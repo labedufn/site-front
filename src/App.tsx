@@ -1,5 +1,12 @@
+import "./assets/css/global/reset.css";
+import Inicio from "./pages/Inicio";
+
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <Inicio />
+    </>
+  );
 };
 
 export default App;
