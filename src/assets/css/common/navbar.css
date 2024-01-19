@@ -1,0 +1,109 @@
+@import url("../utils/cores.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.navbar-bg {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+
+.navbar-bg,
+.navbar-bg-scrolled {
+  transition: background-color 0.5s;
+}
+
+.navbar-bg-scrolled {
+  background-color: var(--cor-neutra1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cor-branco);
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.navbar-logo {
+  width: 74px;
+}
+
+.navbar-links {
+  margin-left: 80px;
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  color: var(--cor-branco);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+  padding: 12px;
+  margin: -12px;
+}
+
+.navbar-links a:hover {
+  color: var(--cor-primaria1);
+}
+
+.navbar-icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.navbar-icons a img {
+  width: 24px;
+  height: 24px;
+}
+
+.instagram:hover path {
+  fill: #fce57e;
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    bottom: -100%;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 16, 19, 0.92);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 0.5s ease-in-out, opacity 0.8s ease-in-out;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-links.active {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  .navbar-links a {
+    font-size: 20px;
+  }
+
+  .navbar-icons {
+    display: none;
+  }
+}
