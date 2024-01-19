@@ -13,19 +13,19 @@ const ItensHero: React.FC = () => {
           <ItemConteudo
             icone={EletronicaIcon}
             titulo={"ELETRÔNICA"}
-            descricao={"Lorem ipsum dolor sit amet consectetur."}
+            descricao={"Eletrônica aplicada a projetos reais."}
           />
 
           <ItemConteudo
             icone={ProgramacaoIcon}
             titulo={"PROGRAMAÇÃO"}
-            descricao={"Lorem ipsum dolor sit amet consectetur."}
+            descricao={"Desenvolvimento de softwares e aplicações."}
           />
 
           <ItemConteudo
             icone={RoboticaIcon}
             titulo={"ROBÓTICA"}
-            descricao={"Lorem ipsum dolor sit amet consectetur."}
+            descricao={"Criação de robôs para competição."}
           />
         </div>
       </div>
