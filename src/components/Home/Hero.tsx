@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../assets/css/components/hero.css";
-import DivisorSection from "../common/DivisorSection";
+import "../../assets/css/components/hero.css";
+import DivisorSection from "../../common/DivisorSection";
 import ItensHero from "./ItensHero";
 
 interface HeroProps {

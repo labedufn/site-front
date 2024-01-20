@@ -2,8 +2,8 @@ import React from "react";
 import "../assets/css/global/global.css";
 import ImagemHero from "../assets/img/fotos/hero_bg.png";
 import Navbar from "../common/Navbar";
-import Hero from "../components/Hero";
-import Sobre from "../components/Sobre";
+import Hero from "../components/Home/Hero";
+import Sobre from "../components/Home/Sobre";
 
 const Inicio: React.FC = () => {
   return (
