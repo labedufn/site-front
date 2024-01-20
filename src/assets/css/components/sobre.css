@@ -1,0 +1,79 @@
+@import url("../utils/cores.css");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto&display=swap");
+
+.sobre {
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.sobre-content {
+  display: flex;
+  align-items: center;
+}
+
+.sobre-textos {
+  color: var(--cor-neutra1);
+}
+
+.subtitulo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 1.28px;
+  margin-bottom: 16px;
+}
+
+.titulo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 3.84px;
+  margin-bottom: 32px;
+}
+
+.paragrafo {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.sobre-imagem {
+  margin-left: 24px;
+}
+
+@media (max-width: 1000px) {
+  .sobre {
+    margin-top: 40px;
+  }
+
+  .sobre-content {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .sobre-textos {
+    text-align: center;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    letter-spacing: 0.96px;
+    margin-bottom: 12px;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+    letter-spacing: 2.56px;
+    margin-bottom: 16px;
+  }
+
+  .paragrafo {
+    font-size: 1rem;
+  }
+
+  .sobre-imagem {
+    margin-left: 0;
+  }
+}
