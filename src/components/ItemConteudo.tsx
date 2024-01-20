@@ -10,7 +10,7 @@ interface ItemConteudoProps {
 const ItemConteudo: React.FC<ItemConteudoProps> = ({ icone, titulo, descricao }) => {
   return (
     <>
-      <div className="item container">
+      <div className="item">
         <img src={icone} alt={titulo} />
         <h3>{titulo}</h3>
         <p>{descricao}</p>
