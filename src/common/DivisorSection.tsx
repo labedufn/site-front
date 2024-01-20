@@ -1,5 +1,4 @@
 import React from "react";
-import "../assets/css/components/itens-hero.css";
 import DivisorBottom from "../assets/img/utils/divisor_section_bottom.svg";
 import DivisorTop from "../assets/img/utils/divisor_section_top.svg";
 

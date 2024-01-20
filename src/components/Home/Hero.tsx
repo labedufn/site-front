@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../assets/css/components/hero.css";
+import "../../assets/css/components/home/hero.css";
 import DivisorSection from "../../common/DivisorSection";
 import ItensHero from "./ItensHero";
 

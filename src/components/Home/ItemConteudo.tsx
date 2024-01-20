@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/components/item-conteudo.css";
+import "../../assets/css/components/home/item-conteudo.css";
 
 interface ItemConteudoProps {
   icone: string;

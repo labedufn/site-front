@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/components/botao.css";
+import "../../assets/css/components/home/botao.css";
 
 interface BotaoProps {
   texto: string;

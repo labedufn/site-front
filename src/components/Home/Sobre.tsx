@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/components/sobre.css";
+import "../../assets/css/components/home/sobre.css";
 import Foto from "../../assets/img/ilustracoes/chiko_desenho.svg";
 import Botao from "./Botao";
 

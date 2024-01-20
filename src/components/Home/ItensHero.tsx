@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/components/itens-hero.css";
+import "../../assets/css/components/home/itens-hero.css";
 import EletronicaIcon from "../../assets/img/icons/eletronica.svg";
 import ProgramacaoIcon from "../../assets/img/icons/programacao.svg";
 import RoboticaIcon from "../../assets/img/icons/robotica.svg";
