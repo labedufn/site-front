@@ -36,4 +36,8 @@
   .item p {
     font-size: 1rem;
   }
+
+  .item img {
+    width: 80px;
+  }
 }

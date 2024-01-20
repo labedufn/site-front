@@ -57,6 +57,12 @@
     text-align: center;
   }
 
+  .sobre-imagem {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
   .subtitulo {
     font-size: 1rem;
     letter-spacing: 0.96px;
@@ -71,9 +77,5 @@
 
   .paragrafo {
     font-size: 1rem;
-  }
-
-  .sobre-imagem {
-    margin-left: 0;
   }
 }
