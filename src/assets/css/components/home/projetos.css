@@ -1,72 +1,55 @@
 @import url("../../utils/cores.css");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap");
 
 .projetos-bg {
-  position: relative;
-  background-color: var(--cor-primaria1);
-  background-size: cover;
-  background-position: center;
-  height: 480px;
-}
-
-.projetos {
+  background-color: var(--cor-branco);
   margin-bottom: 80px;
 }
 
-.ultimo-divisor {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  bottom: calc(0% - 6px);
-}
-
-.projetos-divisor {
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-  margin-bottom: 60px;
+.projetos-header {
+  background-color: var(--cor-primaria1);
+  box-shadow: inset 0 -6px var(--cor-branco);
 }
 
 .projetos-titulo {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 3.84px;
   text-align: center;
   text-transform: uppercase;
   color: var(--cor-neutra1);
-  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.projetos-divisor-top {
+  width: 100%;
+}
+
+.projetos-divisor-bottom {
+  width: 100%;
 }
 
 .projetos-itens {
-  position: relative;
   display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
   gap: 40px;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 3;
   margin-bottom: 60px;
 }
 
 .projetos-botao {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-@media (max-width: 1400px) {
-  .projetos-bg {
-    height: 300px;
-  }
-
+@media (max-width: 768px) {
   .projetos-titulo {
     font-size: 1.5rem;
     letter-spacing: 2.88px;
-    margin-bottom: 40px;
-  }
-
-  .projetos-itens {
-    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }

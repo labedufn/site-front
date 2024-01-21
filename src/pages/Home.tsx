@@ -2,11 +2,12 @@ import React from "react";
 import "../assets/css/global/global.css";
 import ImagemHero from "../assets/img/fotos/hero_bg.png";
 import Navbar from "../common/Navbar";
+import Apoiadores from "../components/Home/Apoiadores";
 import Hero from "../components/Home/Hero";
 import Projetos from "../components/Home/Projetos";
 import Sobre from "../components/Home/Sobre";
 
-const Inicio: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -23,8 +24,9 @@ const Inicio: React.FC = () => {
         }
       />
       <Projetos />
+      <Apoiadores />
     </>
   );
 };
 
-export default Inicio;
+export default Home;
