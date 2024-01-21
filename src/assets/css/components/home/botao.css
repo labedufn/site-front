@@ -9,16 +9,24 @@
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
   padding: 16px 40px;
 }
 
 .botao:hover {
-  filter: brightness(0.9);
+  filter: brightness(0.8);
 }
 
-.botao:active {
-  filter: brightness(0.8);
+.botao-outline {
+  background-color: transparent;
+  color: var(--cor-neutra1);
+  border: 2px solid var(--cor-neutra1);
+}
+
+.botao-outline:hover {
+  background-color: var(--cor-neutra1);
+  color: var(--cor-branco);
 }
 
 @media (max-width: 768px) {

@@ -3,12 +3,15 @@ import "../../assets/css/components/home/botao.css";
 
 interface BotaoProps {
   texto: string;
+  secundario?: boolean;
 }
 
-const Botao: React.FC<BotaoProps> = ({ texto }) => {
+const Botao: React.FC<BotaoProps> = ({ texto, secundario = false }) => {
+  const buttonClass = secundario ? "botao botao-outline" : "botao";
+
   return (
     <>
-      <button className="botao">{texto}</button>
+      <button className={buttonClass}>{texto}</button>
     </>
   );
 };

@@ -1,0 +1,72 @@
+@import url("../../utils/cores.css");
+
+.projetos-bg {
+  position: relative;
+  background-color: var(--cor-primaria1);
+  background-size: cover;
+  background-position: center;
+  height: 480px;
+}
+
+.projetos {
+  margin-bottom: 80px;
+}
+
+.ultimo-divisor {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  bottom: calc(0% - 6px);
+}
+
+.projetos-divisor {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+
+.projetos-titulo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 3.84px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--cor-neutra1);
+  margin-bottom: 60px;
+}
+
+.projetos-itens {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  margin-bottom: 60px;
+}
+
+.projetos-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1400px) {
+  .projetos-bg {
+    height: 300px;
+  }
+
+  .projetos-titulo {
+    font-size: 1.5rem;
+    letter-spacing: 2.88px;
+    margin-bottom: 40px;
+  }
+
+  .projetos-itens {
+    flex-direction: column;
+  }
+}

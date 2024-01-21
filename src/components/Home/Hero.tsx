@@ -37,10 +37,10 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
           </h1>
           <p>{subtitulo}</p>
         </div>
-        <DivisorSection />
+        <DivisorSection inverter={true} />
       </section>
       <ItensHero />
-      <DivisorSection inverter={true} />
+      <DivisorSection />
     </>
   );
 };
