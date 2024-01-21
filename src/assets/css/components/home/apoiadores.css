@@ -1,0 +1,47 @@
+@import url("../../utils/cores.css");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+
+.apoiadores-bg {
+  background-color: var(--cor-neutra1);
+}
+
+.apoiadores-titulo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.96px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--cor-branco);
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.apoiadores-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.apoiadores-logos::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--cor-neutra2);
+}
+
+.apoiadores-logos img:hover {
+  cursor: pointer;
+  filter: brightness(0.6);
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 1400px) {
+  .apoiadores-logos {
+    width: 200px;
+    justify-content: center;
+  }
+}
