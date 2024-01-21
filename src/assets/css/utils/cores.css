@@ -8,3 +8,11 @@
   --cor-preto: #000000;
   --cor-branco: #ffffff;
 }
+
+.cor-primaria1 {
+  fill: var(--cor-primaria1);
+}
+
+.cor-branco {
+  fill: var(--cor-branco);
+}

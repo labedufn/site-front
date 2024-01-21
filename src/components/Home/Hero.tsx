@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../assets/css/components/hero.css";
-import DivisorSection from "../common/DivisorSection";
+import "../../assets/css/components/home/hero.css";
+import DivisorSection from "../../common/DivisorSection";
 import ItensHero from "./ItensHero";
 
 interface HeroProps {
@@ -37,10 +37,10 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
           </h1>
           <p>{subtitulo}</p>
         </div>
-        <DivisorSection />
+        <DivisorSection inverter={true} />
       </section>
       <ItensHero />
-      <DivisorSection inverter={true} />
+      <DivisorSection />
     </>
   );
 };

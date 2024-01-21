@@ -1,10 +1,10 @@
 import "./assets/css/global/reset.css";
-import Inicio from "./pages/Inicio";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <>
-      <Inicio />
+      <Home />
     </>
   );
 };

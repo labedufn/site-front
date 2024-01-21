@@ -13,6 +13,9 @@ img {
 }
 
 .divisor {
-  width: 100%;
   z-index: 2;
+}
+
+.divisor.invertido {
+  transform: rotate(180deg);
 }
