@@ -1,6 +1,7 @@
 import React from "react";
 import "../assets/css/global/global.css";
 import ImagemHero from "../assets/img/fotos/hero_bg.png";
+import Footer from "../common/Footer";
 import Navbar from "../common/Navbar";
 import Apoiadores from "../components/Home/Apoiadores";
 import Hero from "../components/Home/Hero";
@@ -25,6 +26,7 @@ const Home: React.FC = () => {
       />
       <Projetos />
       <Apoiadores />
+      <Footer />
     </>
   );
 };

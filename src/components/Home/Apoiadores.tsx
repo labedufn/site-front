@@ -1,5 +1,4 @@
-import React from "react";
-import "../../assets/css/components/home/apoiadores.css";
+import "../../assets/css/components/home/apoiadores.css"; // Certifique-se de que o CSS do slider está aqui
 import "../../assets/css/utils/cores.css";
 import CienciaComputacao from "../../assets/img/apoiadores/ciencia_computacao.svg";
 import EngenhariaBiomedica from "../../assets/img/apoiadores/engenharia_biomedica.svg";
@@ -9,7 +8,16 @@ import Ufn from "../../assets/img/apoiadores/ufn.svg";
 import Ufnbotz from "../../assets/img/apoiadores/ufnbotz.svg";
 import DivisorSection from "../../common/DivisorSection";
 
-const Apoiadores: React.FC = () => {
+const Apoiadores = () => {
+  const logos = [
+    Ufn,
+    Ufnbotz,
+    JogosDigitais,
+    SistemasInformacao,
+    CienciaComputacao,
+    EngenhariaBiomedica,
+  ];
+
   return (
     <section>
       <div className="apoiadores-bg">
@@ -18,12 +26,20 @@ const Apoiadores: React.FC = () => {
           <h3>Apoiadores</h3>
         </div>
         <div className="apoiadores-logos container">
-          <img src={Ufn} />
-          <img src={Ufnbotz} />
-          <img src={JogosDigitais} />
-          <img src={SistemasInformacao} />
-          <img src={CienciaComputacao} />
-          <img src={EngenhariaBiomedica} />
+          <div className="slider">
+            <div className="slide-track">
+              {logos.map((logo, index) => (
+                <div className="slide" key={index}>
+                  <img src={logo} alt={`Logo ${index + 1}`} />
+                </div>
+              ))}
+              {logos.map((logo, index) => (
+                <div className="slide" key={`duplicate-${index}`}>
+                  <img src={logo} alt={`Logo duplicate ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
