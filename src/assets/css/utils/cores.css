@@ -4,6 +4,7 @@
 
   /* Neutras */
   --cor-neutra1: #001013;
+  --cor-neutra2: #003842;
 
   --cor-preto: #000000;
   --cor-branco: #ffffff;
@@ -15,4 +16,8 @@
 
 .cor-branco {
   fill: var(--cor-branco);
+}
+
+.cor-neutra1 {
+  fill: var(--cor-neutra1);
 }
