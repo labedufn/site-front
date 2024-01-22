@@ -38,8 +38,9 @@
   margin-bottom: 24px;
 }
 
-.footer a,
-.footer-endereco {
+.footer-home a,
+.footer-endereco,
+.footer-contato a {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: var(--cor-branco);
@@ -100,12 +101,15 @@
 .footer-copy {
   font-family: "Roboto", sans-serif;
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
   font-size: 0.8rem;
   color: var(--cor-branco);
   margin-top: 40px;
   padding-bottom: 60px;
+}
+
+.footer-copy a {
+  color: var(--cor-branco);
 }
 
 @media (max-width: 768px) {
@@ -121,5 +125,13 @@
   .footer-logo {
     display: flex;
     justify-self: center;
+  }
+
+  .footer-lab {
+    max-width: 200px;
+  }
+
+  .footer-dev {
+    text-align: end;
   }
 }

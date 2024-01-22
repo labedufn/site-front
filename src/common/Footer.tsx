@@ -70,9 +70,15 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="footer-copy">
-            <p>
+            <p className="footer-lab">
               &copy; {currentYear} LABED - Laboratório de Eletrônica e Desenvolvimento. Todos os
               direitos reservados.
+            </p>
+            <p className="footer-dev">
+              Desenvolvido por{" "}
+              <a href="https://github.com/mauricioprb" target="blank">
+                @mauricioprb
+              </a>
             </p>
           </div>
         </div>
