@@ -1,6 +1,6 @@
 import React from "react";
 import "../../assets/css/components/home/sobre.css";
-import Foto from "../../assets/img/ilustracoes/chiko_desenho.svg";
+import Foto from "../../assets/img/ilustracoes/chiko_desenho.png";
 import Botao from "./Botao";
 
 interface SobreProps {
