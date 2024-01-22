@@ -82,6 +82,17 @@
   gap: 16px;
 }
 
+.instagram-icon,
+.github-icon {
+  color: var(--cor-branco);
+  transition: color 0.3s ease-in-out;
+}
+
+.instagram-icon:hover,
+.github-icon:hover {
+  color: var(--cor-primaria1);
+}
+
 .footer-redes-icons a {
   width: 32px;
 }

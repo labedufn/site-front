@@ -1,9 +1,8 @@
 import React from "react";
+import { FaGithub, FaInstagram } from "react-icons/fa";
 import "../assets/css/common/footer.css";
 import "../assets/css/utils/cores.css";
 import EmailIcon from "../assets/img/icons/email.svg";
-import FooterGitHub from "../assets/img/icons/github_negativo.svg";
-import FooterInsta from "../assets/img/icons/instagram_negativo.svg";
 import EnderecoIcon from "../assets/img/icons/local.svg";
 import Logo from "../assets/img/logos/logo_original.svg";
 
@@ -61,10 +60,10 @@ const Footer: React.FC = () => {
                 <h3>Redes Sociais</h3>
                 <div className="footer-redes-icons">
                   <a href="#">
-                    <img src={FooterInsta} />
+                    <FaInstagram size={32} className="instagram-icon" />
                   </a>
                   <a href="#">
-                    <img src={FooterGitHub} />
+                    <FaGithub size={32} className="github-icon" />
                   </a>
                 </div>
               </div>

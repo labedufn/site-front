@@ -61,9 +61,15 @@
   gap: 16px;
 }
 
-.navbar-icons a img {
-  width: 24px;
-  height: 24px;
+.instagram-icon,
+.github-icon {
+  color: var(--cor-branco);
+  transition: color 0.3s ease-in-out;
+}
+
+.instagram-icon:hover,
+.github-icon:hover {
+  color: var(--cor-primaria1);
 }
 
 .menu-icon {
