@@ -17,7 +17,7 @@ const Apoiadores = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries, observer) => {
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);

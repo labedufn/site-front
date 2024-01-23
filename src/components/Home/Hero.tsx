@@ -47,9 +47,9 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
     setIsComponentVisible(true);
   };
 
-  const onExitViewport = () => {
-    setIsComponentVisible(false);
-  };
+  // const onExitViewport = () => {
+  //   setIsComponentVisible(false);
+  // };
 
   return (
     <>
