@@ -10,7 +10,7 @@ const DivisorSection: React.FC<DivisorSectionProps> = ({ fillClass, inverter }) 
     <>
       <svg
         width="100%"
-        height="auto"
+        height="100%"
         viewBox="0 0 1440 76"
         fill="#22B5D3"
         xmlns="http://www.w3.org/2000/svg"

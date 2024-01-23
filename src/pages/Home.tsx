@@ -21,7 +21,7 @@ const Home: React.FC = () => {
         subtitulo={"SOBRE O"}
         titulo={"LABORATÓRIO DE ELETRÔNICA E DESENVOLVIMENTO"}
         paragrafo={
-          "Lorem ipsum dolor sit amet consectetur. Id purus lacinia malesuada vitae orci et posuere. Volutpat tristique vivamus fermentum velit nisl quam lobortis tempus. Diam eleifend vitae consectetur risus suspendisse platea etiam. Viverra potenti est proin vel eget turpis."
+          "O LABED, fruto da parceria entre alunos e professores, nasceu de encontros regulares para discutir ideias práticas em eletrônica. O laboratório não é apenas um espaço físico, mas um ambiente inclusivo. Sem focar em individualidades, o LABED é um ponto de encontro onde a paixão pela eletrônica se traduz em projetos tangíveis. Em encontros semanais, valorizamos a diversidade de perspectivas, acreditando que é dessa mistura que nascem as ideias mais criativas. O LABED é um hub de inovação, proporcionando oportunidades para aprender e criar em eletrônica, tornando a tecnologia acessível a todos os interessados."
         }
       />
       <Projetos />

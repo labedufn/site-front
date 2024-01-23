@@ -20,7 +20,7 @@
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 40px;
   padding-bottom: 60px;
 }
 
@@ -39,8 +39,8 @@
 }
 
 .footer-home a,
-.footer-endereco,
-.footer-contato a {
+.footer-contato a,
+.footer-contato {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: var(--cor-branco);
@@ -71,11 +71,6 @@
 
 .footer-email {
   align-items: center;
-}
-
-.footer-endereco {
-  align-items: start;
-  max-width: 280px;
 }
 
 .footer-redes-icons {
@@ -112,14 +107,19 @@
   color: var(--cor-branco);
 }
 
+.footer-dev a {
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-dev a:hover {
+  color: var(--cor-primaria1);
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 60px;
-  }
-
-  .footer-endereco {
-    max-width: 100%;
   }
 
   .footer-logo {
