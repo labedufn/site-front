@@ -1,0 +1,21 @@
+.container {
+  box-sizing: border-box;
+  max-width: 1400px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.divisor {
+  z-index: 2;
+}
+
+.divisor.invertido {
+  transform: rotate(180deg);
+}
