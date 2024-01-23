@@ -123,10 +123,10 @@ const Footer: React.FC = () => {
                 >
                   <h3>Redes Sociais</h3>
                   <div className="footer-redes-icons">
-                    <a href="#">
+                    <a href="https://www.instagram.com/labedufn" target="blank">
                       <FaInstagram size={32} className="instagram-icon" />
                     </a>
-                    <a href="#">
+                    <a href="https://github.com/labedufn" target="blank">
                       <FaGithub size={32} className="github-icon" />
                     </a>
                   </div>
