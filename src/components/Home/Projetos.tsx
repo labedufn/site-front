@@ -77,6 +77,7 @@ const Projetos: React.FC = () => {
                   descricao={
                     "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut."
                   }
+                  link={""}
                 />
               </motion.div>
             </ScrollTrigger>
@@ -88,6 +89,7 @@ const Projetos: React.FC = () => {
                   descricao={
                     "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut."
                   }
+                  link={""}
                 />
               </motion.div>
             </ScrollTrigger>
@@ -99,6 +101,7 @@ const Projetos: React.FC = () => {
                   descricao={
                     "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut."
                   }
+                  link={""}
                 />
               </motion.div>
             </ScrollTrigger>

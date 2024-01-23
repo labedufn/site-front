@@ -50,7 +50,7 @@ const Sobre: React.FC<SobreProps> = ({ subtitulo, titulo, paragrafo }) => {
   return (
     <>
       <section id="sobre" className="sobre" ref={ref}>
-        <div className="sobre-content container">
+        <div className="sobre-conteudo container">
           <motion.div
             className="sobre-textos"
             initial={{ opacity: 0, x: -100 }}

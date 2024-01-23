@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-.sobre-content {
+.sobre-conteudo {
   display: flex;
   align-items: center;
 }
@@ -49,7 +49,7 @@
     margin-top: 40px;
   }
 
-  .sobre-content {
+  .sobre-conteudo {
     flex-direction: column-reverse;
     gap: 40px;
   }

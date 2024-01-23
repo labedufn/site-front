@@ -4,6 +4,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/hero.css";
 import DivisorSection from "../../common/DivisorSection";
 import ItensHero from "./ItensHero";
+import ScrollButton from "./ScrollButton";
 
 interface HeroProps {
   titulo: string;
@@ -69,6 +70,14 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
             </motion.p>
           </div>
           <div className="hero-divisor">
+            <motion.div
+              className="scroll-button"
+              initial="hidden"
+              animate={controls}
+              variants={titleVariants}
+            >
+              <ScrollButton />
+            </motion.div>
             <DivisorSection inverter={true} />
           </div>
         </section>
