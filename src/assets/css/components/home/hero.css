@@ -101,7 +101,13 @@
 
 .scroll-button {
   bottom: 0;
-  padding-bottom: 140px;
+  padding-bottom: 200px;
+}
+
+@media (max-width: 900px) {
+  .scroll-button {
+    padding-bottom: 124px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -120,7 +126,7 @@
   }
 
   .scroll-button {
-    padding-bottom: 80px;
+    padding-bottom: 140px;
   }
 }
 

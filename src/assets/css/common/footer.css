@@ -24,10 +24,6 @@
   padding-bottom: 60px;
 }
 
-.footer-logo {
-  width: 160px;
-}
-
 .footer h3 {
   font-family: "Orbitron", sans-serif;
   font-size: 1.5rem;
@@ -123,8 +119,8 @@
   }
 
   .footer-logo {
-    display: flex;
-    justify-self: center;
+    width: 100%;
+    text-align: center;
   }
 
   .footer-lab {

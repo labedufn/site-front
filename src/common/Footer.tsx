@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               <ScrollTrigger onEnter={() => setIsLogoVisible(true)}>
                 <motion.div className="footer-logo" initial={{ opacity: 0 }} animate={controlsLogo}>
                   <a href="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
-                    <Logo />
+                    <Logo width={180} />
                   </a>
                 </motion.div>
               </ScrollTrigger>

@@ -18,23 +18,23 @@ const ItensHero: React.FC = () => {
 
   useEffect(() => {
     // Inicia as animações com opacidade 0 e scale maior
-    controlsEletronica.start({ opacity: 0, scale: 1.2 });
-    controlsProgramacao.start({ opacity: 0, scale: 1.2 });
-    controlsRobotica.start({ opacity: 0, scale: 1.2 });
+    controlsEletronica.start({ opacity: 0 });
+    controlsProgramacao.start({ opacity: 0 });
+    controlsRobotica.start({ opacity: 0 });
 
     // Atualiza a animação com base na visibilidade
     if (isEletronicaVisible) {
-      controlsEletronica.start({ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.2 } });
+      controlsEletronica.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
     }
     if (isProgramacaoVisible) {
       controlsProgramacao.start({
         opacity: 1,
-        scale: 1,
+
         transition: { duration: 0.5, delay: 0.4 },
       });
     }
     if (isRoboticaVisible) {
-      controlsRobotica.start({ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.6 } });
+      controlsRobotica.start({ opacity: 1, transition: { duration: 0.5, delay: 0.6 } });
     }
   }, [isEletronicaVisible, isProgramacaoVisible, isRoboticaVisible]);
 
@@ -43,7 +43,7 @@ const ItensHero: React.FC = () => {
       <div className="itens-bg">
         <div className="itens container">
           <ScrollTrigger onEnter={() => setIsEletronicaVisible(true)}>
-            <motion.div initial={{ opacity: 0, scale: 1.2 }} animate={controlsEletronica}>
+            <motion.div initial={{ opacity: 0 }} animate={controlsEletronica}>
               <ItemConteudo
                 icone={EletronicaIcon}
                 titulo={"ELETRÔNICA"}
@@ -55,7 +55,7 @@ const ItensHero: React.FC = () => {
           </ScrollTrigger>
 
           <ScrollTrigger onEnter={() => setIsProgramacaoVisible(true)}>
-            <motion.div initial={{ opacity: 0, scale: 1.2 }} animate={controlsProgramacao}>
+            <motion.div initial={{ opacity: 0 }} animate={controlsProgramacao}>
               <ItemConteudo
                 icone={ProgramacaoIcon}
                 titulo={"PROGRAMAÇÃO"}
@@ -67,7 +67,7 @@ const ItensHero: React.FC = () => {
           </ScrollTrigger>
 
           <ScrollTrigger onEnter={() => setIsRoboticaVisible(true)}>
-            <motion.div initial={{ opacity: 0, scale: 1.2 }} animate={controlsRobotica}>
+            <motion.div initial={{ opacity: 0 }} animate={controlsRobotica}>
               <ItemConteudo
                 icone={RoboticaIcon}
                 titulo={"ROBÓTICA"}
