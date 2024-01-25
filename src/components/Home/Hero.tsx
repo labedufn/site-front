@@ -83,7 +83,9 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
         </section>
       </ScrollTrigger>
       <ItensHero />
-      <DivisorSection />
+      <div className="hero-divisor-bottom">
+        <DivisorSection />
+      </div>
     </>
   );
 };

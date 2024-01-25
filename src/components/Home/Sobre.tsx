@@ -47,6 +47,17 @@ const Sobre: React.FC<SobreProps> = ({ subtitulo, titulo, paragrafo }) => {
     };
   }, [controlsTextos, controlsImagem]);
 
+  const handleSobreLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    sectionId: string
+  ) => {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section id="sobre" className="sobre" ref={ref}>
@@ -59,7 +70,9 @@ const Sobre: React.FC<SobreProps> = ({ subtitulo, titulo, paragrafo }) => {
             <h2 className="subtitulo">{subtitulo}</h2>
             <h1 className="titulo">{titulo}</h1>
             <p className="paragrafo">{paragrafo}</p>
-            <Botao texto="Conheça os membros" />
+            <a onClick={(e) => handleSobreLinkClick(e, "projetos")}>
+              <Botao texto="Conheça nossos projetos" />
+            </a>
           </motion.div>
           <motion.img
             src={Foto}

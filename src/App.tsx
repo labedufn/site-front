@@ -1,10 +1,16 @@
+import React from "react";
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import "./assets/css/global/reset.css";
 import Home from "./pages/Home";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
-      <Home />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </>
   );
 };

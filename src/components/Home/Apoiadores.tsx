@@ -78,7 +78,7 @@ const Apoiadores = () => {
             initial={{ opacity: 0 }}
             animate={controls}
           >
-            <Slider duration={20} pauseOnHover={true} blurBorders={true} blurBoderColor={"#001013"}>
+            <Slider duration={20} pauseOnHover={true}>
               {logos.map((item, index) => (
                 <Slider.Slide key={index}>
                   <img className="logo" src={item} alt={`Logo ${index}`} />
