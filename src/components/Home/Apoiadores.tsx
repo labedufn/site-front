@@ -1,11 +1,13 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Slider from "react-infinite-logo-slider";
 import "../../assets/css/components/home/apoiadores.css";
 import "../../assets/css/utils/cores.css";
 import CienciaComputacao from "../../assets/img/apoiadores/ciencia_computacao.svg";
 import EngenhariaBiomedica from "../../assets/img/apoiadores/engenharia_biomedica.svg";
 import JogosDigitais from "../../assets/img/apoiadores/jogos_digitais.svg";
 import SistemasInformacao from "../../assets/img/apoiadores/sistemas_informacao.svg";
+import SolidWorks from "../../assets/img/apoiadores/solidworks.svg";
 import Ufn from "../../assets/img/apoiadores/ufn.svg";
 import Ufnbotz from "../../assets/img/apoiadores/ufnbotz.svg";
 import DivisorSection from "../../common/DivisorSection";
@@ -55,9 +57,10 @@ const Apoiadores = () => {
 
   const logos = [
     Ufn,
-    Ufnbotz,
-    JogosDigitais,
     SistemasInformacao,
+    Ufnbotz,
+    SolidWorks,
+    JogosDigitais,
     CienciaComputacao,
     EngenhariaBiomedica,
   ];
@@ -75,20 +78,13 @@ const Apoiadores = () => {
             initial={{ opacity: 0 }}
             animate={controls}
           >
-            <div className="slider">
-              <div className="slide-track">
-                {logos.map((logo, index) => (
-                  <div className="slide" key={index}>
-                    <img src={logo} alt={`Logo ${index + 1}`} />
-                  </div>
-                ))}
-                {logos.map((logo, index) => (
-                  <div className="slide" key={`duplicate-${index}`}>
-                    <img src={logo} alt={`Logo duplicate ${index + 1}`} />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <Slider duration={20} pauseOnHover={true} blurBorders={true} blurBoderColor={"#001013"}>
+              {logos.map((item, index) => (
+                <Slider.Slide key={index}>
+                  <img className="logo" src={item} alt={`Logo ${index}`} />
+                </Slider.Slide>
+              ))}
+            </Slider>
           </motion.div>
         </div>
       </section>

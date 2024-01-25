@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               <ScrollTrigger onEnter={() => setIsLogoVisible(true)}>
                 <motion.div className="footer-logo" initial={{ opacity: 0 }} animate={controlsLogo}>
                   <a href="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
-                    <Logo width={180} />
+                    <Logo width={160} />
                   </a>
                 </motion.div>
               </ScrollTrigger>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                       <div className="endereco-icon">
                         <LuMapPin size={24} />
                       </div>
-                      <a href="https://maps.app.goo.gl/oEeGiputU7H2fRjd7" target="blank">
+                      <a href="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="blank">
                         Rua dos Andradas, 1614 - Centro, Universidade Franciscana - Conjunto I,
                         Prédio 3, Lab. 109, Santa Maria - RS, 97010-030
                       </a>
