@@ -23,11 +23,6 @@ const Sobre: React.FC<SobreProps> = ({ subtitulo, titulo, paragrafo }) => {
           controlsTextos.start({ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } });
           controlsImagem.start({ opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.4 } });
         }
-        // else {
-        //   // Elemento saiu da viewport - reinicia as animações
-        //   controlsTextos.start({ opacity: 0, x: -100, transition: { duration: 0.5 } });
-        //   controlsImagem.start({ opacity: 0, x: 100, transition: { duration: 0.5 } });
-        // }
       },
       {
         root: null,

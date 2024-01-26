@@ -1,6 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/projetos.css";
 import "../../assets/css/utils/cores.css";
@@ -20,6 +19,7 @@ const Projetos: React.FC = () => {
   const [isTituloVisible, setIsTituloVisible] = useState(false);
   const [isBotaoVisible, setIsBotaoVisible] = useState(false);
   const [isProjetosVisible, setIsProjetosVisible] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const projetos = [
     {
@@ -43,7 +43,24 @@ const Projetos: React.FC = () => {
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
       link: "",
     },
+    {
+      imagem: ProjetoSeguidorLinha,
+      titulo: "Seguidor de Linha",
+      descricao:
+        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
+      link: "",
+    },
+    {
+      imagem: ProjetoSeguidorLinha,
+      titulo: "Seguidor de Linha",
+      descricao:
+        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
+      link: "",
+    },
   ];
+
+  const visibleProjects = showAllProjects ? projetos : projetos.slice(0, 3);
+
   useEffect(() => {
     controlsTitulo.start({ opacity: 0 });
 
@@ -89,7 +106,7 @@ const Projetos: React.FC = () => {
             </div>
           </div>
           <div className="projetos-itens container">
-            {projetos.map((projeto, index) => (
+            {visibleProjects.map((projeto, index) => (
               <ScrollTrigger key={index} onEnter={() => setIsProjetosVisible(true)}>
                 <AnimacaoFadeCrescente controls={controlsProjetos}>
                   <ItemProjetos
@@ -105,9 +122,11 @@ const Projetos: React.FC = () => {
           <ScrollTrigger onEnter={() => setIsBotaoVisible(true)}>
             <div className="projetos-botao">
               <AnimacaoFadeCrescente controls={controlsBotao}>
-                <NavLink to="/404">
-                  <Botao texto={"Ver todos os projetos"} secundario={true} />
-                </NavLink>
+                <Botao
+                  texto={showAllProjects ? "Ver menos projetos" : "Ver todos os projetos"}
+                  secundario={true}
+                  onClick={() => setShowAllProjects(!showAllProjects)}
+                />
               </AnimacaoFadeCrescente>
             </div>
           </ScrollTrigger>
