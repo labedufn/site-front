@@ -5,6 +5,7 @@ import "../../assets/css/components/home/itens-hero.css";
 import EletronicaIcon from "../../assets/img/icons/eletronica.svg";
 import ProgramacaoIcon from "../../assets/img/icons/programacao.svg";
 import RoboticaIcon from "../../assets/img/icons/robotica.svg";
+import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import ItemConteudo from "./ItemConteudo";
 
 const ItensHero: React.FC = () => {
@@ -17,19 +18,16 @@ const ItensHero: React.FC = () => {
   const [isRoboticaVisible, setIsRoboticaVisible] = useState(false);
 
   useEffect(() => {
-    // Inicia as animações com opacidade 0 e scale maior
     controlsEletronica.start({ opacity: 0 });
     controlsProgramacao.start({ opacity: 0 });
     controlsRobotica.start({ opacity: 0 });
 
-    // Atualiza a animação com base na visibilidade
     if (isEletronicaVisible) {
       controlsEletronica.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
     }
     if (isProgramacaoVisible) {
       controlsProgramacao.start({
         opacity: 1,
-
         transition: { duration: 0.5, delay: 0.4 },
       });
     }
@@ -43,39 +41,45 @@ const ItensHero: React.FC = () => {
       <div className="itens-bg">
         <div className="itens container">
           <ScrollTrigger onEnter={() => setIsEletronicaVisible(true)}>
-            <motion.div initial={{ opacity: 0 }} animate={controlsEletronica}>
-              <ItemConteudo
-                icone={EletronicaIcon}
-                titulo={"ELETRÔNICA"}
-                descricao={
-                  "Usamos as mais variadas placas programaveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
-                }
-              />
-            </motion.div>
+            <AnimacaoFadeCrescente controls={controlsEletronica}>
+              <motion.div>
+                <ItemConteudo
+                  icone={EletronicaIcon}
+                  titulo={"ELETRÔNICA"}
+                  descricao={
+                    "Usamos as mais variadas placas programaveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
+                  }
+                />
+              </motion.div>
+            </AnimacaoFadeCrescente>
           </ScrollTrigger>
 
           <ScrollTrigger onEnter={() => setIsProgramacaoVisible(true)}>
-            <motion.div initial={{ opacity: 0 }} animate={controlsProgramacao}>
-              <ItemConteudo
-                icone={ProgramacaoIcon}
-                titulo={"PROGRAMAÇÃO"}
-                descricao={
-                  "Em programação, criamos softwares e sistemas embarcados, focando em soluções práticas e acessíveis."
-                }
-              />
-            </motion.div>
+            <AnimacaoFadeCrescente controls={controlsProgramacao}>
+              <motion.div>
+                <ItemConteudo
+                  icone={ProgramacaoIcon}
+                  titulo={"PROGRAMAÇÃO"}
+                  descricao={
+                    "Em programação, criamos softwares e sistemas embarcados, focando em soluções práticas e acessíveis."
+                  }
+                />
+              </motion.div>
+            </AnimacaoFadeCrescente>
           </ScrollTrigger>
 
           <ScrollTrigger onEnter={() => setIsRoboticaVisible(true)}>
-            <motion.div initial={{ opacity: 0 }} animate={controlsRobotica}>
-              <ItemConteudo
-                icone={RoboticaIcon}
-                titulo={"ROBÓTICA"}
-                descricao={
-                  "A nossa equipe de robótica participa de competições na área e desenvolve projetos do zero, mesclando prática e inovação."
-                }
-              />
-            </motion.div>
+            <AnimacaoFadeCrescente controls={controlsRobotica}>
+              <motion.div>
+                <ItemConteudo
+                  icone={RoboticaIcon}
+                  titulo={"ROBÓTICA"}
+                  descricao={
+                    "A nossa equipe de robótica participa de competições na área e desenvolve projetos do zero, mesclando prática e inovação."
+                  }
+                />
+              </motion.div>
+            </AnimacaoFadeCrescente>
           </ScrollTrigger>
         </div>
       </div>

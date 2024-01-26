@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/projetos.css";
 import "../../assets/css/utils/cores.css";
@@ -44,21 +45,18 @@ const Projetos: React.FC = () => {
     },
   ];
   useEffect(() => {
-    // Animação do título
     controlsTitulo.start({ opacity: 0 });
 
     if (isTituloVisible) {
       controlsTitulo.start({ opacity: 1, transition: { duration: 0.5, delay: 0.1 } });
     }
 
-    // Animação dos projetos
     controlsProjetos.start({ opacity: 0 });
 
     if (isProjetosVisible) {
       controlsProjetos.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
     }
 
-    // Animação do botão
     controlsBotao.start({ opacity: 0 });
 
     if (isBotaoVisible) {
@@ -107,7 +105,9 @@ const Projetos: React.FC = () => {
           <ScrollTrigger onEnter={() => setIsBotaoVisible(true)}>
             <div className="projetos-botao">
               <AnimacaoFadeCrescente controls={controlsBotao}>
-                <Botao texto={"Ver todos os projetos"} secundario={true} />
+                <NavLink to="/404">
+                  <Botao texto={"Ver todos os projetos"} secundario={true} />
+                </NavLink>
               </AnimacaoFadeCrescente>
             </div>
           </ScrollTrigger>

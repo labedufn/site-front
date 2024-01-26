@@ -38,18 +38,11 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
     if (isComponentVisible) {
       controls.start("visible");
     }
-    // else {
-    //   controls.start("hidden");
-    // }
   }, [controls, isComponentVisible]);
 
   const onEnterViewport = () => {
     setIsComponentVisible(true);
   };
-
-  // const onExitViewport = () => {
-  //   setIsComponentVisible(false);
-  // };
 
   return (
     <>

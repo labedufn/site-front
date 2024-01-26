@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
-import "../assets/css/common/navbar.css";
-import FecharIcon from "../assets/img/icons/fechar_icon.svg?react";
-import HamburgerIcon from "../assets/img/icons/hamburger_icon.svg?react";
-import LogoAbreviado from "../assets/img/logos/logo_abreviado.svg?react";
+import "../../assets/css/components/home/navbar.css";
+import FecharIcon from "../../assets/img/icons/fechar_icon.svg?react";
+import HamburgerIcon from "../../assets/img/icons/hamburger_icon.svg?react";
+import LogoAbreviado from "../../assets/img/logos/logo_abreviado.svg?react";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

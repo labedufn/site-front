@@ -135,3 +135,9 @@
     padding-bottom: 32px;
   }
 }
+
+@media (max-width: 400px) and (min-height: 800px) {
+  .scroll-button {
+    padding-bottom: 80px;
+  }
+}

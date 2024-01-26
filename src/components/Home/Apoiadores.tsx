@@ -1,6 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-infinite-logo-slider";
+import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/apoiadores.css";
 import "../../assets/css/utils/cores.css";
 import CienciaComputacao from "../../assets/img/apoiadores/ciencia_computacao.svg";
@@ -10,23 +11,23 @@ import SistemasInformacao from "../../assets/img/apoiadores/sistemas_informacao.
 import SolidWorks from "../../assets/img/apoiadores/solidworks.svg";
 import Ufn from "../../assets/img/apoiadores/ufn.svg";
 import Ufnbotz from "../../assets/img/apoiadores/ufnbotz.svg";
+import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import DivisorSection from "../../common/DivisorSection";
 
 const Apoiadores = () => {
-  const controls = useAnimation();
+  const controlsTitulo = useAnimation();
+  const controlsLogos = useAnimation();
   const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isTituloVisible, setIsTituloVisible] = useState(false);
+  const [isLogosVisible, setIsLogosVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true);
+            setIsTituloVisible(true);
           }
-          // else {
-          //   setIsVisible(false);
-          // }
         });
       },
       {
@@ -48,12 +49,18 @@ const Apoiadores = () => {
   }, []);
 
   useEffect(() => {
-    if (isVisible) {
-      controls.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
-    } else {
-      controls.start({ opacity: 0 });
+    controlsTitulo.start({ opacity: 0 });
+
+    if (isTituloVisible) {
+      controlsTitulo.start({ opacity: 1, transition: { duration: 0.5, delay: 0.1 } });
     }
-  }, [isVisible, controls]);
+
+    controlsLogos.start({ opacity: 0 });
+
+    if (isLogosVisible) {
+      controlsLogos.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
+    }
+  }, [isTituloVisible, isLogosVisible, controlsTitulo, controlsLogos]);
 
   const logos = [
     Ufn,
@@ -70,22 +77,26 @@ const Apoiadores = () => {
       <section id="apoiadores" ref={ref}>
         <div className="apoiadores-bg">
           <DivisorSection fillClass="cor-branco" />
-          <motion.div className="apoiadores-titulo" initial={{ opacity: 0 }} animate={controls}>
-            <h3>Apoiadores</h3>
-          </motion.div>
-          <motion.div
-            className="apoiadores-logos container"
-            initial={{ opacity: 0 }}
-            animate={controls}
-          >
-            <Slider duration={20} pauseOnHover={true}>
-              {logos.map((item, index) => (
-                <Slider.Slide key={index}>
-                  <img className="logo" src={item} alt={`Logo ${index}`} />
-                </Slider.Slide>
-              ))}
-            </Slider>
-          </motion.div>
+          <ScrollTrigger onEnter={() => setIsTituloVisible(true)}>
+            <AnimacaoFadeCrescente controls={controlsTitulo}>
+              <motion.div className="apoiadores-titulo">
+                <h3>Apoiadores</h3>
+              </motion.div>
+            </AnimacaoFadeCrescente>
+          </ScrollTrigger>
+          <ScrollTrigger onEnter={() => setIsLogosVisible(true)}>
+            <AnimacaoFadeCrescente controls={controlsLogos}>
+              <motion.div className="apoiadores-logos container">
+                <Slider duration={20} pauseOnHover={true}>
+                  {logos.map((item, index) => (
+                    <Slider.Slide key={index}>
+                      <img className="logo" src={item} alt={`Logo ${index}`} />
+                    </Slider.Slide>
+                  ))}
+                </Slider>
+              </motion.div>
+            </AnimacaoFadeCrescente>
+          </ScrollTrigger>
         </div>
       </section>
     </>

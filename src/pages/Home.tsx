@@ -1,16 +1,25 @@
 import React from "react";
+import Helmet from "react-helmet";
 import "../assets/css/global/global.css";
 import ImagemHero from "../assets/img/fotos/hero_bg.png";
-import Footer from "../common/Footer";
-import Navbar from "../common/Navbar";
 import Apoiadores from "../components/Home/Apoiadores";
+import Footer from "../components/Home/Footer";
 import Hero from "../components/Home/Hero";
+import Navbar from "../components/Home/Navbar";
 import Projetos from "../components/Home/Projetos";
 import Sobre from "../components/Home/Sobre";
 
 const Home: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>LABED - Laboratório de Eletrônica e Desenvolvimento</title>
+        <meta
+          name="description"
+          content="LABED - Laboratório de Eletrônica e Desenvolvimento da Universidade Franciscana ⚡"
+        />
+      </Helmet>
+
       <Navbar />
       <Hero
         titulo="SPARK THE SMART, BUILD THE BRIGHT."

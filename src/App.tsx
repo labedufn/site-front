@@ -1,18 +1,9 @@
 import React from "react";
-import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import "./assets/css/global/reset.css";
-import Home from "./pages/Home";
+import MappedRoutes from "./routes";
 
 const App: React.FC = () => {
-  return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-    </>
-  );
+  return <MappedRoutes />;
 };
 
 export default App;
