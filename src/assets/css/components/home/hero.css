@@ -65,6 +65,10 @@
   padding: 0;
 }
 
+.hero-logo {
+  display: none;
+}
+
 .hero-texto {
   color: var(--cor-branco);
   text-align: center;
@@ -75,17 +79,17 @@
 }
 
 .hero-texto h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 800;
   letter-spacing: 6.4px;
-  margin-bottom: 24px;
+  margin-bottom: 64px;
 }
 
 .hero-texto p {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 500;
   letter-spacing: 1.92px;
-  margin-bottom: 84px;
+  margin-bottom: 32px;
 }
 
 .ponto-final {
@@ -99,39 +103,56 @@
   z-index: 2;
 }
 
-.scroll-button {
-  bottom: 0;
-  padding-bottom: 200px;
-}
-
-@media (max-width: 900px) {
-  .scroll-button {
-    padding-bottom: 124px;
+@media (max-width: 1400px) {
+  .hero-texto h1 {
+    font-size: 3rem;
+    letter-spacing: 5.12px;
+  }
+  .hero-texto p {
+    font-size: 2rem;
+    letter-spacing: 1.6px;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-texto {
-    margin-top: 120px;
-    margin-bottom: 80px;
-  }
-  .hero-texto h1 {
-    font-size: 3rem;
-    letter-spacing: 3.84px;
-  }
-  .hero-texto p {
-    font-size: 1rem;
-    letter-spacing: 1.28px;
-    padding-bottom: 0;
+  .hero {
+    height: auto;
   }
 
-  .scroll-button {
-    padding-bottom: 140px;
+  .hero-texto h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .hero-texto p {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-logo {
+    display: block;
+    max-width: 364px;
+  }
+
+  .scroll-button-hero {
+    scale: 0.8;
   }
 }
 
-@media (max-width: 400px) {
-  .scroll-button {
-    padding-bottom: 32px;
+@media (max-width: 500px) {
+  .hero-texto h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2.56px;
+    margin-bottom: 40px;
+  }
+
+  .hero-texto p {
+    font-size: 0.8rem;
+    letter-spacing: 1.28px;
+    margin-bottom: 16px;
+  }
+
+  .scroll-button-hero {
+    scale: 0.6;
   }
 }

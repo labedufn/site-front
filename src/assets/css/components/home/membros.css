@@ -1,0 +1,45 @@
+@import url("../../utils/cores.css");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap");
+
+.membros-bg {
+  background-color: var(--cor-branco);
+}
+
+.membros {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 76px;
+  flex-wrap: wrap;
+  padding-bottom: 80px;
+}
+
+.membros-header {
+  background-color: var(--cor-neutra1);
+  box-shadow: inset 0 -6px var(--cor-branco);
+}
+
+.membros-titulo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 3.84px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--cor-branco);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 685px) {
+  .membros {
+    justify-content: space-between;
+    gap: 60px;
+  }
+  .membros-titulo {
+    font-size: 2rem;
+    letter-spacing: 2.56px;
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+}

@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
 import "../../assets/css/components/home/sobre.css";
 import Foto from "../../assets/img/ilustracoes/chiko_desenho.png";
 import Botao from "./Botao";
@@ -65,9 +66,9 @@ const Sobre: React.FC<SobreProps> = ({ subtitulo, titulo, paragrafo }) => {
             <h2 className="subtitulo">{subtitulo}</h2>
             <h1 className="titulo">{titulo}</h1>
             <p className="paragrafo">{paragrafo}</p>
-            <a onClick={(e) => handleSobreLinkClick(e, "projetos")}>
+            <NavLink to={"#projetos"} onClick={(e) => handleSobreLinkClick(e, "projetos")}>
               <Botao texto="Conheça nossos projetos" />
-            </a>
+            </NavLink>
           </motion.div>
           <motion.img
             src={Foto}

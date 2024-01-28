@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/hero.css";
 import DivisorSection from "../../common/DivisorSection";
-import ItensHero from "./ItensHero";
+import ItemHero from "./ItemHero";
 import ScrollButton from "./ScrollButton";
 
 interface HeroProps {
@@ -28,7 +28,6 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
 
   const [tituloSemPonto, pontoFinal] = titulo.match(/(.*)(\.)/)?.slice(1) || [titulo, ""];
 
-  // Animação para o título e subtítulo
   const titleVariants = {
     hidden: { scale: 1.5, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { duration: 0.8 } },
@@ -54,13 +53,16 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
         >
           <div className="ruido-bg"></div>
           <div className="hero-texto container">
+            <motion.p initial="hidden" animate={controls} variants={titleVariants}>
+              {subtitulo}
+            </motion.p>
             <motion.h1 initial="hidden" animate={controls} variants={titleVariants}>
               {tituloSemPonto}
               <span className="ponto-final">{pontoFinal}</span>
             </motion.h1>
-            <motion.p initial="hidden" animate={controls} variants={titleVariants}>
-              {subtitulo}
-            </motion.p>
+            <div className="scroll-button-hero">
+              <ScrollButton />
+            </div>
           </div>
           <div className="hero-divisor">
             <motion.div
@@ -68,14 +70,12 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
               initial="hidden"
               animate={controls}
               variants={titleVariants}
-            >
-              <ScrollButton />
-            </motion.div>
+            ></motion.div>
             <DivisorSection inverter={true} />
           </div>
         </section>
       </ScrollTrigger>
-      <ItensHero />
+      <ItemHero />
       <div className="hero-divisor-bottom">
         <DivisorSection />
       </div>

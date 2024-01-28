@@ -1,14 +1,14 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
-import "../../assets/css/components/home/itens-hero.css";
+import "../../assets/css/components/home/item-hero.css";
 import EletronicaIcon from "../../assets/img/icons/eletronica.svg";
 import ProgramacaoIcon from "../../assets/img/icons/programacao.svg";
 import RoboticaIcon from "../../assets/img/icons/robotica.svg";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import ItemConteudo from "./ItemConteudo";
 
-const ItensHero: React.FC = () => {
+const ItemHero: React.FC = () => {
   const controlsEletronica = useAnimation();
   const controlsProgramacao = useAnimation();
   const controlsRobotica = useAnimation();
@@ -87,4 +87,4 @@ const ItensHero: React.FC = () => {
   );
 };
 
-export default ItensHero;
+export default ItemHero;
