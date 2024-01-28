@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/projetos.css";
 import "../../assets/css/utils/cores.css";
-import ProjetoCabine from "../../assets/img/fotos/cabine_rv.png";
-import ProjetoSeguidorLinha from "../../assets/img/fotos/robo_seguidor.png";
-import ProjetoRobos from "../../assets/img/fotos/robos_combate.png";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import DivisorSection from "../../common/DivisorSection";
 import Botao from "./Botao";
@@ -21,45 +18,52 @@ const Projetos: React.FC = () => {
   const [isProjetosVisible, setIsProjetosVisible] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
 
-  const projetos = [
+  const projetosData = [
     {
-      imagem: ProjetoCabine,
-      titulo: "Cabine de RV",
+      imagem: "https://placehold.co/720x520.png",
+      titulo: "Nome Projeto",
       descricao:
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
       link: "",
     },
     {
-      imagem: ProjetoRobos,
-      titulo: "Robôs de Combate",
+      imagem: "https://placehold.co/720x520.png",
+      titulo: "Nome Projeto",
       descricao:
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
       link: "",
     },
     {
-      imagem: ProjetoSeguidorLinha,
-      titulo: "Seguidor de Linha",
+      imagem: "https://placehold.co/720x520.png",
+      titulo: "Nome Projeto",
       descricao:
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
       link: "",
     },
     {
-      imagem: ProjetoSeguidorLinha,
-      titulo: "Seguidor de Linha",
+      imagem: "https://placehold.co/720x520.png",
+      titulo: "Nome Projeto",
       descricao:
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
       link: "",
     },
     {
-      imagem: ProjetoSeguidorLinha,
-      titulo: "Seguidor de Linha",
+      imagem: "https://placehold.co/720x520.png",
+      titulo: "Nome Projeto",
+      descricao:
+        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
+      link: "",
+    },
+    {
+      imagem: "https://placehold.co/720x520.png",
+      titulo: "Nome Projeto",
       descricao:
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
       link: "",
     },
   ];
 
-  const visibleProjects = showAllProjects ? projetos : projetos.slice(0, 3);
+  const visibleProjects = showAllProjects ? projetosData : projetosData.slice(0, 3);
 
   useEffect(() => {
     controlsTitulo.start({ opacity: 0 });
@@ -94,7 +98,7 @@ const Projetos: React.FC = () => {
         <div className="projetos">
           <div className="projetos-header">
             <div className="projetos-divisor-top">
-              <DivisorSection fillClass="cor-neutra1" />
+              <DivisorSection fillClass="cor-branco" />
             </div>
             <ScrollTrigger onEnter={() => setIsTituloVisible(true)}>
               <AnimacaoFadeCrescente controls={controlsTitulo}>

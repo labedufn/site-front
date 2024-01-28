@@ -54,48 +54,45 @@ const ItemMembros: React.FC<ItemMembrosProps> = ({
   };
 
   return (
-    <div
-      className="card-container"
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-        <div>
-          <div className="item-membros" onLoad={handleFrontLoad}>
-            <img className="item-membros-img" src={foto} alt={nome} />
-            <div className="item-membros-infos">
-              <h3 className="item-membros-nome">{nome}</h3>
-              <p className="item-membros-curso">{curso}</p>
+    <>
+      <div onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+          <div>
+            <div className="item-membros" onLoad={handleFrontLoad}>
+              <img className="item-membros-img" src={foto} alt={nome} />
+              <div className="item-membros-infos">
+                <h3 className="item-membros-nome">{nome}</h3>
+                <p className="item-membros-curso">{curso}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="item-membros-back" style={{ height: frontHeight, width: frontWidth }}>
-          <div className="item-membros-infos-back">
-            <h3 className="item-membros-nome-back">{nome}</h3>
-            <p className="item-membros-nome-completo-back">{nomeCompleto}</p>
-            <div className="item-membros-curso-container-back">
-              {icone}
-              <p className="item-membros-curso-back">{curso}</p>
+          <div className="item-membros-back" style={{ height: frontHeight, width: frontWidth }}>
+            <div className="item-membros-infos-back">
+              <h3 className="item-membros-nome-back">{nome}</h3>
+              <p className="item-membros-nome-completo-back">{nomeCompleto}</p>
+              <div className="item-membros-curso-container-back">
+                {icone}
+                <p className="item-membros-curso-back">{curso}</p>
+              </div>
+            </div>
+            <div className="item-membros-redes-back">
+              {redesSociaisIcons?.map((item, index) => (
+                <NavLink
+                  key={index}
+                  to={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleIconClick}
+                >
+                  {item.icon}
+                </NavLink>
+              ))}
             </div>
           </div>
-          <div className="item-membros-redes-back">
-            {redesSociaisIcons?.map((item, index) => (
-              <NavLink
-                key={index}
-                to={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleIconClick}
-              >
-                {item.icon}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-      </ReactCardFlip>
-    </div>
+        </ReactCardFlip>
+      </div>
+    </>
   );
 };
 

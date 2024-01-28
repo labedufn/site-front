@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import "../assets/css/components/home/hero.css";
 import "../assets/css/global/global.css";
 import ImagemHero from "../assets/img/fotos/hero_bg.png";
 import Apoiadores from "../components/Home/Apoiadores";
@@ -23,8 +24,8 @@ const Home: React.FC = () => {
 
       <Navbar />
       <Hero
-        titulo="SPARK THE SMART, BUILD THE BRIGHT."
-        subtitulo="LABORATÓRIO DE ELETRÔNICA E DESENVOLVIMENTO"
+        titulo="ELETRÔNICA E DESENVOLVIMENTO"
+        subtitulo="LABORATÓRIO DE"
         urlImagem={ImagemHero}
       />
       <Sobre

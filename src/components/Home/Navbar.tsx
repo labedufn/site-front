@@ -63,6 +63,7 @@ const Navbar: React.FC = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId); // Atualize o activeSection ao clicar em um link
       setIsMenuOpen(false);
     }
   };
@@ -122,16 +123,12 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="navbar-icons">
-            <NavLink
-              to="https://www.instagram.com/labedufn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.instagram.com/labedufn" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={24} className="instagram-icon" />
-            </NavLink>
-            <NavLink to="https://github.com/labedufn" target="_blank" rel="noopener noreferrer">
+            </a>
+            <a href="https://github.com/labedufn" target="_blank" rel="noopener noreferrer">
               <FaGithub size={24} className="github-icon" />
-            </NavLink>
+            </a>
           </div>
         </nav>
       </header>
