@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { LuMapPin } from "react-icons/lu";
 import { MdMailOutline } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/footer.css";
 import "../../assets/css/utils/cores.css";
@@ -68,9 +69,9 @@ const Footer: React.FC = () => {
               <ScrollTrigger onEnter={() => setIsLogoVisible(true)}>
                 <AnimacaoFadeCrescente controls={controlsLogo}>
                   <motion.div className="footer-logo">
-                    <a href="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
+                    <NavLink to="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
                       <Logo width={160} />
-                    </a>
+                    </NavLink>
                   </motion.div>
                 </AnimacaoFadeCrescente>
               </ScrollTrigger>
@@ -79,18 +80,21 @@ const Footer: React.FC = () => {
                   <motion.div className="footer-home">
                     <h3>LABED</h3>
                     <ul className="footer-anexos">
-                      <a href="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
+                      <NavLink to="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
                         <li>Início</li>
-                      </a>
-                      <a href="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
+                      </NavLink>
+                      <NavLink to="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
                         <li>Sobre</li>
-                      </a>
-                      <a href="#projetos" onClick={(e) => handleScroll(e, "projetos")}>
+                      </NavLink>
+                      <NavLink to="#membros" onClick={(e) => handleScroll(e, "membros")}>
+                        <li>Membros</li>
+                      </NavLink>
+                      <NavLink to="#projetos" onClick={(e) => handleScroll(e, "projetos")}>
                         <li>Projetos</li>
-                      </a>
-                      <a href="#apoiadores" onClick={(e) => handleScroll(e, "apoiadores")}>
+                      </NavLink>
+                      <NavLink to="#apoiadores" onClick={(e) => handleScroll(e, "apoiadores")}>
                         <li>Apoiadores</li>
-                      </a>
+                      </NavLink>
                     </ul>
                   </motion.div>
                 </AnimacaoFadeCrescente>
@@ -102,16 +106,16 @@ const Footer: React.FC = () => {
                     <div className="footer-contato-infos">
                       <div className="footer-email">
                         <MdMailOutline size={24} />
-                        <a href="mailto:labedufn@gmail.com">labedufn@gmail.com</a>
+                        <NavLink to="mailto:labedufn@gmail.com">labedufn@gmail.com</NavLink>
                       </div>
                       <div className="footer-endereco">
                         <div className="endereco-icon">
                           <LuMapPin size={24} />
                         </div>
-                        <a href="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="blank">
+                        <NavLink to="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="blank">
                           Rua dos Andradas, 1614 - Centro, Universidade Franciscana - Conjunto I,
                           Prédio 3, Lab. 109, Santa Maria - RS, 97010-030
-                        </a>
+                        </NavLink>
                       </div>
                     </div>
                   </motion.div>
@@ -122,12 +126,12 @@ const Footer: React.FC = () => {
                   <motion.div className="footer-redes">
                     <h3>Redes Sociais</h3>
                     <div className="footer-redes-icons">
-                      <a href="https://www.instagram.com/labedufn" target="blank">
+                      <NavLink to="https://www.instagram.com/labedufn" target="blank">
                         <FaInstagram size={32} className="instagram-icon" />
-                      </a>
-                      <a href="https://github.com/labedufn" target="blank">
+                      </NavLink>
+                      <NavLink to="https://github.com/labedufn" target="blank">
                         <FaGithub size={32} className="github-icon" />
-                      </a>
+                      </NavLink>
                     </div>
                   </motion.div>
                 </AnimacaoFadeCrescente>
@@ -142,9 +146,9 @@ const Footer: React.FC = () => {
                 </p>
                 <p className="footer-dev">
                   Desenvolvido por{" "}
-                  <a href="https://github.com/mauricioprb" target="blank">
+                  <NavLink to="https://github.com/mauricioprb" target="blank">
                     @mauricioprb
-                  </a>
+                  </NavLink>
                 </p>
               </motion.div>
             </AnimacaoFadeCrescente>

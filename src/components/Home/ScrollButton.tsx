@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../assets/css/components/home/scroll-button.css";
 
 const ScrollButton: React.FC = () => {
@@ -16,11 +17,11 @@ const ScrollButton: React.FC = () => {
   return (
     <>
       <span className="scroll-button">
-        <a href="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
+        <NavLink to="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
           <span className="mouse">
             <span></span>
           </span>
-        </a>
+        </NavLink>
       </span>
     </>
   );

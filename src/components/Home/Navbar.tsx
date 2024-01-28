@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import "../../assets/css/components/home/navbar.css";
 import FecharIcon from "../../assets/img/icons/fechar_icon.svg?react";
 import HamburgerIcon from "../../assets/img/icons/hamburger_icon.svg?react";
@@ -34,10 +35,11 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5, // Adjust this threshold as needed
+      threshold: 0.5,
     });
 
-    const sections = ["inicio", "sobre", "projetos", "apoiadores"];
+    const sections = ["inicio", "sobre", "membros", "projetos", "apoiadores"];
+
     sections.forEach((sectionId) => {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -69,56 +71,67 @@ const Navbar: React.FC = () => {
     <>
       <header className={`navbar-bg ${isScrolled ? "navbar-bg-scrolled" : ""}`}>
         <nav className="navbar container">
-          <a
-            href="#inicio"
+          <NavLink
+            to="#inicio"
             onClick={(e) => handleNavLinkClick(e, "inicio")}
             className={activeSection === "inicio" ? "link-ativo" : ""}
           >
             <LogoAbreviado className="navbar-logo" />
-          </a>
+          </NavLink>
 
           <div className="menu-icon" onClick={toggleMenu}>
             {isMenuOpen ? <FecharIcon /> : <HamburgerIcon />}
           </div>
 
           <div className={`navbar-links ${isMenuOpen ? "active" : ""}`} ref={menuRef}>
-            <a
-              href="#inicio"
+            <NavLink
+              to="#inicio"
               onClick={(e) => handleNavLinkClick(e, "inicio")}
               className={activeSection === "inicio" ? "link-ativo" : "link"}
             >
               Início
-            </a>
-            <a
-              href="#sobre"
+            </NavLink>
+            <NavLink
+              to="#sobre"
               onClick={(e) => handleNavLinkClick(e, "sobre")}
               className={activeSection === "sobre" ? "link-ativo" : "link"}
             >
               Sobre
-            </a>
-            <a
-              href="#projetos"
+            </NavLink>
+            <NavLink
+              to="#membros"
+              onClick={(e) => handleNavLinkClick(e, "membros")}
+              className={activeSection === "membros" ? "link-ativo" : "link"}
+            >
+              Membros
+            </NavLink>
+            <NavLink
+              to="#projetos"
               onClick={(e) => handleNavLinkClick(e, "projetos")}
               className={activeSection === "projetos" ? "link-ativo" : "link"}
             >
               Projetos
-            </a>
-            <a
-              href="#apoiadores"
+            </NavLink>
+            <NavLink
+              to="#apoiadores"
               onClick={(e) => handleNavLinkClick(e, "apoiadores")}
               className={activeSection === "apoiadores" ? "link-ativo" : "link"}
             >
               Apoiadores
-            </a>
+            </NavLink>
           </div>
 
           <div className="navbar-icons">
-            <a href="https://www.instagram.com/labedufn" target="_blank" rel="noopener noreferrer">
+            <NavLink
+              to="https://www.instagram.com/labedufn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram size={24} className="instagram-icon" />
-            </a>
-            <a href="https://github.com/labedufn" target="_blank" rel="noopener noreferrer">
+            </NavLink>
+            <NavLink to="https://github.com/labedufn" target="_blank" rel="noopener noreferrer">
               <FaGithub size={24} className="github-icon" />
-            </a>
+            </NavLink>
           </div>
         </nav>
       </header>

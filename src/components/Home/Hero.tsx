@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import "../../assets/css/components/home/hero.css";
 import DivisorSection from "../../common/DivisorSection";
-import ItensHero from "./ItensHero";
+import ItemHero from "./ItemHero";
 import ScrollButton from "./ScrollButton";
 
 interface HeroProps {
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
           </div>
         </section>
       </ScrollTrigger>
-      <ItensHero />
+      <ItemHero />
       <div className="hero-divisor-bottom">
         <DivisorSection />
       </div>

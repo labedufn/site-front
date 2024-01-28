@@ -94,7 +94,7 @@ const Projetos: React.FC = () => {
         <div className="projetos">
           <div className="projetos-header">
             <div className="projetos-divisor-top">
-              <DivisorSection fillClass="cor-branco" />
+              <DivisorSection fillClass="cor-neutra1" />
             </div>
             <ScrollTrigger onEnter={() => setIsTituloVisible(true)}>
               <AnimacaoFadeCrescente controls={controlsTitulo}>

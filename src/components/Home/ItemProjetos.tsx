@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../assets/css/components/home/item-projetos.css";
 
 interface ItemProjetosProps {
@@ -12,7 +13,7 @@ const ItemProjetos: React.FC<ItemProjetosProps> = ({ link, imagem, titulo, descr
   return (
     <>
       <div className="item-projetos">
-        <a href={link} className="item-link">
+        <NavLink to={link} className="item-link">
           <div className="item-projetos-imagem-container">
             <img src={imagem} alt={titulo} className="item-projetos-imagem" />
           </div>
@@ -20,7 +21,7 @@ const ItemProjetos: React.FC<ItemProjetosProps> = ({ link, imagem, titulo, descr
             <h3 className="item-projetos-titulo">{titulo}</h3>
             <p className="item-projetos-descricao">{descricao}</p>
           </div>
-        </a>
+        </NavLink>
       </div>
     </>
   );
