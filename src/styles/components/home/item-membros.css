@@ -26,12 +26,7 @@
 }
 
 .item-membros-nome {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
   color: var(--cor-neutra1);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
 }
 
 .item-membros-curso-container {
@@ -41,9 +36,6 @@
 }
 
 .item-membros-curso {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
   color: var(--cor-neutra1);
   padding-top: 12px;
 }
@@ -61,18 +53,10 @@
 }
 
 .item-membros-nome-back {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
   color: var(--cor-neutra1);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
 }
 
 .item-membros-nome-completo-back {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
   color: var(--cor-neutra1);
   padding-top: 12px;
 }
@@ -85,9 +69,6 @@
 }
 
 .item-membros-curso-back {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
   color: var(--cor-neutra1);
 }
 

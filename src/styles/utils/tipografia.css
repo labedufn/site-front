@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Roboto:wght@400;700&display=swap");
+
+.font-1-xxl {
+  font: 800 6rem/1.125 "Orbitron", sans-serif;
+}
+
+.font-1-l {
+  font: 500 3rem/1.125 "Orbitron", sans-serif;
+}
+
+.font-1-l-b {
+  font: 700 3rem/1.125 "Orbitron", sans-serif;
+}
+
+.font-1-m {
+  font: 500 2rem/1.125 "Orbitron", sans-serif;
+}
+
+.font-1-m-b {
+  font: 700 2rem/1.125 "Orbitron", sans-serif;
+}
+
+.font-1-sl {
+  font: 700 1.5rem/1.125 "Orbitron", sans-serif;
+}
+
+.font-2-sl {
+  font: 400 1.25rem/1.4 "Roboto", sans-serif;
+}
+
+.font-2-sm {
+  font: 400 1rem/1.125 "Roboto", sans-serif;
+}
+
+.font-2-sm-b {
+  font: 700 1rem/1.125 "Roboto", sans-serif;
+}
+
+.font-2-s {
+  font: 400 0.8rem/1.125 "Roboto", sans-serif;
+}
+
+.font-2-s-b {
+  font: 700 0.8rem/1.125 "Roboto", sans-serif;
+}
+
+.font-1-xxl,
+.font-1-l,
+.font-1-l-b,
+.font-1-m,
+.font-1-m-b,
+.font-1-sl {
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .font-1-xxl {
+  }
+  .font-1-l,
+  .font-1-l-b,
+  .font-1-m,
+  .font-1-m-b,
+  .font-1-sl {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .font-1-xxl {
+    font-size: 2rem;
+  }
+  .font-1-l,
+  .font-1-l-b,
+  .font-1-m,
+  .font-1-m-b,
+  .font-1-sl {
+    font-size: 1.5rem;
+  }
+
+  .font-2-sl {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .font-1-xxl {
+    font-size: 1.5rem;
+  }
+  .font-1-l,
+  .font-1-l-b,
+  .font-1-m,
+  .font-1-m-b,
+  .font-1-sl {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .font-1-xxl {
+    font-size: 1.25rem;
+  }
+  .font-1-l,
+  .font-1-l-b,
+  .font-1-m,
+  .font-1-m-b,
+  .font-1-sl {
+    font-size: 1rem;
+  }
+}

@@ -22,3 +22,27 @@
 .cor-neutra1 {
   fill: var(--cor-neutra1);
 }
+
+.cor-primaria1 {
+  background-color: var(--cor-primaria1);
+}
+
+.cor-branco {
+  background-color: var(--cor-branco);
+}
+
+.cor-neutra1 {
+  background-color: var(--cor-neutra1);
+}
+
+.cor-primaria1-texto {
+  color: var(--cor-primaria1);
+}
+
+.cor-branco-texto {
+  color: var(--cor-branco);
+}
+
+.cor-neutra1-texto {
+  color: var(--cor-neutra1);
+}

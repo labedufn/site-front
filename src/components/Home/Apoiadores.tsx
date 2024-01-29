@@ -2,8 +2,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-infinite-logo-slider";
 import ScrollTrigger from "react-scroll-trigger";
-import "../../assets/css/components/home/apoiadores.css";
-import "../../assets/css/utils/cores.css";
 import CienciaComputacao from "../../assets/img/apoiadores/ciencia_computacao.svg";
 import EngenhariaBiomedica from "../../assets/img/apoiadores/engenharia_biomedica.svg";
 import JogosDigitais from "../../assets/img/apoiadores/jogos_digitais.svg";
@@ -12,7 +10,10 @@ import SolidWorks from "../../assets/img/apoiadores/solidworks.svg";
 import Ufn from "../../assets/img/apoiadores/ufn.svg";
 import Ufnbotz from "../../assets/img/apoiadores/ufnbotz.svg";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
+import Container from "../../common/Container";
 import DivisorSection from "../../common/DivisorSection";
+import "../../styles/components/home/apoiadores.css";
+import "../../styles/utils/cores.css";
 
 const Apoiadores = () => {
   const controlsTitulo = useAnimation();
@@ -80,21 +81,23 @@ const Apoiadores = () => {
           <ScrollTrigger onEnter={() => setIsTituloVisible(true)}>
             <AnimacaoFadeCrescente controls={controlsTitulo}>
               <motion.div className="apoiadores-titulo">
-                <h3>Apoiadores</h3>
+                <h3 className="font-1-sl">Apoiadores</h3>
               </motion.div>
             </AnimacaoFadeCrescente>
           </ScrollTrigger>
           <ScrollTrigger onEnter={() => setIsLogosVisible(true)}>
             <AnimacaoFadeCrescente controls={controlsLogos}>
-              <motion.div className="apoiadores-logos container">
-                <Slider duration={20} pauseOnHover={true}>
-                  {logos.map((item, index) => (
-                    <Slider.Slide key={index}>
-                      <img className="logo" src={item} alt={`Logo ${index}`} />
-                    </Slider.Slide>
-                  ))}
-                </Slider>
-              </motion.div>
+              <Container>
+                <motion.div className="apoiadores-logos">
+                  <Slider duration={20} pauseOnHover={true}>
+                    {logos.map((item, index) => (
+                      <Slider.Slide key={index}>
+                        <img className="logo" src={item} alt={`Logo ${index}`} />
+                      </Slider.Slide>
+                    ))}
+                  </Slider>
+                </motion.div>
+              </Container>
             </AnimacaoFadeCrescente>
           </ScrollTrigger>
         </div>

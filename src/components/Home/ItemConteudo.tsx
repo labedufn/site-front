@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/components/home/item-conteudo.css";
+import "../../styles/components/home/item-conteudo.css";
 
 interface ItemConteudoProps {
   icone: string;
@@ -12,8 +12,8 @@ const ItemConteudo: React.FC<ItemConteudoProps> = ({ icone, titulo, descricao })
     <>
       <div className="item">
         <img src={icone} alt={titulo} />
-        <h3>{titulo}</h3>
-        <p>{descricao}</p>
+        <h3 className="font-1-m-b">{titulo}</h3>
+        <p className="font-2-sl">{descricao}</p>
       </div>
     </>
   );

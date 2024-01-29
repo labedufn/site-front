@@ -1,19 +1,19 @@
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
-import "../../assets/css/components/home/projetos.css";
-import "../../assets/css/utils/cores.css";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
-import DivisorSection from "../../common/DivisorSection";
+import Container from "../../common/Container";
+import "../../styles/components/home/projetos.css";
+import "../../styles/utils/cores.css";
 import Botao from "./Botao";
 import ItemProjetos from "./ItemProjetos";
+import SectionHeader from "./SectionHeader";
 
 const Projetos: React.FC = () => {
   const controlsTitulo = useAnimation();
   const controlsBotao = useAnimation();
   const controlsProjetos = useAnimation();
 
-  const [isTituloVisible, setIsTituloVisible] = useState(false);
   const [isBotaoVisible, setIsBotaoVisible] = useState(false);
   const [isProjetosVisible, setIsProjetosVisible] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -68,10 +68,6 @@ const Projetos: React.FC = () => {
   useEffect(() => {
     controlsTitulo.start({ opacity: 0 });
 
-    if (isTituloVisible) {
-      controlsTitulo.start({ opacity: 1, transition: { duration: 0.5, delay: 0.1 } });
-    }
-
     controlsProjetos.start({ opacity: 0 });
 
     if (isProjetosVisible) {
@@ -83,46 +79,34 @@ const Projetos: React.FC = () => {
     if (isBotaoVisible) {
       controlsBotao.start({ opacity: 1, transition: { duration: 0.5, delay: 0.4 } });
     }
-  }, [
-    isTituloVisible,
-    isProjetosVisible,
-    isBotaoVisible,
-    controlsTitulo,
-    controlsProjetos,
-    controlsBotao,
-  ]);
+  }, [isProjetosVisible, isBotaoVisible, controlsTitulo, controlsProjetos, controlsBotao]);
 
   return (
     <>
       <section id="projetos" className="projetos-bg">
         <div className="projetos">
-          <div className="projetos-header">
-            <div className="projetos-divisor-top">
-              <DivisorSection fillClass="cor-branco" />
+          <SectionHeader
+            titulo="Projetos"
+            corBackground={"cor-primaria1"}
+            corTexto={"cor-neutra1-texto"}
+            corDivisor={"cor-branco"}
+          />
+          <Container>
+            <div className="projetos-itens">
+              {visibleProjects.map((projeto, index) => (
+                <ScrollTrigger key={index} onEnter={() => setIsProjetosVisible(true)}>
+                  <AnimacaoFadeCrescente controls={controlsProjetos}>
+                    <ItemProjetos
+                      imagem={projeto.imagem}
+                      titulo={projeto.titulo}
+                      descricao={projeto.descricao}
+                      link={projeto.link}
+                    />
+                  </AnimacaoFadeCrescente>
+                </ScrollTrigger>
+              ))}
             </div>
-            <ScrollTrigger onEnter={() => setIsTituloVisible(true)}>
-              <AnimacaoFadeCrescente controls={controlsTitulo}>
-                <motion.h2 className="projetos-titulo">Projetos</motion.h2>
-              </AnimacaoFadeCrescente>
-            </ScrollTrigger>
-            <div className="projetos-divisor-bottom">
-              <DivisorSection fillClass="cor-branco" inverter={true} />
-            </div>
-          </div>
-          <div className="projetos-itens container">
-            {visibleProjects.map((projeto, index) => (
-              <ScrollTrigger key={index} onEnter={() => setIsProjetosVisible(true)}>
-                <AnimacaoFadeCrescente controls={controlsProjetos}>
-                  <ItemProjetos
-                    imagem={projeto.imagem}
-                    titulo={projeto.titulo}
-                    descricao={projeto.descricao}
-                    link={projeto.link}
-                  />
-                </AnimacaoFadeCrescente>
-              </ScrollTrigger>
-            ))}
-          </div>
+          </Container>
           <ScrollTrigger onEnter={() => setIsBotaoVisible(true)}>
             <div className="projetos-botao">
               <AnimacaoFadeCrescente controls={controlsBotao}>

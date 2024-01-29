@@ -1,10 +1,12 @@
 // Import necessary modules
-import React, { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { NavLink } from "react-router-dom";
-import "../../assets/css/components/home/item-membros.css";
+import ScrollTrigger from "react-scroll-trigger";
+import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
+import "../../styles/components/home/item-membros.css";
 
-// Define the prop types
 interface ItemMembrosProps {
   foto: string;
   nome: string;
@@ -14,7 +16,6 @@ interface ItemMembrosProps {
   redesSociaisIcons?: { icon: React.ReactNode; link: string }[];
 }
 
-// Define the functional component
 const ItemMembros: React.FC<ItemMembrosProps> = ({
   foto,
   nome,
@@ -53,45 +54,65 @@ const ItemMembros: React.FC<ItemMembrosProps> = ({
     e.stopPropagation();
   };
 
+  const controlsMembros = useAnimation();
+
+  const [isMembrosVisible, setIsMembrosVisible] = useState(false);
+
+  useEffect(() => {
+    controlsMembros.start({ opacity: 0 });
+
+    if (isMembrosVisible) {
+      controlsMembros.start({ opacity: 1, transition: { duration: 0.5, delay: 0.4 } });
+    }
+  }, [isMembrosVisible, controlsMembros]);
+
   return (
     <>
-      <div onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-          <div>
-            <div className="item-membros" onLoad={handleFrontLoad}>
-              <img className="item-membros-img" src={foto} alt={nome} />
-              <div className="item-membros-infos">
-                <h3 className="item-membros-nome">{nome}</h3>
-                <p className="item-membros-curso">{curso}</p>
+      <ScrollTrigger onEnter={() => setIsMembrosVisible(true)}>
+        <AnimacaoFadeCrescente controls={controlsMembros}>
+          <motion.div
+            onClick={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+              <div>
+                <div className="item-membros" onLoad={handleFrontLoad}>
+                  <img className="item-membros-img" src={foto} alt={nome} />
+                  <div className="item-membros-infos">
+                    <h3 className="item-membros-nome font-1-sl">{nome}</h3>
+                    <p className="item-membros-curso font-2-sm">{curso}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div className="item-membros-back" style={{ height: frontHeight, width: frontWidth }}>
-            <div className="item-membros-infos-back">
-              <h3 className="item-membros-nome-back">{nome}</h3>
-              <p className="item-membros-nome-completo-back">{nomeCompleto}</p>
-              <div className="item-membros-curso-container-back">
-                {icone}
-                <p className="item-membros-curso-back">{curso}</p>
+              <div className="item-membros-back" style={{ height: frontHeight, width: frontWidth }}>
+                <div className="item-membros-infos-back">
+                  <h3 className="item-membros-nome-back font-1-sl">{nome}</h3>
+                  <p className="item-membros-nome-completo-back font-2-sm">{nomeCompleto}</p>
+                  <div className="item-membros-curso-container-back">
+                    {icone}
+                    <p className="item-membros-curso-back font-2-sm-b">{curso}</p>
+                  </div>
+                </div>
+                <div className="item-membros-redes-back">
+                  {redesSociaisIcons?.map((item, index) => (
+                    <NavLink
+                      key={index}
+                      to={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleIconClick}
+                    >
+                      {item.icon}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="item-membros-redes-back">
-              {redesSociaisIcons?.map((item, index) => (
-                <NavLink
-                  key={index}
-                  to={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleIconClick}
-                >
-                  {item.icon}
-                </NavLink>
-              ))}
-            </div>
-          </div>
-        </ReactCardFlip>
-      </div>
+            </ReactCardFlip>
+          </motion.div>
+        </AnimacaoFadeCrescente>
+      </ScrollTrigger>
     </>
   );
 };

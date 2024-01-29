@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../assets/css/components/home/scroll-button.css";
+import "../../styles/components/home/scroll-button.css";
 
 const ScrollButton: React.FC = () => {
   const handleScroll = (

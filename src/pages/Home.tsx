@@ -1,7 +1,5 @@
 import React from "react";
 import Helmet from "react-helmet";
-import "../assets/css/components/home/hero.css";
-import "../assets/css/global/global.css";
 import ImagemHero from "../assets/img/fotos/hero_bg.png";
 import Apoiadores from "../components/Home/Apoiadores";
 import Footer from "../components/Home/Footer";
@@ -10,6 +8,8 @@ import Membros from "../components/Home/Membros";
 import Navbar from "../components/Home/Navbar";
 import Projetos from "../components/Home/Projetos";
 import Sobre from "../components/Home/Sobre";
+import "../styles/components/home/hero.css";
+import "../styles/global/global.css";
 
 const Home: React.FC = () => {
   return (

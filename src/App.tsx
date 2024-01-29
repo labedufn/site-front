@@ -1,6 +1,7 @@
 import React from "react";
-import "./assets/css/global/reset.css";
 import MappedRoutes from "./routes";
+import "./styles/global/global.css";
+import "./styles/global/reset.css";
 
 const App: React.FC = () => {
   return <MappedRoutes />;

@@ -25,11 +25,6 @@
 }
 
 .footer h3 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.96px;
-  text-transform: uppercase;
-  font-weight: 700;
   color: var(--cor-branco);
   margin-bottom: 24px;
 }
@@ -37,8 +32,6 @@
 .footer-home a,
 .footer-contato a,
 .footer-contato {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
   color: var(--cor-branco);
   transition: color 0.3s ease-in-out;
 }
@@ -90,10 +83,8 @@
 }
 
 .footer-copy {
-  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
   color: var(--cor-branco);
   margin-top: 40px;
   padding-bottom: 60px;

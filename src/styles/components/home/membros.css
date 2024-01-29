@@ -20,12 +20,7 @@
 }
 
 .membros-titulo {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
-  letter-spacing: 3.84px;
   text-align: center;
-  text-transform: uppercase;
   color: var(--cor-branco);
   padding-top: 60px;
   padding-bottom: 60px;
@@ -37,8 +32,6 @@
     gap: 60px;
   }
   .membros-titulo {
-    font-size: 2rem;
-    letter-spacing: 2.56px;
     padding-top: 40px;
     margin-bottom: 40px;
   }

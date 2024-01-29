@@ -1,11 +1,12 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
-import "../../assets/css/components/home/item-hero.css";
 import EletronicaIcon from "../../assets/img/icons/eletronica.svg";
 import ProgramacaoIcon from "../../assets/img/icons/programacao.svg";
 import RoboticaIcon from "../../assets/img/icons/robotica.svg";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
+import Container from "../../common/Container";
+import "../../styles/components/home/item-hero.css";
 import ItemConteudo from "./ItemConteudo";
 
 const ItemHero: React.FC = () => {
@@ -39,49 +40,51 @@ const ItemHero: React.FC = () => {
   return (
     <>
       <div className="itens-bg">
-        <div className="itens container">
-          <ScrollTrigger onEnter={() => setIsEletronicaVisible(true)}>
-            <AnimacaoFadeCrescente controls={controlsEletronica}>
-              <motion.div>
-                <ItemConteudo
-                  icone={EletronicaIcon}
-                  titulo={"ELETRÔNICA"}
-                  descricao={
-                    "Usamos as mais variadas placas programaveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
-                  }
-                />
-              </motion.div>
-            </AnimacaoFadeCrescente>
-          </ScrollTrigger>
+        <Container>
+          <div className="itens">
+            <ScrollTrigger onEnter={() => setIsEletronicaVisible(true)}>
+              <AnimacaoFadeCrescente controls={controlsEletronica}>
+                <motion.div>
+                  <ItemConteudo
+                    icone={EletronicaIcon}
+                    titulo={"ELETRÔNICA"}
+                    descricao={
+                      "Usamos as mais variadas placas programaveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
+                    }
+                  />
+                </motion.div>
+              </AnimacaoFadeCrescente>
+            </ScrollTrigger>
 
-          <ScrollTrigger onEnter={() => setIsProgramacaoVisible(true)}>
-            <AnimacaoFadeCrescente controls={controlsProgramacao}>
-              <motion.div>
-                <ItemConteudo
-                  icone={ProgramacaoIcon}
-                  titulo={"PROGRAMAÇÃO"}
-                  descricao={
-                    "Em programação, criamos softwares e sistemas embarcados, focando em soluções práticas e acessíveis."
-                  }
-                />
-              </motion.div>
-            </AnimacaoFadeCrescente>
-          </ScrollTrigger>
+            <ScrollTrigger onEnter={() => setIsProgramacaoVisible(true)}>
+              <AnimacaoFadeCrescente controls={controlsProgramacao}>
+                <motion.div>
+                  <ItemConteudo
+                    icone={ProgramacaoIcon}
+                    titulo={"PROGRAMAÇÃO"}
+                    descricao={
+                      "Em programação, criamos softwares e sistemas embarcados, focando em soluções práticas e acessíveis."
+                    }
+                  />
+                </motion.div>
+              </AnimacaoFadeCrescente>
+            </ScrollTrigger>
 
-          <ScrollTrigger onEnter={() => setIsRoboticaVisible(true)}>
-            <AnimacaoFadeCrescente controls={controlsRobotica}>
-              <motion.div>
-                <ItemConteudo
-                  icone={RoboticaIcon}
-                  titulo={"ROBÓTICA"}
-                  descricao={
-                    "A nossa equipe de robótica participa de competições na área e desenvolve projetos do zero, mesclando prática e inovação."
-                  }
-                />
-              </motion.div>
-            </AnimacaoFadeCrescente>
-          </ScrollTrigger>
-        </div>
+            <ScrollTrigger onEnter={() => setIsRoboticaVisible(true)}>
+              <AnimacaoFadeCrescente controls={controlsRobotica}>
+                <motion.div>
+                  <ItemConteudo
+                    icone={RoboticaIcon}
+                    titulo={"ROBÓTICA"}
+                    descricao={
+                      "A nossa equipe de robótica participa de competições na área e desenvolve projetos do zero, mesclando prática e inovação."
+                    }
+                  />
+                </motion.div>
+              </AnimacaoFadeCrescente>
+            </ScrollTrigger>
+          </div>
+        </Container>
       </div>
     </>
   );

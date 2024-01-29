@@ -5,10 +5,11 @@ import { LuMapPin } from "react-icons/lu";
 import { MdMailOutline } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import ScrollTrigger from "react-scroll-trigger";
-import "../../assets/css/components/home/footer.css";
-import "../../assets/css/utils/cores.css";
 import Logo from "../../assets/img/logos/logo_original.svg?react";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
+import Container from "../../common/Container";
+import "../../styles/components/home/footer.css";
+import "../../styles/utils/cores.css";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -63,97 +64,99 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className="footer-bg">
-        <div className="footer container">
-          <div className="footer-conteudo">
-            <div className="footer-grid">
-              <ScrollTrigger onEnter={() => setIsLogoVisible(true)}>
-                <AnimacaoFadeCrescente controls={controlsLogo}>
-                  <motion.div className="footer-logo">
-                    <NavLink to="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
-                      <Logo width={160} />
-                    </NavLink>
-                  </motion.div>
-                </AnimacaoFadeCrescente>
-              </ScrollTrigger>
-              <ScrollTrigger onEnter={() => setIsHomeVisible(true)}>
-                <AnimacaoFadeCrescente controls={controlsHome}>
-                  <motion.div className="footer-home">
-                    <h3>LABED</h3>
-                    <ul className="footer-anexos">
+        <Container>
+          <div className="footer">
+            <div className="footer-conteudo">
+              <div className="footer-grid">
+                <ScrollTrigger onEnter={() => setIsLogoVisible(true)}>
+                  <AnimacaoFadeCrescente controls={controlsLogo}>
+                    <motion.div className="footer-logo">
                       <NavLink to="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
-                        <li>Início</li>
+                        <Logo width={160} />
                       </NavLink>
-                      <NavLink to="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
-                        <li>Sobre</li>
-                      </NavLink>
-                      <NavLink to="#membros" onClick={(e) => handleScroll(e, "membros")}>
-                        <li>Membros</li>
-                      </NavLink>
-                      <NavLink to="#projetos" onClick={(e) => handleScroll(e, "projetos")}>
-                        <li>Projetos</li>
-                      </NavLink>
-                      <NavLink to="#apoiadores" onClick={(e) => handleScroll(e, "apoiadores")}>
-                        <li>Apoiadores</li>
-                      </NavLink>
-                    </ul>
-                  </motion.div>
-                </AnimacaoFadeCrescente>
-              </ScrollTrigger>
-              <ScrollTrigger onEnter={() => setIsContatoVisible(true)}>
-                <AnimacaoFadeCrescente controls={controlsContato}>
-                  <motion.div className="footer-contato">
-                    <h3>Contato</h3>
-                    <div className="footer-contato-infos">
-                      <div className="footer-email">
-                        <MdMailOutline size={24} />
-                        <NavLink to="mailto:labedufn@gmail.com">labedufn@gmail.com</NavLink>
-                      </div>
-                      <div className="footer-endereco">
-                        <div className="endereco-icon">
-                          <LuMapPin size={24} />
+                    </motion.div>
+                  </AnimacaoFadeCrescente>
+                </ScrollTrigger>
+                <ScrollTrigger onEnter={() => setIsHomeVisible(true)}>
+                  <AnimacaoFadeCrescente controls={controlsHome}>
+                    <motion.div className="footer-home">
+                      <h3 className="font-1-sl">LABED</h3>
+                      <ul className="footer-anexos font-2-sm">
+                        <NavLink to="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
+                          <li>Início</li>
+                        </NavLink>
+                        <NavLink to="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
+                          <li>Sobre</li>
+                        </NavLink>
+                        <NavLink to="#membros" onClick={(e) => handleScroll(e, "membros")}>
+                          <li>Membros</li>
+                        </NavLink>
+                        <NavLink to="#projetos" onClick={(e) => handleScroll(e, "projetos")}>
+                          <li>Projetos</li>
+                        </NavLink>
+                        <NavLink to="#apoiadores" onClick={(e) => handleScroll(e, "apoiadores")}>
+                          <li>Apoiadores</li>
+                        </NavLink>
+                      </ul>
+                    </motion.div>
+                  </AnimacaoFadeCrescente>
+                </ScrollTrigger>
+                <ScrollTrigger onEnter={() => setIsContatoVisible(true)}>
+                  <AnimacaoFadeCrescente controls={controlsContato}>
+                    <motion.div className="footer-contato">
+                      <h3 className="font-1-sl">Contato</h3>
+                      <div className="footer-contato-infos font-2-sm">
+                        <div className="footer-email">
+                          <MdMailOutline size={24} />
+                          <NavLink to="mailto:labedufn@gmail.com">labedufn@gmail.com</NavLink>
                         </div>
-                        <NavLink to="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="blank">
-                          Rua dos Andradas, 1614 - Centro, Universidade Franciscana - Conjunto I,
-                          Prédio 3, Lab. 109, Santa Maria - RS, 97010-030
+                        <div className="footer-endereco">
+                          <div className="endereco-icon">
+                            <LuMapPin size={24} />
+                          </div>
+                          <NavLink to="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="blank">
+                            Rua dos Andradas, 1614 - Centro, Universidade Franciscana - Conjunto I,
+                            Prédio 3, Lab. 109, Santa Maria - RS, 97010-030
+                          </NavLink>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </AnimacaoFadeCrescente>
+                </ScrollTrigger>
+                <ScrollTrigger onEnter={() => setIsRedesVisible(true)}>
+                  <AnimacaoFadeCrescente controls={controlsRedes}>
+                    <motion.div className="footer-redes">
+                      <h3 className="font-1-sl">Redes Sociais</h3>
+                      <div className="footer-redes-icons">
+                        <NavLink to="https://www.instagram.com/labedufn" target="blank">
+                          <FaInstagram size={32} className="instagram-icon" />
+                        </NavLink>
+                        <NavLink to="https://github.com/labedufn" target="blank">
+                          <FaGithub size={32} className="github-icon" />
                         </NavLink>
                       </div>
-                    </div>
-                  </motion.div>
-                </AnimacaoFadeCrescente>
-              </ScrollTrigger>
-              <ScrollTrigger onEnter={() => setIsRedesVisible(true)}>
-                <AnimacaoFadeCrescente controls={controlsRedes}>
-                  <motion.div className="footer-redes">
-                    <h3>Redes Sociais</h3>
-                    <div className="footer-redes-icons">
-                      <NavLink to="https://www.instagram.com/labedufn" target="blank">
-                        <FaInstagram size={32} className="instagram-icon" />
-                      </NavLink>
-                      <NavLink to="https://github.com/labedufn" target="blank">
-                        <FaGithub size={32} className="github-icon" />
-                      </NavLink>
-                    </div>
-                  </motion.div>
-                </AnimacaoFadeCrescente>
-              </ScrollTrigger>
+                    </motion.div>
+                  </AnimacaoFadeCrescente>
+                </ScrollTrigger>
+              </div>
             </div>
+            <ScrollTrigger onEnter={() => setIsCopyVisible(true)}>
+              <AnimacaoFadeCrescente controls={controlsCopy}>
+                <motion.div className="footer-copy">
+                  <p className="footer-lab font-2-s">
+                    &copy; {currentYear} LABED - Laboratório de Eletrônica e Desenvolvimento.
+                  </p>
+                  <p className="footer-dev font-2-s">
+                    Desenvolvido por{" "}
+                    <NavLink to="https://github.com/mauricioprb" target="blank">
+                      @mauricioprb
+                    </NavLink>
+                  </p>
+                </motion.div>
+              </AnimacaoFadeCrescente>
+            </ScrollTrigger>
           </div>
-          <ScrollTrigger onEnter={() => setIsCopyVisible(true)}>
-            <AnimacaoFadeCrescente controls={controlsCopy}>
-              <motion.div className="footer-copy">
-                <p className="footer-lab">
-                  &copy; {currentYear} LABED - Laboratório de Eletrônica e Desenvolvimento.
-                </p>
-                <p className="footer-dev">
-                  Desenvolvido por{" "}
-                  <NavLink to="https://github.com/mauricioprb" target="blank">
-                    @mauricioprb
-                  </NavLink>
-                </p>
-              </motion.div>
-            </AnimacaoFadeCrescente>
-          </ScrollTrigger>
-        </div>
+        </Container>
       </footer>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
-import "../assets/css/pages/not-found.css";
+import "../styles/pages/not-found.css";
 
 const NotFound: React.FC = () => {
   return (

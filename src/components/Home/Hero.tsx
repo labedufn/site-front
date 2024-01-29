@@ -1,8 +1,10 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
-import "../../assets/css/components/home/hero.css";
+import Container from "../../common/Container";
 import DivisorSection from "../../common/DivisorSection";
+import "../../styles/components/home/hero.css";
+import "../../styles/utils/tipografia.css";
 import ItemHero from "./ItemHero";
 import ScrollButton from "./ScrollButton";
 
@@ -25,8 +27,6 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const [tituloSemPonto, pontoFinal] = titulo.match(/(.*)(\.)/)?.slice(1) || [titulo, ""];
 
   const titleVariants = {
     hidden: { scale: 1.5, opacity: 0 },
@@ -51,26 +51,21 @@ const Hero: React.FC<HeroProps> = ({ titulo, subtitulo, urlImagem }) => {
           className="hero"
           style={{ backgroundImage: `url(${urlImagem})`, backgroundPositionY: offset * 0.5 }}
         >
-          <div className="ruido-bg"></div>
-          <div className="hero-texto container">
-            <motion.p initial="hidden" animate={controls} variants={titleVariants}>
-              {subtitulo}
-            </motion.p>
-            <motion.h1 initial="hidden" animate={controls} variants={titleVariants}>
-              {tituloSemPonto}
-              <span className="ponto-final">{pontoFinal}</span>
-            </motion.h1>
-            <div className="scroll-button-hero">
-              <ScrollButton />
-            </div>
-          </div>
-          <div className="hero-divisor">
+          <Container>
             <motion.div
-              className="scroll-button"
+              className="hero-texto"
               initial="hidden"
               animate={controls}
               variants={titleVariants}
-            ></motion.div>
+            >
+              <h3 className="font-1-l">{subtitulo}</h3>
+              <h1 className="font-1-xxl">{titulo}</h1>
+              <div className="scroll-button-hero">
+                <ScrollButton />
+              </div>
+            </motion.div>
+          </Container>
+          <div className="hero-divisor">
             <DivisorSection inverter={true} />
           </div>
         </section>
