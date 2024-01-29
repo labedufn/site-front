@@ -9,7 +9,6 @@ import Logo from "../../assets/img/logos/logo_original.svg?react";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import Container from "../../common/Container";
 import "../../styles/components/home/footer.css";
-import "../../styles/utils/cores.css";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();

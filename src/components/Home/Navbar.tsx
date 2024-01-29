@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionId); // Atualize o activeSection ao clicar em um link
+      setActiveSection(sectionId);
       setIsMenuOpen(false);
     }
   };

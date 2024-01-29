@@ -3,7 +3,6 @@ import { FaCode, FaGithub, FaInstagram } from "react-icons/fa";
 import { MdMailOutline } from "react-icons/md";
 import Container from "../../common/Container";
 import "../../styles/components/home/membros.css";
-import "../../styles/utils/cores.css";
 import ItemMembros from "./ItemMembros";
 import SectionHeader from "./SectionHeader";
 

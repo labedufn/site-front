@@ -4,7 +4,6 @@ import ScrollTrigger from "react-scroll-trigger";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import Container from "../../common/Container";
 import "../../styles/components/home/projetos.css";
-import "../../styles/utils/cores.css";
 import Botao from "./Botao";
 import ItemProjetos from "./ItemProjetos";
 import SectionHeader from "./SectionHeader";

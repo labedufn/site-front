@@ -13,7 +13,6 @@ import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import Container from "../../common/Container";
 import DivisorSection from "../../common/DivisorSection";
 import "../../styles/components/home/apoiadores.css";
-import "../../styles/utils/cores.css";
 
 const Apoiadores = () => {
   const controlsTitulo = useAnimation();

@@ -9,7 +9,6 @@ import Navbar from "../components/Home/Navbar";
 import Projetos from "../components/Home/Projetos";
 import Sobre from "../components/Home/Sobre";
 import "../styles/components/home/hero.css";
-import "../styles/global/global.css";
 
 const Home: React.FC = () => {
   return (

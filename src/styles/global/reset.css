@@ -1,6 +1,3 @@
-/* reset.css */
-
-/* Remove margens e paddings padrão */
 html,
 body,
 div,
@@ -45,18 +42,15 @@ td {
   border: 0;
 }
 
-/* Remover list-style padrão de listas */
 ul,
 ol {
   list-style: none;
 }
 
-/* Remover text-decoration padrão de links */
 a {
   text-decoration: none;
 }
 
-/* Remover fontes padrão */
 body,
 table,
 th,
@@ -69,17 +63,14 @@ button {
   font-size: 100%;
 }
 
-/* Remover outline padrão de elementos focados */
 :focus {
   outline: none;
 }
 
-/* Remover resize padrão de textareas */
 textarea {
   resize: none;
 }
 
-/* Remover borda padrão de inputs e buttons */
 input,
 button,
 select,
@@ -89,7 +80,6 @@ textarea {
   box-shadow: none;
 }
 
-/* Remover aparência padrão de todos os inputs e botões */
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -104,35 +94,29 @@ button {
   appearance: none;
 }
 
-/* Definir box-sizing para border-box */
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-/* Remover cor de fundo padrão de body */
 body {
   background: none;
 }
 
-/* Remover texto sublinhado de abbr */
 abbr[title] {
   text-decoration: none;
 }
 
-/* Remover borda padrão em imagens dentro de links */
 a img {
   border: none;
 }
 
-/* Resetar tabelas */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* Resetar campos de formulário para herdar font-family */
 input,
 textarea,
 select,
@@ -140,7 +124,6 @@ button {
   font-family: inherit;
 }
 
-/* Remover aparência padrão no Firefox */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;

@@ -4,7 +4,6 @@ import ScrollTrigger from "react-scroll-trigger";
 import Container from "../../common/Container";
 import DivisorSection from "../../common/DivisorSection";
 import "../../styles/components/home/hero.css";
-import "../../styles/utils/tipografia.css";
 import ItemHero from "./ItemHero";
 import ScrollButton from "./ScrollButton";
 
