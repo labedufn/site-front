@@ -47,7 +47,7 @@ const ItemHero: React.FC = () => {
                 <motion.div>
                   <ItemConteudo
                     icone={EletronicaIcon}
-                    titulo={"ELETRÔNICA"}
+                    titulo={"Eletrônica"}
                     descricao={
                       "Usamos as mais variadas placas programaveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
                     }
@@ -61,7 +61,7 @@ const ItemHero: React.FC = () => {
                 <motion.div>
                   <ItemConteudo
                     icone={ProgramacaoIcon}
-                    titulo={"PROGRAMAÇÃO"}
+                    titulo={"Programação"}
                     descricao={
                       "Em programação, criamos softwares e sistemas embarcados, focando em soluções práticas e acessíveis."
                     }
@@ -75,7 +75,7 @@ const ItemHero: React.FC = () => {
                 <motion.div>
                   <ItemConteudo
                     icone={RoboticaIcon}
-                    titulo={"ROBÓTICA"}
+                    titulo={"Robótica"}
                     descricao={
                       "A nossa equipe de robótica participa de competições na área e desenvolve projetos do zero, mesclando prática e inovação."
                     }

@@ -11,8 +11,7 @@
 }
 
 .item h3 {
-  margin-bottom: 8px;
-  word-break: break-all;
+  margin-bottom: 12px;
 }
 
 .item p {
@@ -22,5 +21,9 @@
 @media (max-width: 768px) {
   .item img {
     width: 80px;
+  }
+
+  .item h3 {
+    margin-bottom: 8px;
   }
 }

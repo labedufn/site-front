@@ -58,7 +58,7 @@ const Membros: React.FC = () => {
     },
     {
       foto: "https://hwchamber.co.uk/wp-content/uploads/2022/04/avatar-placeholder.gif",
-      nome: "Nome",
+      nome: "Alessandro",
       curso: "Ciência da Computação",
       nomeCompleto: "Nome Completo",
       icone: <FaCode size={24} />,
