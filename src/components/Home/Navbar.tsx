@@ -1,11 +1,26 @@
+import Hamburger from "hamburger-react";
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import FecharIcon from "../../assets/img/icons/fechar_icon.svg?react";
-import HamburgerIcon from "../../assets/img/icons/hamburger_icon.svg?react";
 import LogoAbreviado from "../../assets/img/logos/logo_abreviado.svg?react";
 import Container from "../../common/Container";
 import "../../styles/components/home/navbar.css";
+
+const sections = [
+  { id: "inicio", label: "Início" },
+  { id: "sobre", label: "Sobre" },
+  { id: "projetos", label: "Projetos" },
+  { id: "membros", label: "Membros" },
+  { id: "apoiadores", label: "Apoiadores" },
+];
+
+const socialLinks = [
+  {
+    url: "https://www.instagram.com/labedufn",
+    icon: <FaInstagram size={24} className="instagram-icon" />,
+  },
+  { url: "https://github.com/labedufn", icon: <FaGithub size={24} className="github-icon" /> },
+];
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +34,7 @@ const Navbar: React.FC = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    setIsScrolled(offset > 50);
   };
 
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -39,12 +50,10 @@ const Navbar: React.FC = () => {
       threshold: 0.5,
     });
 
-    const sections = ["inicio", "sobre", "membros", "projetos", "apoiadores"];
-
-    sections.forEach((sectionId) => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        observer.observe(section);
+    sections.forEach((section) => {
+      const sectionElement = document.getElementById(section.id);
+      if (sectionElement) {
+        observer.observe(sectionElement);
       }
     });
 
@@ -83,58 +92,28 @@ const Navbar: React.FC = () => {
             </NavLink>
 
             <div className="menu-icon" onClick={toggleMenu}>
-              {isMenuOpen ? <FecharIcon /> : <HamburgerIcon />}
+              <Hamburger toggled={isMenuOpen} toggle={setIsMenuOpen} size={32} rounded />
             </div>
 
             <div className={`navbar-links ${isMenuOpen ? "active" : ""}`} ref={menuRef}>
-              <NavLink
-                to="#inicio"
-                onClick={(e) => handleNavLinkClick(e, "inicio")}
-                className={activeSection === "inicio" ? "link-ativo" : "link"}
-              >
-                Início
-              </NavLink>
-              <NavLink
-                to="#sobre"
-                onClick={(e) => handleNavLinkClick(e, "sobre")}
-                className={activeSection === "sobre" ? "link-ativo" : "link"}
-              >
-                Sobre
-              </NavLink>
-              <NavLink
-                to="#membros"
-                onClick={(e) => handleNavLinkClick(e, "membros")}
-                className={activeSection === "membros" ? "link-ativo" : "link"}
-              >
-                Membros
-              </NavLink>
-              <NavLink
-                to="#projetos"
-                onClick={(e) => handleNavLinkClick(e, "projetos")}
-                className={activeSection === "projetos" ? "link-ativo" : "link"}
-              >
-                Projetos
-              </NavLink>
-              <NavLink
-                to="#apoiadores"
-                onClick={(e) => handleNavLinkClick(e, "apoiadores")}
-                className={activeSection === "apoiadores" ? "link-ativo" : "link"}
-              >
-                Apoiadores
-              </NavLink>
+              {sections.map((section) => (
+                <NavLink
+                  key={section.id}
+                  to={`#${section.id}`}
+                  onClick={(e) => handleNavLinkClick(e, section.id)}
+                  className={activeSection === section.id ? "link-ativo" : "link"}
+                >
+                  {section.label}
+                </NavLink>
+              ))}
             </div>
 
             <div className="navbar-icons">
-              <a
-                href="https://www.instagram.com/labedufn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram size={24} className="instagram-icon" />
-              </a>
-              <a href="https://github.com/labedufn" target="_blank" rel="noopener noreferrer">
-                <FaGithub size={24} className="github-icon" />
-              </a>
+              {socialLinks.map((socialLink, index) => (
+                <a key={index} href={socialLink.url} target="_blank" rel="noopener noreferrer">
+                  {socialLink.icon}
+                </a>
+              ))}
             </div>
           </nav>
         </Container>

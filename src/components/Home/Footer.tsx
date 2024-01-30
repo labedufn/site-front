@@ -10,6 +10,14 @@ import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import Container from "../../common/Container";
 import "../../styles/components/home/footer.css";
 
+const sections = [
+  { id: "inicio", label: "Início" },
+  { id: "sobre", label: "Sobre" },
+  { id: "projetos", label: "Projetos" },
+  { id: "membros", label: "Membros" },
+  { id: "apoiadores", label: "Apoiadores" },
+];
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -81,21 +89,15 @@ const Footer: React.FC = () => {
                     <motion.div className="footer-home">
                       <h3 className="font-1-sl">LABED</h3>
                       <ul className="footer-anexos font-2-sm">
-                        <NavLink to="#inicio" onClick={(e) => handleScroll(e, "inicio")}>
-                          <li>Início</li>
-                        </NavLink>
-                        <NavLink to="#sobre" onClick={(e) => handleScroll(e, "sobre")}>
-                          <li>Sobre</li>
-                        </NavLink>
-                        <NavLink to="#membros" onClick={(e) => handleScroll(e, "membros")}>
-                          <li>Membros</li>
-                        </NavLink>
-                        <NavLink to="#projetos" onClick={(e) => handleScroll(e, "projetos")}>
-                          <li>Projetos</li>
-                        </NavLink>
-                        <NavLink to="#apoiadores" onClick={(e) => handleScroll(e, "apoiadores")}>
-                          <li>Apoiadores</li>
-                        </NavLink>
+                        {sections.map((section) => (
+                          <NavLink
+                            key={section.id}
+                            to={`#${section.id}`}
+                            onClick={(e) => handleScroll(e, section.id)}
+                          >
+                            <li>{section.label}</li>
+                          </NavLink>
+                        ))}
                       </ul>
                     </motion.div>
                   </AnimacaoFadeCrescente>

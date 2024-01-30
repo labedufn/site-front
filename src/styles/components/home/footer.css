@@ -49,6 +49,12 @@
   gap: 16px;
 }
 
+.footer-contato-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 .footer-email,
 .footer-endereco {
   display: flex;
