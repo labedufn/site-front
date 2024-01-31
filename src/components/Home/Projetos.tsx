@@ -17,6 +17,22 @@ const Projetos: React.FC = () => {
   const [isProjetosVisible, setIsProjetosVisible] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
 
+  useEffect(() => {
+    controlsTitulo.start({ opacity: 0 });
+
+    controlsProjetos.start({ opacity: 0 });
+
+    if (isProjetosVisible) {
+      controlsProjetos.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
+    }
+
+    controlsBotao.start({ opacity: 0 });
+
+    if (isBotaoVisible) {
+      controlsBotao.start({ opacity: 1, transition: { duration: 0.5, delay: 0.4 } });
+    }
+  }, [isProjetosVisible, isBotaoVisible, controlsTitulo, controlsProjetos, controlsBotao]);
+
   const projetosData = [
     {
       imagem: "https://placehold.co/720x520.png",
@@ -63,22 +79,6 @@ const Projetos: React.FC = () => {
   ];
 
   const visibleProjects = showAllProjects ? projetosData : projetosData.slice(0, 3);
-
-  useEffect(() => {
-    controlsTitulo.start({ opacity: 0 });
-
-    controlsProjetos.start({ opacity: 0 });
-
-    if (isProjetosVisible) {
-      controlsProjetos.start({ opacity: 1, transition: { duration: 0.5, delay: 0.2 } });
-    }
-
-    controlsBotao.start({ opacity: 0 });
-
-    if (isBotaoVisible) {
-      controlsBotao.start({ opacity: 1, transition: { duration: 0.5, delay: 0.4 } });
-    }
-  }, [isProjetosVisible, isBotaoVisible, controlsTitulo, controlsProjetos, controlsBotao]);
 
   return (
     <>

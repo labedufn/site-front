@@ -3,10 +3,6 @@ img {
   display: block;
 }
 
-.divisor {
-  z-index: 2;
-}
-
 .divisor.invertido {
   transform: rotate(180deg);
 }
