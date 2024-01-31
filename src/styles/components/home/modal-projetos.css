@@ -102,9 +102,6 @@
   color: var(--cor-primaria1);
 }
 
-modal-projetos-redes:hover {
-}
-
 @media (max-width: 1600px) {
   .swiper {
     max-width: 800px;
@@ -160,6 +157,6 @@ modal-projetos-redes:hover {
 
   .modal-projetos-fechar {
     right: 0;
-    top: -38px;
+    top: -56px;
   }
 }
