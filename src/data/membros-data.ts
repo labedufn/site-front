@@ -1,6 +1,6 @@
 export const membros = [
   {
-    foto: "https://i.ibb.co/ZGrXM1k/dcf70a6e-3ac9-4c46-8c3b-6f615ce88e9d.jpg",
+    foto: "https://imgur.com/PnT88fX.jpg",
     nome: "Andrisa Santos",
     curso: "Ciência da Computação",
     emailContato: "andrisassilva@gmail.com",
@@ -8,7 +8,7 @@ export const membros = [
   },
 
   {
-    foto: "https://i.ibb.co/M2vVvC0/10ed936c-6d57-4f98-89ea-8d488c9e8542.jpg",
+    foto: "https://imgur.com/S8iNiL3.jpg",
     nome: "Kalleby Evangelho",
     curso: "Ciência da Computação",
     emailContato: "kallebyevangelho03@gmail.com",
@@ -16,7 +16,7 @@ export const membros = [
   },
 
   {
-    foto: "https://i.ibb.co/nfYL8CL/Screenshot-11.png",
+    foto: "https://imgur.com/eMtkohn.png",
     nome: "Mauricio Pereira",
     curso: "Ciência da Computação",
     emailContato: "mauprb@gmail.com",
@@ -24,6 +24,7 @@ export const membros = [
   },
 
   {
+    foto: "https://imgur.com/fzJeLtR.jpg",
     nome: "Lourdinha Maria Muraro Favarin",
     curso: "Engenharia Biomédica",
     emailContato: "lourdes.favarin@ufn.edu.br",
@@ -31,7 +32,7 @@ export const membros = [
   },
 
   {
-    foto: "https://i.ibb.co/BjPHKwt/101106957.jpg",
+    foto: "https://imgur.com/xlMCjhD.jpg",
     nome: "Gabriel Fachim",
     curso: "Ciência da Computação",
     emailContato: "gabrielafachim2@gmail.com",
@@ -39,13 +40,7 @@ export const membros = [
   },
 
   {
-    nome: "Alessandro Mainardi",
-    curso: "Professor Orientador",
-    emailContato: "alessandro.andre@ufn.edu.br",
-  },
-
-  {
-    foto: "https://i.ibb.co/b7p8zrm/0ef56d4b-72b9-4796-a948-b7b0695aedf0.jpg",
+    foto: "https://imgur.com/MbXZSmY.jpg",
     nome: "Paulo André Maracci",
     curso: "Ciência da Computação",
     emailContato: "paulo.andre@ufn.edu.br",
