@@ -109,13 +109,13 @@ const Footer: React.FC = () => {
                       <div className="footer-contato-infos font-2-sm">
                         <div className="footer-email">
                           <MdMailOutline size={24} />
-                          <NavLink to="mailto:labedufn@gmail.com">labedufn@gmail.com</NavLink>
+                          <a href="mailto:labedufn@gmail.com">labedufn@gmail.com</a>
                         </div>
                         <div className="footer-endereco">
                           <div className="endereco-icon">
                             <LuMapPin size={24} />
                           </div>
-                          <NavLink to="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="blank">
+                          <NavLink to="https://maps.app.goo.gl/S8dV92rKibENyxCe8" target="_blank">
                             Rua dos Andradas, 1614 - Centro, Universidade Franciscana - Conjunto I,
                             Prédio 3, Lab. 109, Santa Maria - RS, 97010-030
                           </NavLink>
@@ -129,10 +129,10 @@ const Footer: React.FC = () => {
                     <motion.div className="footer-redes">
                       <h3 className="font-1-sl">Redes Sociais</h3>
                       <div className="footer-redes-icons">
-                        <NavLink to="https://www.instagram.com/labedufn" target="blank">
+                        <NavLink to="https://www.instagram.com/labedufn" target="_blank">
                           <FaInstagram size={32} className="instagram-icon" />
                         </NavLink>
-                        <NavLink to="https://github.com/labedufn" target="blank">
+                        <NavLink to="https://github.com/labedufn" target="_blank">
                           <FaGithub size={32} className="github-icon" />
                         </NavLink>
                       </div>
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
                   </p>
                   <p className="footer-dev font-2-s">
                     Desenvolvido por{" "}
-                    <NavLink to="https://github.com/mauricioprb" target="blank">
+                    <NavLink to="https://github.com/mauricioprb" target="_blank">
                       @mauricioprb
                     </NavLink>
                   </p>

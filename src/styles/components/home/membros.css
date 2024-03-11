@@ -25,7 +25,6 @@
 
 @media (max-width: 685px) {
   .membros {
-    justify-content: space-between;
     gap: 60px;
   }
   .membros-titulo {

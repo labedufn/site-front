@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ScrollTrigger from "react-scroll-trigger";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import Container from "../../common/Container";
+import { projetos } from "../../data/projetos-data";
 import "../../styles/components/home/projetos.css";
 import Botao from "./Botao";
 import ItemProjetos from "./ItemProjetos";
@@ -35,50 +36,20 @@ const Projetos: React.FC = () => {
 
   const projetosData = [
     {
-      imagem: "https://placehold.co/720x520.png",
+      thumbnail: "https://placehold.co/720x520.png",
+      imagem: ["https://placehold.co/720x520.png", "https://placehold.co/722x520.png"],
       titulo: "Nome Projeto",
       descricao:
         "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      link: "",
-    },
-    {
-      imagem: "https://placehold.co/720x520.png",
-      titulo: "Nome Projeto",
-      descricao:
-        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      link: "",
-    },
-    {
-      imagem: "https://placehold.co/720x520.png",
-      titulo: "Nome Projeto",
-      descricao:
-        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      link: "",
-    },
-    {
-      imagem: "https://placehold.co/720x520.png",
-      titulo: "Nome Projeto",
-      descricao:
-        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      link: "",
-    },
-    {
-      imagem: "https://placehold.co/720x520.png",
-      titulo: "Nome Projeto",
-      descricao:
-        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      link: "",
-    },
-    {
-      imagem: "https://placehold.co/720x520.png",
-      titulo: "Nome Projeto",
-      descricao:
-        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      link: "",
+      slug: "nome-projeto",
     },
   ];
 
-  const visibleProjects = showAllProjects ? projetosData : projetosData.slice(0, 3);
+  const visibleProjects = showAllProjects ? projetos : projetos.slice(0, 3);
+
+  const criarSlug = (titulo: string) => {
+    return titulo.toLowerCase().replace(/ /g, "-");
+  };
 
   return (
     <>
@@ -96,10 +67,12 @@ const Projetos: React.FC = () => {
                 <ScrollTrigger key={index} onEnter={() => setIsProjetosVisible(true)}>
                   <AnimacaoFadeCrescente controls={controlsProjetos}>
                     <ItemProjetos
+                      thumbnail={projeto.thumbnail}
                       imagem={projeto.imagem}
                       titulo={projeto.titulo}
                       descricao={projeto.descricao}
-                      link={projeto.link}
+                      conteudo={projeto.conteudo}
+                      slug={criarSlug(projeto.titulo)}
                     />
                   </AnimacaoFadeCrescente>
                 </ScrollTrigger>
