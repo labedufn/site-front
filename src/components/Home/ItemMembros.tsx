@@ -2,13 +2,12 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ReactCardFlip from "react-card-flip";
-import { NavLink } from "react-router-dom";
 import ScrollTrigger from "react-scroll-trigger";
 import AnimacaoFadeCrescente from "../../common/AnimacaoFadeCrescente";
 import "../../styles/components/home/item-membros.css";
 
 interface ItemMembrosProps {
-  foto: string;
+  foto?: string;
   nome: string;
   curso: string;
   nomeCompleto: string;
@@ -76,13 +75,11 @@ const ItemMembros: React.FC<ItemMembrosProps> = ({
             onMouseLeave={handleMouseLeave}
           >
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <div>
-                <div className="item-membros" onLoad={handleFrontLoad}>
-                  <img className="item-membros-img" src={foto} alt={nome} />
-                  <div className="item-membros-infos">
-                    <h3 className="item-membros-nome font-1-sl">{nome}</h3>
-                    <p className="item-membros-curso font-2-sm">{curso}</p>
-                  </div>
+              <div className="item-membros" onLoad={handleFrontLoad}>
+                <img className="item-membros-img" src={foto} alt={nome} />
+                <div className="item-membros-infos">
+                  <h3 className="item-membros-nome font-1-sl">{nome}</h3>
+                  <p className="item-membros-curso font-2-sm">{curso}</p>
                 </div>
               </div>
 
@@ -97,15 +94,15 @@ const ItemMembros: React.FC<ItemMembrosProps> = ({
                 </div>
                 <div className="item-membros-redes-back">
                   {redesSociaisIcons?.map((item, index) => (
-                    <NavLink
+                    <a
                       key={index}
-                      to={item.link}
+                      href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleIconClick}
                     >
                       {item.icon}
-                    </NavLink>
+                    </a>
                   ))}
                 </div>
               </div>
