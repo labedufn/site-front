@@ -37,21 +37,11 @@ const Projetos: React.FC = () => {
   const visibleProjects = showAllProjects ? projetos : projetos.slice(0, 3);
 
   const criarSlug = (titulo: string) => {
-    const timestamp = Date.now();
-    const valorAleatorio = Math.random().toString(36).substring(2, 15);
-    const baseHash = `${titulo}-${timestamp}-${valorAleatorio}`;
-    const hashSimples = baseHash.split("").reduce((a, b) => {
-      a = (a << 5) - a + b.charCodeAt(0);
-      return a & a;
-    }, 0);
-
-    return (
-      titulo
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase()
-        .replace(/ /g, "-") + `+${Math.abs(hashSimples).toString(36)}`
-    );
+    return titulo
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/ /g, "-");
   };
 
   return (
