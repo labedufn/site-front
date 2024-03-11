@@ -9,7 +9,7 @@ export const membros = [
 
   {
     foto: "https://i.ibb.co/M2vVvC0/10ed936c-6d57-4f98-89ea-8d488c9e8542.jpg",
-    nome: "Kalleby evangelho",
+    nome: "Kalleby Evangelho",
     curso: "Ciência da Computação",
     emailContato: "kallebyevangelho03@gmail.com",
     redesSociais: ["instagram.com/kallebyevangelho", "github.com/KallebyX"],
@@ -33,7 +33,7 @@ export const membros = [
   {
     nome: "Gabriel Fachim",
     curso: "Ciência da Computação",
-    emailContato: "",
+    emailContato: "gabrielafachim2@gmail.com",
     redesSociais: ["instagram.com/gabriel_fachim", "github.com/GabrielAF-Faca"],
   },
 
@@ -41,5 +41,13 @@ export const membros = [
     nome: "Alessandro Mainardi",
     curso: "Professor Orientador",
     emailContato: "alessandro.andre@ufn.edu.br",
+  },
+
+  {
+    foto: "https://i.ibb.co/b7p8zrm/0ef56d4b-72b9-4796-a948-b7b0695aedf0.jpg",
+    nome: "Paulo André Maracci",
+    curso: "Ciência da Computação",
+    emailContato: "paulo.andre@ufn.edu.br",
+    redesSociais: ["instagram.com/paulo_m.m", "github.com/PauloMM23"],
   },
 ];
