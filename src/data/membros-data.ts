@@ -31,6 +31,7 @@ export const membros = [
   },
 
   {
+    foto: "https://i.ibb.co/BjPHKwt/101106957.jpg",
     nome: "Gabriel Fachim",
     curso: "Ciência da Computação",
     emailContato: "gabrielafachim2@gmail.com",

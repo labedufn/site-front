@@ -2,7 +2,6 @@
   max-width: 800px;
   max-height: 520px;
   border-radius: 12px;
-  object-fit: cover;
 }
 
 .swiper-button-next,
@@ -17,6 +16,7 @@
 .swiper-slide img {
   display: block;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -110,6 +110,8 @@
 
   .modal-projetos-conteudo {
     flex-wrap: wrap;
+    height: 100%;
+    overflow-y: auto;
   }
 
   .modal-projetos-info {
@@ -151,6 +153,12 @@
   .swiper {
     max-height: 240px;
   }
+
+  .modal-projetos-conteudo {
+    height: 140vw;
+    overflow-y: auto;
+  }
+
   .modal-projetos {
     height: fit-content;
   }
