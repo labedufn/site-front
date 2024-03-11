@@ -56,8 +56,7 @@ const ItemProjetos: React.FC<ItemProjetosProps> = ({
   }, []);
 
   const shareOnFacebook = () => {
-    const message = `Confira o projeto do LABED - ${titulo}: ${window.location.href}`;
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(message)}`;
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
     window.open(url, "_blank");
   };
 
