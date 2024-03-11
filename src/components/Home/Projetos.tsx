@@ -34,17 +34,6 @@ const Projetos: React.FC = () => {
     }
   }, [isProjetosVisible, isBotaoVisible, controlsTitulo, controlsProjetos, controlsBotao]);
 
-  const projetosData = [
-    {
-      thumbnail: "https://placehold.co/720x520.png",
-      imagem: ["https://placehold.co/720x520.png", "https://placehold.co/722x520.png"],
-      titulo: "Nome Projeto",
-      descricao:
-        "Lorem ipsum dolor sit amet consectetur. Sodales sed enim pretium interdum duis. Ipsum sed enim sed nisl tortor faucibus ut.",
-      slug: "nome-projeto",
-    },
-  ];
-
   const visibleProjects = showAllProjects ? projetos : projetos.slice(0, 3);
 
   const criarSlug = (titulo: string) => {
