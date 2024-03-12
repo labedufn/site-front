@@ -16,7 +16,7 @@ export const membros = [
   },
 
   {
-    foto: "https://imgur.com/eMtkohn.png",
+    foto: "https://imgur.com/h5PyBpq.jpg",
     nome: "Mauricio Pereira",
     curso: "Ciência da Computação",
     emailContato: "mauprb@gmail.com",
