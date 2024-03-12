@@ -1,6 +1,6 @@
 export const membros = [
   {
-    foto: "https://imgur.com/PnT88fX.jpg",
+    foto: "https://i.imgur.com/PnT88fX.jpg",
     nome: "Andrisa Santos",
     curso: "Ciência da Computação",
     emailContato: "andrisassilva@gmail.com",
@@ -8,7 +8,7 @@ export const membros = [
   },
 
   {
-    foto: "https://imgur.com/S8iNiL3.jpg",
+    foto: "https://i.imgur.com/S8iNiL3.jpg",
     nome: "Kalleby Evangelho",
     curso: "Ciência da Computação",
     emailContato: "kallebyevangelho03@gmail.com",
@@ -16,7 +16,7 @@ export const membros = [
   },
 
   {
-    foto: "https://imgur.com/h5PyBpq.jpg",
+    foto: "https://i.imgur.com/Tp7OCnD.jpg",
     nome: "Mauricio Pereira",
     curso: "Ciência da Computação",
     emailContato: "mauprb@gmail.com",
@@ -24,7 +24,7 @@ export const membros = [
   },
 
   {
-    foto: "https://imgur.com/fzJeLtR.jpg",
+    foto: "https://i.imgur.com/fzJeLtR.jpg",
     nome: "Lourdinha Maria Muraro Favarin",
     curso: "Engenharia Biomédica",
     emailContato: "lourdes.favarin@ufn.edu.br",
@@ -40,7 +40,7 @@ export const membros = [
   },
 
   {
-    foto: "https://imgur.com/MbXZSmY.jpg",
+    foto: "https://i.imgur.com/MbXZSmY.jpg",
     nome: "Paulo André Maracci",
     curso: "Ciência da Computação",
     emailContato: "paulo.andre@ufn.edu.br",
