@@ -49,7 +49,7 @@ const ItemHero: React.FC = () => {
                     icone={EletronicaIcon}
                     titulo={"Eletrônica"}
                     descricao={
-                      "Usamos as mais variadas placas programaveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
+                      "Usamos as mais variadas placas programáveis para criar circuitos, aplicando teoria em sistemas embarcados práticos."
                     }
                   />
                 </motion.div>
