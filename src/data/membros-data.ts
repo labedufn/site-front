@@ -46,4 +46,11 @@ export const membros = [
     emailContato: "paulo.andre@ufn.edu.br",
     redesSociais: ["instagram.com/paulo_m.m", "github.com/PauloMM23"],
   },
+
+  {
+    foto: "https://i.imgur.com/0Z0rVw9.jpeg",
+    nome: "Alessandro de Oliveira",
+    curso: "Professor Orientador",
+    emailContato: "paulo.andre@ufn.edu.br",
+  },
 ];
