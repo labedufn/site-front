@@ -51,6 +51,6 @@ export const membros = [
     foto: "https://i.imgur.com/0Z0rVw9.jpeg",
     nome: "Alessandro de Oliveira",
     curso: "Professor Orientador",
-    emailContato: "paulo.andre@ufn.edu.br",
+    emailContato: "alessandroandre@ufn.edu.br",
   },
 ];
