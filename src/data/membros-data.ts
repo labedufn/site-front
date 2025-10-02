@@ -1,6 +1,6 @@
 export const membros = [
   {
-    foto: "https://i.imgur.com/PnT88fX.jpg",
+    foto: "https://i.imgur.com/x5k0tS9.jpeg",
     nome: "Andrisa Santos",
     curso: "Ciência da Computação",
     emailContato: "andrisassilva@gmail.com",
@@ -46,16 +46,16 @@ export const membros = [
   },
 
   {
-    foto: "",
+    foto: "https://i.imgur.com/ypvfZ6d.jpeg",
     nome: "Gustavo Sefrim",
     curso: "Ciência da Computação",
-    emailContato: "",
+    emailContato: "g.sefrim@ufn.edu.br",
   },
 
   {
-    foto: "",
+    foto: "https://i.imgur.com/ad9lwmz.jpeg",
     nome: "Matheus Faccin",
     curso: "Ciência da Computação",
-    emailContato: "",
+    emailContato: "matheus.faccin@ufn.edu.br",
   },
 ];
