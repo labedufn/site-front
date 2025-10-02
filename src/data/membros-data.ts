@@ -42,7 +42,7 @@ export const membros = [
     foto: "",
     nome: "Maria Antônia Espinosa",
     curso: "Ciência da Computação",
-    emailContato: "",
+    emailContato: "maria.aewoltmann@ufn.edu.br",
   },
 
   {
