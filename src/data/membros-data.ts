@@ -8,33 +8,17 @@ export const membros = [
   },
 
   {
-    foto: "https://i.imgur.com/S8iNiL3.jpg",
-    nome: "Kalleby Evangelho",
-    curso: "Ciência da Computação",
-    emailContato: "kallebyevangelho03@gmail.com",
-    redesSociais: ["instagram.com/kallebyevangelho", "github.com/KallebyX"],
-  },
-
-  {
     foto: "https://i.imgur.com/Tp7OCnD.jpg",
     nome: "Mauricio Pereira",
-    curso: "Ciência da Computação",
+    curso: "PPG Nanociências",
     emailContato: "mauprb@gmail.com",
     redesSociais: ["instagram.com/mauricioprb", "github.com/mauricioprb"],
   },
 
   {
-    foto: "https://i.imgur.com/fzJeLtR.jpg",
-    nome: "Lourdinha Maria Muraro Favarin",
-    curso: "Engenharia Biomédica",
-    emailContato: "lourdes.favarin@ufn.edu.br",
-    redesSociais: ["instagram.com/lourdinha_favarin"],
-  },
-
-  {
     foto: "https://imgur.com/xlMCjhD.jpg",
     nome: "Gabriel Fachim",
-    curso: "Ciência da Computação",
+    curso: "PPG Nanociências",
     emailContato: "gabrielafachim2@gmail.com",
     redesSociais: ["instagram.com/gabriel_fachim", "github.com/GabrielAF-Faca"],
   },
@@ -52,5 +36,26 @@ export const membros = [
     nome: "Alessandro de Oliveira",
     curso: "Professor Orientador",
     emailContato: "alessandroandre@ufn.edu.br",
+  },
+
+  {
+    foto: "",
+    nome: "Maria Antônia Espinosa",
+    curso: "Ciência da Computação",
+    emailContato: "",
+  },
+
+  {
+    foto: "",
+    nome: "Gustavo Sefrim",
+    curso: "Ciência da Computação",
+    emailContato: "",
+  },
+
+  {
+    foto: "",
+    nome: "Matheus Faccin",
+    curso: "Ciência da Computação",
+    emailContato: "",
   },
 ];

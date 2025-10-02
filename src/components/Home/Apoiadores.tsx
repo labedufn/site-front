@@ -2,8 +2,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-infinite-logo-slider";
 import ScrollTrigger from "react-scroll-trigger";
+import Abille from "../../assets/img/apoiadores/abille.svg";
 import CienciaComputacao from "../../assets/img/apoiadores/ciencia_computacao.svg";
-import EngenhariaBiomedica from "../../assets/img/apoiadores/engenharia_biomedica.svg";
+import Conectare from "../../assets/img/apoiadores/conectare.svg";
 import JogosDigitais from "../../assets/img/apoiadores/jogos_digitais.svg";
 import SistemasInformacao from "../../assets/img/apoiadores/sistemas_informacao.svg";
 import SolidWorks from "../../assets/img/apoiadores/solidworks.svg";
@@ -69,7 +70,8 @@ const Apoiadores = () => {
     SolidWorks,
     JogosDigitais,
     CienciaComputacao,
-    EngenhariaBiomedica,
+    Conectare,
+    Abille,
   ];
 
   return (
