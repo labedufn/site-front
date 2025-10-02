@@ -4,7 +4,7 @@ export const membros = [
     nome: "Andrisa Santos",
     curso: "Ciência da Computação",
     emailContato: "andrisassilva@gmail.com",
-    redesSociais: ["instagram.com/xxdrih", "github.com/Andrisa-S"],
+    redesSociais: ["instagram.com/andrisaxsantos", "github.com/Andrisa-S"],
   },
 
   {
@@ -47,9 +47,10 @@ export const membros = [
 
   {
     foto: "https://i.imgur.com/ypvfZ6d.jpeg",
-    nome: "Gustavo Sefrim",
+    nome: "Gustavo Sefrin",
     curso: "Ciência da Computação",
-    emailContato: "g.sefrim@ufn.edu.br",
+    emailContato: "g.sefrin@ufn.edu.br",
+    redesSociais: ["github.com/TavoSefrin"],
   },
 
   {
@@ -57,5 +58,6 @@ export const membros = [
     nome: "Matheus Faccin",
     curso: "Ciência da Computação",
     emailContato: "matheus.faccin@ufn.edu.br",
+    redesSociais: ["github.com/MatheusMFaccin"],
   },
 ];
