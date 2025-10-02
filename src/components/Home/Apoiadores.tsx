@@ -2,7 +2,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-infinite-logo-slider";
 import ScrollTrigger from "react-scroll-trigger";
-import Abille from "../../assets/img/apoiadores/abille.svg";
 import CienciaComputacao from "../../assets/img/apoiadores/ciencia_computacao.svg";
 import Conectare from "../../assets/img/apoiadores/conectare.svg";
 import JogosDigitais from "../../assets/img/apoiadores/jogos_digitais.svg";
@@ -71,7 +70,6 @@ const Apoiadores = () => {
     JogosDigitais,
     CienciaComputacao,
     Conectare,
-    Abille,
   ];
 
   return (
