@@ -12,7 +12,7 @@ export const membros = [
     nome: "Mauricio Pereira",
     curso: "PPG Nanociências",
     emailContato: "mauprb@gmail.com",
-    redesSociais: ["instagram.com/mauricioprb", "github.com/mauricioprb"],
+    redesSociais: ["instagram.com/mauricioprb", "github.com/mauricioprb", "http://lattes.cnpq.br/4826637586256637"],
   },
 
   {
@@ -20,7 +20,7 @@ export const membros = [
     nome: "Gabriel Fachim",
     curso: "PPG Nanociências",
     emailContato: "gabrielafachim2@gmail.com",
-    redesSociais: ["instagram.com/gabriel_fachim", "github.com/GabrielAF-Faca"],
+    redesSociais: ["instagram.com/gabriel_fachim", "github.com/GabrielAF-Faca", "http://lattes.cnpq.br/4660333925873089"],
   },
 
   {
@@ -36,6 +36,7 @@ export const membros = [
     nome: "Alessandro de Oliveira",
     curso: "Professor Orientador",
     emailContato: "alessandroandre@ufn.edu.br",
+    redesSociais: ["http://lattes.cnpq.br/2955059113937654"],
   },
 
   {
@@ -66,7 +67,7 @@ export const membros = [
     nome: "Luiz Batista Cardoso",
     curso: "PPG Nanociências",
     emailContato: "luiz.bcardoso@ufn.edu.br",
-    redesSociais: ["github.com/luiz-bcardoso"],
+    redesSociais: ["github.com/luiz-bcardoso", "http://lattes.cnpq.br/8803636666287797"],
   },
 
   {
@@ -77,7 +78,7 @@ export const membros = [
   },
 
   {
-    foto: "https://i.imgur.com/teeXdqE.jpeg",
+    foto: "https://i.imgur.com/mmRAKV0.jpeg",
     nome: "Matheus Braga",
     curso: "Ciência de Dados",
     emailContato: "matheus.braga@ufn.edu.br",

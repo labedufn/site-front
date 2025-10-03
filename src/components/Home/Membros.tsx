@@ -5,6 +5,7 @@ import { FaChalkboardTeacher, FaCode, FaGamepad, FaGithub, FaInstagram } from "r
 import { FaGears } from "react-icons/fa6";
 import { IoSchool } from "react-icons/io5";
 import { MdMailOutline } from "react-icons/md";
+import IconeLattes from "../../assets/img/icons/lattes.svg";
 import Container from "../../common/Container";
 import { membros } from "../../data/membros-data";
 import "../../styles/components/home/membros.css";
@@ -47,6 +48,12 @@ const Membros: React.FC = () => {
       } else if (redeSocial.includes("github.com")) {
         icon = <FaGithub size={32} />;
         link = `https://${redeSocial}`;
+      } else if (
+        redeSocial.includes("http://lattes.cnpq.br/") ||
+        redeSocial.includes("https://lattes.cnpq.br/")
+      ) {
+        icon = <img src={IconeLattes} alt="Lattes" style={{ width: 32, height: 32 }} />;
+        link = redeSocial;
       } else {
         icon = <MdMailOutline size={32} />;
         userEmail = redeSocial;
