@@ -26,7 +26,7 @@ export const membros = [
   {
     foto: "https://i.imgur.com/MbXZSmY.jpg",
     nome: "Paulo André Maracci",
-    curso: "Ciência da Computação",
+    curso: "Egresso",
     emailContato: "paulo.andre@ufn.edu.br",
     redesSociais: ["instagram.com/paulo_m.m", "github.com/PauloMM23"],
   },
@@ -39,7 +39,7 @@ export const membros = [
   },
 
   {
-    foto: "",
+    foto: "https://i.imgur.com/D3btSLP.jpeg",
     nome: "Maria Antônia Espinosa",
     curso: "Ciência da Computação",
     emailContato: "maria.aewoltmann@ufn.edu.br",
@@ -59,5 +59,28 @@ export const membros = [
     curso: "Ciência da Computação",
     emailContato: "matheus.faccin@ufn.edu.br",
     redesSociais: ["github.com/MatheusMFaccin"],
+  },
+
+  {
+    foto: "https://i.imgur.com/e5Y98I7.jpeg",
+    nome: "Luiz Batista Cardoso",
+    curso: "PPG Nanociências",
+    emailContato: "luiz.bcardoso@ufn.edu.br",
+    redesSociais: ["github.com/luiz-bcardoso"],
+  },
+
+  {
+    foto: "https://i.imgur.com/8wWzx0S.png",
+    nome: "Mateus dos Reis",
+    curso: "Jogos Digitais",
+    emailContato: "m.nedel@ufn.edu.br",
+  },
+
+  {
+    foto: "https://i.imgur.com/teeXdqE.jpeg",
+    nome: "Matheus Braga",
+    curso: "Ciência de Dados",
+    emailContato: "matheus.braga@ufn.edu.br",
+    redesSociais: ["github.com/matheuskbraga"],
   },
 ];

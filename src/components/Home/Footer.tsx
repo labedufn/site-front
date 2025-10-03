@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
                   </p>
                   <p className="footer-dev font-2-s">
                     Desenvolvido por{" "}
-                    <NavLink to="https://github.com/mauricioprb" target="_blank">
+                    <NavLink to="https://mauricioprb.dev" target="_blank">
                       @mauricioprb
                     </NavLink>
                   </p>

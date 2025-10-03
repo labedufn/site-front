@@ -1,7 +1,8 @@
 import React from "react";
-import { FaCode, FaGithub, FaInstagram } from "react-icons/fa";
+import { BiAtom } from "react-icons/bi";
+import { BsClipboard2DataFill } from "react-icons/bs";
+import { FaChalkboardTeacher, FaCode, FaGamepad, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaGears } from "react-icons/fa6";
-import { GiMaterialsScience } from "react-icons/gi";
 import { IoSchool } from "react-icons/io5";
 import { MdMailOutline } from "react-icons/md";
 import Container from "../../common/Container";
@@ -16,11 +17,17 @@ const Membros: React.FC = () => {
       case "ciência da computação":
         return <FaCode size={24} />;
       case "professor orientador":
-        return <IoSchool size={24} />;
+        return <FaChalkboardTeacher size={24} />;
       case "engenharia biomédica":
         return <FaGears size={24} />;
       case "ppg nanociências":
-        return <GiMaterialsScience size={24} />;
+        return <BiAtom size={24} />;
+      case "jogos digitais":
+        return <FaGamepad size={24} />;
+      case "ciência de dados":
+        return <BsClipboard2DataFill size={24} />;
+      case "egresso":
+        return <IoSchool size={24} />;
       default:
         return null;
     }
