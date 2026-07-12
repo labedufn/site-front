@@ -33,7 +33,11 @@ const areas = [
           v-reveal="{ delay: index * 200 }"
           class="flex flex-col items-center"
         >
-          <img :src="area.icone" :alt="''" class="mb-6 w-20 md:w-auto" width="96" height="96" aria-hidden="true" >
+          <div
+            class="mb-6 flex size-24 items-center justify-center rounded-2xl bg-white shadow-[0_4px_16px_rgb(0_16_19/0.15)] md:size-28"
+          >
+            <img :src="area.icone" :alt="''" class="w-14 md:w-16" width="64" height="64" aria-hidden="true" >
+          </div>
           <h2 class="titulo-display mb-3 text-xl font-bold text-escuro md:text-3xl">
             {{ area.titulo }}
           </h2>

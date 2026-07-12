@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { membros } from "~/data/membros";
+import { projetos } from "~/data/projetos";
+
+const numeros = [
+  { valor: membros.length, rotulo: "membros" },
+  { valor: projetos.length, rotulo: "projetos" },
+  { valor: 3, rotulo: "áreas de atuação" },
+];
+</script>
+
 <template>
   <section id="sobre" class="my-10 scroll-mt-20 overflow-hidden md:my-20">
     <div class="container-site">
@@ -25,6 +36,17 @@
               inovação educacional e colaboração multidisciplinar.
             </p>
           </div>
+
+          <dl class="mb-8 flex flex-wrap gap-x-12 gap-y-4 max-[1000px]:justify-center">
+            <div v-for="numero in numeros" :key="numero.rotulo">
+              <dt class="sr-only">{{ numero.rotulo }}</dt>
+              <dd class="titulo-display text-3xl font-bold text-primaria-escura md:text-4xl">
+                {{ String(numero.valor).padStart(2, "0") }}
+              </dd>
+              <dd class="mt-1 text-sm text-escuro/70">{{ numero.rotulo }}</dd>
+            </div>
+          </dl>
+
           <BotaoAcao to="/#projetos">Conheça nossos projetos</BotaoAcao>
         </div>
         <NuxtImg

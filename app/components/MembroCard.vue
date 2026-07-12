@@ -44,17 +44,17 @@ const redes = computed(() => {
 <template>
   <div class="group w-70 max-w-full [perspective:1200px]">
     <div
-      class="relative h-full transition-transform duration-500 [transform-style:preserve-3d] group-focus-within:[transform:rotateY(180deg)] group-hover:[transform:rotateY(180deg)] motion-reduce:transition-none"
+      class="relative h-full transition-transform duration-500 [transform-style:preserve-3d] group-focus-within:transform-[rotateY(180deg)] group-hover:transform-[rotateY(180deg)] motion-reduce:transition-none"
     >
       <!-- Frente -->
       <article
-        class="flex flex-col items-center rounded-xl border border-cinza bg-white p-10 shadow-sm [backface-visibility:hidden]"
+        class="flex flex-col items-center rounded-2xl border border-cinza/60 bg-white p-10 shadow-sm transition-shadow duration-300 backface-hidden group-hover:shadow-[0_12px_32px_rgb(0_16_19/0.12)]"
       >
         <NuxtImg
           v-if="membro.foto"
           :src="membro.foto"
           :alt="`Foto de ${membro.nome}`"
-          class="size-50 rounded-full object-cover"
+          class="size-50 rounded-full object-cover ring-4 ring-primaria/15"
           width="200"
           height="200"
           loading="lazy"
@@ -73,7 +73,7 @@ const redes = computed(() => {
 
       <!-- Verso -->
       <div
-        class="absolute inset-0 flex flex-col justify-between rounded-xl border border-cinza bg-white p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        class="absolute inset-0 flex flex-col justify-between rounded-2xl border border-cinza/60 bg-white p-6 shadow-sm backface-hidden transform-[rotateY(180deg)]"
       >
         <div>
           <h3 class="titulo-display text-xl font-bold text-escuro">{{ primeiroNome }}</h3>

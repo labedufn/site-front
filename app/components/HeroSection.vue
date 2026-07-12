@@ -11,11 +11,19 @@
           Laboratório de
         </p>
         <h1
-          class="titulo-display mb-10 text-2xl font-extrabold sm:text-3xl md:mb-16 md:text-5xl xl:text-6xl min-[1400px]:text-8xl"
+          class="titulo-display mb-6 text-2xl font-extrabold [text-shadow:0_0_32px_rgb(34_181_211/0.4)] sm:text-3xl md:mb-8 md:text-5xl xl:text-6xl min-[1400px]:text-8xl"
         >
           Eletrônica e Desenvolvimento
         </h1>
-        <ScrollIndicador class="scale-75 md:scale-100" />
+        <p class="mx-auto mb-10 max-w-xl text-base text-white/80 md:text-lg">
+          Robótica, eletrônica e programação na prática — um espaço maker da Universidade
+          Franciscana aberto à comunidade acadêmica.
+        </p>
+        <div class="mb-12 flex flex-wrap items-center justify-center gap-4">
+          <BotaoAcao to="/#projetos">Conheça os projetos</BotaoAcao>
+          <BotaoAcao secundario claro to="mailto:labedufn@gmail.com">Fale conosco</BotaoAcao>
+        </div>
+        <ScrollIndicador class="scale-75 md:scale-90" />
       </div>
     </div>
     <div class="absolute -bottom-1.5 w-full">

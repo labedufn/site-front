@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cores da marca */
   --color-primaria: #22b5d3;
+  /* Tom fechado do ciano — texto de tags/links sobre fundo claro (contraste AA) */
+  --color-primaria-escura: #0c657a;
   --color-escuro: #001013;
   --color-escuro-claro: #003842;
   --color-cinza: #cccccc;
 
-  /* Tipografia */
   --font-display: "Orbitron", sans-serif;
   --font-sans: "Roboto", sans-serif;
 
-  /* Marquee dos apoiadores */
   --animate-marquee: marquee 30s linear infinite;
 
   @keyframes marquee {
@@ -21,14 +20,12 @@
   }
 }
 
-/* Container padrão do site (1400px + respiro lateral) */
 @utility container-site {
   margin-inline: auto;
   max-width: 1400px;
   padding-inline: 1.5rem;
 }
 
-/* Título display da marca (Orbitron, caixa alta) */
 @utility titulo-display {
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -50,4 +47,16 @@ body {
   color: var(--color-escuro);
   background-color: white;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Foco visível consistente em toda a navegação por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-primaria);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: var(--color-primaria);
+  color: var(--color-escuro);
 }
