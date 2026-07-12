@@ -10,10 +10,10 @@ const projetosVisiveis = computed(() =>
 </script>
 
 <template>
-  <section id="projetos" class="mb-10 scroll-mt-20 md:mb-20">
-    <SectionHeader titulo="Projetos" classe-fundo="bg-primaria" classe-texto="text-escuro" />
+  <section id="projetos" class="scroll-mt-20 py-16 md:py-24">
     <div class="container-site">
-      <div class="mt-10 mb-15 flex flex-wrap justify-center gap-10 lg:gap-19">
+      <SectionTitle centralizado kicker="projetos" titulo="Projetos" />
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <ProjetoCard
           v-for="(projeto, index) in projetosVisiveis"
           :key="projeto.slug"
@@ -21,11 +21,12 @@ const projetosVisiveis = computed(() =>
           :projeto="projeto"
         />
       </div>
+      <div v-if="projetos.length > LIMITE_INICIAL" class="mt-12 flex justify-center">
+        <BotaoAcao secundario @click="mostrarTodos = !mostrarTodos">
+          {{ mostrarTodos ? "Ver menos projetos" : "Ver todos os projetos" }}
+        </BotaoAcao>
+      </div>
     </div>
-    <div v-if="projetos.length > LIMITE_INICIAL" class="flex justify-center">
-      <BotaoAcao secundario @click="mostrarTodos = !mostrarTodos">
-        {{ mostrarTodos ? "Ver menos projetos" : "Ver todos os projetos" }}
-      </BotaoAcao>
-    </div>
+    <CircuitTrace />
   </section>
 </template>
