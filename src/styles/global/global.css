@@ -1,8 +1,0 @@
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.divisor.invertido {
-  transform: rotate(180deg);
-}
