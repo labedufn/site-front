@@ -56,6 +56,11 @@ useSeoMeta({
         Voltar aos projetos
       </NuxtLink>
 
+      <span
+        class="mb-4 inline-block rounded-full bg-primaria/10 px-3 py-1 text-xs font-bold tracking-wider text-primaria-escura uppercase"
+      >
+        {{ projeto.tag }}
+      </span>
       <h1 class="titulo-display mb-8 text-2xl font-bold text-escuro sm:text-4xl xl:text-5xl">
         {{ projeto.titulo }}
       </h1>
