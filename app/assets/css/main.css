@@ -1,18 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cores da marca — tema escuro (placa de circuito) */
+  /* Cores da marca */
   --color-primaria: #22b5d3;
   --color-escuro: #001013;
   --color-escuro-claro: #003842;
-  --color-superficie: #04191f;
-  --color-texto-suave: #9db4ba;
   --color-cinza: #cccccc;
 
-  /* Tipografia: display (títulos), sans (corpo), mono (labels técnicos) */
+  /* Tipografia */
   --font-display: "Orbitron", sans-serif;
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Roboto", sans-serif;
 
   /* Marquee dos apoiadores */
   --animate-marquee: marquee 30s linear infinite;
@@ -38,19 +35,6 @@
   letter-spacing: 0.1em;
 }
 
-/* Label técnico (mono, ciano, caixa baixa) — kickers e tags */
-@utility label-tecnico {
-  font-family: var(--font-mono);
-  color: var(--color-primaria);
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-}
-
-/* Brilho de LED para elementos de destaque */
-@utility brilho-led {
-  box-shadow: 0 0 24px rgb(34 181 211 / 0.35);
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -63,12 +47,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: white;
-  background-color: var(--color-escuro);
-  -webkit-font-smoothing: antialiased;
-}
-
-::selection {
-  background-color: var(--color-primaria);
   color: var(--color-escuro);
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
 }

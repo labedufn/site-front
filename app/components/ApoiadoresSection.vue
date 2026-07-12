@@ -11,25 +11,27 @@ const logos = [
 </script>
 
 <template>
-  <section id="apoiadores" class="scroll-mt-20 py-16 md:py-24">
+  <section id="apoiadores" class="scroll-mt-20 bg-escuro">
+    <SectionDivisor classe-fill="fill-white" />
+    <h2 v-reveal class="titulo-display pt-10 pb-10 text-center text-xl font-bold text-white md:pt-15 md:text-2xl">
+      Apoiadores
+    </h2>
     <div class="container-site">
-      <SectionTitle centralizado kicker="apoiadores" titulo="Apoiadores" />
       <div v-reveal>
         <div class="overflow-hidden" role="region" aria-label="Logos dos apoiadores">
-          <div
-            class="flex w-max animate-marquee items-center hover:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:justify-center"
-          >
+          <div class="flex w-max animate-marquee items-center hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center">
             <img
               v-for="(logo, index) in [...logos, ...logos]"
               :key="index"
               :src="logo.src"
               :alt="index < logos.length ? logo.nome : ''"
               :aria-hidden="index >= logos.length"
-              class="max-h-24 max-w-50 px-10 opacity-70 transition-opacity duration-300 hover:opacity-100"
+              class="max-h-28 max-w-50 px-10"
               loading="lazy"
             >
           </div>
         </div>
+        <div class="mt-15 h-px w-full bg-escuro-claro" />
       </div>
     </div>
   </section>
