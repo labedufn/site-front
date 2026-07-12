@@ -13,6 +13,8 @@ const iconesCurso: Record<Curso, string> = {
   Egresso: "lucide:graduation-cap",
 };
 
+const primeiroNome = computed(() => props.membro.nome.split(" ")[0]);
+
 const redes = computed(() => {
   const lista: { url: string; icone?: string; imagem?: string; label: string }[] = [
     { url: `mailto:${props.membro.email}`, icone: "lucide:mail", label: `E-mail de ${props.membro.nome}` },
@@ -40,52 +42,62 @@ const redes = computed(() => {
 </script>
 
 <template>
-  <article
-    class="group flex flex-col items-center rounded-xl border border-escuro-claro bg-superficie p-8 text-center transition-colors duration-300 hover:border-primaria/60"
-  >
-    <!-- Foto em duotone ciano; ganha cor no hover/foco -->
-    <div class="overflow-hidden rounded-full bg-primaria">
-      <NuxtImg
-        v-if="membro.foto"
-        :src="membro.foto"
-        :alt="`Foto de ${membro.nome}`"
-        class="size-36 object-cover grayscale transition-all duration-500 mix-blend-luminosity group-focus-within:mix-blend-normal group-focus-within:grayscale-0 group-hover:mix-blend-normal group-hover:grayscale-0"
-        width="160"
-        height="160"
-        loading="lazy"
-      />
-      <div v-else class="flex size-36 items-center justify-center bg-superficie text-primaria">
-        <Icon name="lucide:user" size="56" aria-hidden="true" />
+  <div class="group w-70 max-w-full [perspective:1200px]">
+    <div
+      class="relative h-full transition-transform duration-500 [transform-style:preserve-3d] group-focus-within:[transform:rotateY(180deg)] group-hover:[transform:rotateY(180deg)] motion-reduce:transition-none"
+    >
+      <!-- Frente -->
+      <article
+        class="flex flex-col items-center rounded-xl border border-cinza bg-white p-10 shadow-sm [backface-visibility:hidden]"
+      >
+        <NuxtImg
+          v-if="membro.foto"
+          :src="membro.foto"
+          :alt="`Foto de ${membro.nome}`"
+          class="size-50 rounded-full object-cover"
+          width="200"
+          height="200"
+          loading="lazy"
+        />
+        <div
+          v-else
+          class="flex size-50 items-center justify-center rounded-full bg-cinza/40 text-escuro"
+        >
+          <Icon name="lucide:user" size="80" aria-hidden="true" />
+        </div>
+        <div class="pt-10 text-center">
+          <h3 class="titulo-display text-xl font-bold text-escuro">{{ primeiroNome }}</h3>
+          <p class="pt-3 text-escuro">{{ membro.curso }}</p>
+        </div>
+      </article>
+
+      <!-- Verso -->
+      <div
+        class="absolute inset-0 flex flex-col justify-between rounded-xl border border-cinza bg-white p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+      >
+        <div>
+          <h3 class="titulo-display text-xl font-bold text-escuro">{{ primeiroNome }}</h3>
+          <p class="pt-3 text-escuro">{{ membro.nome }}</p>
+          <div class="flex items-center gap-2 pt-6 text-escuro">
+            <Icon :name="iconesCurso[membro.curso]" size="24" aria-hidden="true" />
+            <p class="font-bold">{{ membro.curso }}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <a
+            v-for="rede in redes"
+            :key="rede.url"
+            :href="rede.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="rede.label"
+            class="text-escuro transition-colors duration-300 hover:text-primaria focus-visible:text-primaria"
+          >
+            <Icon v-if="rede.icone" :name="rede.icone" size="30" />
+            <img v-else-if="rede.imagem" :src="rede.imagem" alt="" class="size-7.5" width="30" height="30" >
+          </a>
+        </div>
       </div>
     </div>
-
-    <h3 class="titulo-display mt-6 text-base font-bold text-white">{{ membro.nome }}</h3>
-
-    <p class="mt-2 flex items-center gap-2 font-mono text-xs text-texto-suave">
-      <Icon :name="iconesCurso[membro.curso]" size="16" class="text-primaria" aria-hidden="true" />
-      {{ membro.curso }}
-    </p>
-
-    <div class="mt-5 flex items-center gap-4 border-t border-escuro-claro pt-5">
-      <a
-        v-for="rede in redes"
-        :key="rede.url"
-        :href="rede.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        :aria-label="rede.label"
-        class="text-texto-suave transition-colors duration-300 hover:text-primaria focus-visible:text-primaria"
-      >
-        <Icon v-if="rede.icone" :name="rede.icone" size="22" />
-        <img
-          v-else-if="rede.imagem"
-          :src="rede.imagem"
-          alt=""
-          class="size-5.5 opacity-70 brightness-0 invert transition-opacity hover:opacity-100"
-          width="22"
-          height="22"
-        >
-      </a>
-    </div>
-  </article>
+  </div>
 </template>

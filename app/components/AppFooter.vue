@@ -21,7 +21,7 @@ const anoAtual = new Date().getFullYear();
         </div>
 
         <nav v-reveal="{ delay: 100 }" aria-label="Seções do site">
-          <h3 class="label-tecnico mb-6 uppercase">LABED</h3>
+          <h3 class="titulo-display mb-6 text-xl font-bold">LABED</h3>
           <ul class="flex flex-col gap-4">
             <li v-for="secao in secoes" :key="secao.id">
               <NuxtLink
@@ -35,7 +35,7 @@ const anoAtual = new Date().getFullYear();
         </nav>
 
         <div v-reveal="{ delay: 200 }">
-          <h3 class="label-tecnico mb-6 uppercase">Contato</h3>
+          <h3 class="titulo-display mb-6 text-xl font-bold">Contato</h3>
           <div class="flex flex-col gap-4">
             <a
               href="mailto:labedufn@gmail.com"
@@ -60,7 +60,7 @@ const anoAtual = new Date().getFullYear();
         </div>
 
         <div v-reveal="{ delay: 300 }">
-          <h3 class="label-tecnico mb-6 uppercase">Redes Sociais</h3>
+          <h3 class="titulo-display mb-6 text-xl font-bold">Redes Sociais</h3>
           <div class="flex gap-4">
             <a
               href="https://www.instagram.com/labedufn"
