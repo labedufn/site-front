@@ -11,7 +11,7 @@
   width: 35px;
   height: 55px;
   margin-inline: auto;
-  border: 3px solid white;
+  border: 2px solid rgb(255 255 255 / 0.5);
   border-radius: 23px;
   transition: border-color 0.3s ease-in-out;
 }

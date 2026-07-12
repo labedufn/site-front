@@ -38,7 +38,8 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: "Orbitron", provider: "google", weights: [500, 700, 800] },
-      { name: "Roboto", provider: "google", weights: [400, 700] },
+      { name: "Inter", provider: "google", weights: [400, 500, 700] },
+      { name: "JetBrains Mono", provider: "google", weights: [400, 700] },
     ],
   },
 });

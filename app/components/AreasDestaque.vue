@@ -1,19 +1,19 @@
 <script setup lang="ts">
 const areas = [
   {
-    icone: "/img/icons/eletronica.svg",
+    icone: "lucide:cpu",
     titulo: "Eletrônica",
     descricao:
       "Usamos as mais variadas placas programáveis para criar circuitos, aplicando teoria em sistemas embarcados práticos.",
   },
   {
-    icone: "/img/icons/programacao.svg",
+    icone: "lucide:code-xml",
     titulo: "Programação",
     descricao:
       "Em programação, criamos softwares e sistemas embarcados, focando em soluções práticas e acessíveis.",
   },
   {
-    icone: "/img/icons/robotica.svg",
+    icone: "lucide:bot",
     titulo: "Robótica",
     descricao:
       "A nossa equipe de robótica participa de competições na área e desenvolve projetos do zero, mesclando prática e inovação.",
@@ -22,25 +22,20 @@ const areas = [
 </script>
 
 <template>
-  <div class="bg-primaria">
-    <div class="container-site">
-      <div
-        class="flex flex-col items-center justify-between gap-10 py-15 text-center min-[1400px]:flex-row min-[1400px]:py-20"
+  <div class="container-site relative z-10 -mt-10">
+    <div class="grid gap-6 md:grid-cols-3">
+      <article
+        v-for="(area, index) in areas"
+        :key="area.titulo"
+        v-reveal="{ delay: index * 150 }"
+        class="rounded-xl border border-escuro-claro bg-superficie p-8 transition-colors duration-300 hover:border-primaria/60"
       >
-        <div
-          v-for="(area, index) in areas"
-          :key="area.titulo"
-          v-reveal="{ delay: index * 200 }"
-          class="flex flex-col items-center"
-        >
-          <img :src="area.icone" :alt="''" class="mb-6 w-20 md:w-auto" width="96" height="96" aria-hidden="true" >
-          <h2 class="titulo-display mb-3 text-xl font-bold text-escuro md:text-3xl">
-            {{ area.titulo }}
-          </h2>
-          <p class="max-w-100 text-base text-escuro md:text-xl">{{ area.descricao }}</p>
+        <div class="mb-6 flex size-14 items-center justify-center rounded-lg bg-primaria/10 text-primaria">
+          <Icon :name="area.icone" size="28" aria-hidden="true" />
         </div>
-      </div>
+        <h2 class="titulo-display mb-3 text-lg font-bold text-white">{{ area.titulo }}</h2>
+        <p class="text-texto-suave">{{ area.descricao }}</p>
+      </article>
     </div>
   </div>
-  <SectionDivisor />
 </template>

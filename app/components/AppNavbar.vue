@@ -23,7 +23,7 @@ watch(
   () => route.fullPath,
   () => {
     menuAberto.value = false;
-  },
+  }
 );
 
 watch(menuAberto, (aberto) => {
@@ -43,7 +43,7 @@ onMounted(() => {
         if (entry.isIntersecting) secaoAtiva.value = entry.target.id;
       }
     },
-    { rootMargin: "-30% 0px -50% 0px" },
+    { rootMargin: "-30% 0px -50% 0px" }
   );
   for (const secao of secoes) {
     const el = document.getElementById(secao.id);
@@ -61,12 +61,22 @@ onMounted(() => {
 <template>
   <header
     class="fixed z-40 w-full transition-colors duration-500"
-    :class="rolado || !naHome ? 'bg-escuro shadow-md' : 'bg-transparent'"
+    :class="
+      rolado || !naHome
+        ? 'border-b border-escuro-claro bg-escuro/85 backdrop-blur-lg'
+        : 'border-b border-transparent bg-transparent'
+    "
   >
     <div class="container-site">
       <nav class="flex items-center justify-between py-4" aria-label="Principal">
         <NuxtLink to="/#inicio" aria-label="LABED - voltar ao início">
-          <img src="/img/logos/logo_abreviado.svg" alt="LABED" class="w-[74px]" width="74" height="46" >
+          <img
+            src="/img/logos/logo_abreviado.svg"
+            alt="LABED"
+            class="w-18.5"
+            width="74"
+            height="46"
+          >
         </NuxtLink>
 
         <!-- Links desktop -->

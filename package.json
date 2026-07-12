@@ -16,6 +16,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "gsap": "^3.15.0",
     "nuxt": "^4.0.0",
     "vue": "^3.5.0"
   },
