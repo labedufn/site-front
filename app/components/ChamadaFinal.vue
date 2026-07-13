@@ -17,7 +17,7 @@
       <p
         class="titulo-display mb-4 text-sm font-medium tracking-[0.35em] text-primaria/90 md:text-base"
       >
-        Faça parte
+        Acompanhe o lab
       </p>
       <div class="mb-8 w-24 text-primaria">
         <RaioLinha />
@@ -25,11 +25,11 @@
       <h2
         class="titulo-display mb-6 max-w-3xl text-2xl leading-tight font-bold text-balance text-white sm:text-4xl xl:text-5xl"
       >
-        Quer construir com <span class="text-primaria">a gente</span>?
+        Quer ver os projetos <span class="text-primaria">de perto</span>?
       </h2>
       <p class="mb-10 max-w-xl leading-relaxed text-white/65">
-        O LABED é aberto à comunidade acadêmica da UFN. Venha conhecer o espaço, participar de um
-        projeto ou trazer uma ideia para a bancada.
+        Bastidores da bancada, robôs em competição e cada novidade em primeira mão: tudo passa
+        primeiro pelo nosso Instagram.
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4">
         <BotaoAcao secundario claro to="https://www.instagram.com/labedufn" target="_blank">

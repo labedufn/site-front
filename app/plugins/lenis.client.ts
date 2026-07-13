@@ -1,7 +1,7 @@
 import Lenis from "lenis";
 import { gsap, ScrollTrigger, movimentoReduzido } from "~/utils/animacao";
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
   if (movimentoReduzido()) {
     return { provide: { lenis: undefined as Lenis | undefined } };
   }
@@ -13,6 +13,10 @@ export default defineNuxtPlugin(() => {
   gsap.ticker.lagSmoothing(0);
 
   ScrollTrigger.clearScrollMemory("manual");
+
+  nuxtApp.hook("page:finish", () => {
+    setTimeout(() => ScrollTrigger.refresh(), 100);
+  });
 
   return { provide: { lenis: lenis as Lenis | undefined } };
 });

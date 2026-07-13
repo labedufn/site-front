@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { gsap, movimentoReduzido } from "~/utils/animacao";
+
 const secoes = [
   { id: "inicio", label: "Início" },
   { id: "sobre", label: "Sobre" },
@@ -14,10 +16,15 @@ const redesSociais = [
 
 const route = useRoute();
 const naHome = computed(() => route.path === "/");
+const { $lenis } = useNuxtApp();
 
 const rolado = ref(false);
 const secaoAtiva = ref<string | null>(null);
 const menuAberto = ref(false);
+
+const barraProgresso = ref<HTMLElement | null>(null);
+const menuMobile = ref<HTMLElement | null>(null);
+let contexto: gsap.Context | undefined;
 
 watch(
   () => route.fullPath,
@@ -26,13 +33,23 @@ watch(
   }
 );
 
-const { $lenis } = useNuxtApp();
-
 watch(menuAberto, (aberto) => {
   if (!import.meta.client) return;
   document.body.classList.toggle("overflow-hidden", aberto);
   if (aberto) $lenis?.stop();
   else $lenis?.start();
+
+  if (aberto && !movimentoReduzido() && menuMobile.value) {
+    gsap.from(menuMobile.value.querySelectorAll("[data-menu-item]"), {
+      y: 26,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power3.out",
+      stagger: 0.06,
+      delay: 0.2,
+      clearProps: "opacity,transform",
+    });
+  }
 });
 
 onMounted(() => {
@@ -55,9 +72,24 @@ onMounted(() => {
     if (el) observer.observe(el);
   }
 
+  if (!movimentoReduzido() && barraProgresso.value) {
+    contexto = gsap.context(() => {
+      gsap.fromTo(
+        barraProgresso.value,
+        { scaleX: 0, transformOrigin: "left center" },
+        {
+          scaleX: 1,
+          ease: "none",
+          scrollTrigger: { start: 0, end: "max", scrub: true },
+        }
+      );
+    });
+  }
+
   onBeforeUnmount(() => {
     window.removeEventListener("scroll", aoRolar);
     observer.disconnect();
+    contexto?.revert();
     document.body.classList.remove("overflow-hidden");
     $lenis?.start();
   });
@@ -71,7 +103,7 @@ onMounted(() => {
       menuAberto
         ? 'bg-transparent'
         : rolado || !naHome
-          ? 'bg-escuro-claro/80 backdrop-blur-md shadow-md'
+          ? 'bg-escuro-claro/80 backdrop-blur-md'
           : 'bg-transparent'
     "
   >
@@ -87,14 +119,38 @@ onMounted(() => {
           >
         </NuxtLink>
 
-        <ul class="ml-20 hidden items-center gap-8 md:flex">
+        <ul class="ml-8 hidden items-center gap-5 md:flex lg:ml-16 lg:gap-7">
           <li v-for="secao in secoes" :key="secao.id">
             <NuxtLink
               :to="`/#${secao.id}`"
-              class="-m-3 p-3 transition-colors duration-300 hover:text-primaria"
-              :class="secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white/85'"
+              class="group relative -m-2 flex items-baseline p-2 transition-colors duration-300"
+              :class="
+                secaoAtiva === secao.id && naHome ? 'text-white' : 'text-white/70 hover:text-white'
+              "
             >
-              {{ secao.label }}
+              <span class="titulo-display text-[0.65rem] font-medium tracking-[0.18em] lg:text-xs">
+                {{ secao.label }}
+              </span>
+              <svg
+                viewBox="0 0 400 28"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+                class="absolute inset-x-2 bottom-0 h-1.5 w-[calc(100%-1rem)] text-primaria"
+              >
+                <path
+                  d="M0 14 H150 L172 4 L204 24 L226 14 H400"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linejoin="round"
+                  class="transition-[stroke-dashoffset] duration-500 ease-out [stroke-dasharray:420] group-hover:[stroke-dashoffset:0]"
+                  :class="
+                    secaoAtiva === secao.id && naHome
+                      ? '[stroke-dashoffset:0]'
+                      : '[stroke-dashoffset:420]'
+                  "
+                />
+              </svg>
             </NuxtLink>
           </li>
         </ul>
@@ -138,7 +194,8 @@ onMounted(() => {
         <Teleport to="body">
           <div
             id="menu-mobile"
-            class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-escuro-claro/95 backdrop-blur-lg transition-all duration-500 md:hidden"
+            ref="menuMobile"
+            class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-escuro-claro/95 backdrop-blur-lg transition-all duration-500 md:hidden"
             :class="
               menuAberto
                 ? 'visible opacity-100 pointer-events-auto'
@@ -150,14 +207,18 @@ onMounted(() => {
               v-for="secao in secoes"
               :key="secao.id"
               :to="`/#${secao.id}`"
-              class="text-xl transition-colors duration-300 hover:text-primaria"
+              data-menu-item
+              class="titulo-display text-lg font-medium tracking-[0.15em] transition-colors duration-300 hover:text-primaria"
               :class="secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white'"
               :tabindex="menuAberto ? 0 : -1"
               @click="menuAberto = false"
             >
               {{ secao.label }}
             </NuxtLink>
-            <div class="flex gap-6">
+            <div data-menu-item aria-hidden="true" class="w-24 text-primaria/60">
+              <RaioLinha />
+            </div>
+            <div data-menu-item class="flex gap-6">
               <a
                 v-for="rede in redesSociais"
                 :key="rede.url"
@@ -174,6 +235,17 @@ onMounted(() => {
           </div>
         </Teleport>
       </nav>
+    </div>
+
+    <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 bottom-0">
+      <div
+        class="h-px w-full bg-primaria/15 transition-opacity duration-500"
+        :class="rolado || !naHome ? 'opacity-100' : 'opacity-0'"
+      />
+      <div
+        ref="barraProgresso"
+        class="absolute inset-x-0 bottom-0 h-0.5 bg-linear-to-r from-primaria-escura to-primaria"
+      />
     </div>
   </header>
 </template>
