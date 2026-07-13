@@ -23,7 +23,7 @@ watch(
   () => route.fullPath,
   () => {
     menuAberto.value = false;
-  },
+  }
 );
 
 watch(menuAberto, (aberto) => {
@@ -43,7 +43,7 @@ onMounted(() => {
         if (entry.isIntersecting) secaoAtiva.value = entry.target.id;
       }
     },
-    { rootMargin: "-30% 0px -50% 0px" },
+    { rootMargin: "-30% 0px -50% 0px" }
   );
   for (const secao of secoes) {
     const el = document.getElementById(secao.id);
@@ -66,10 +66,15 @@ onMounted(() => {
     <div class="container-site">
       <nav class="flex items-center justify-between py-4" aria-label="Principal">
         <NuxtLink to="/#inicio" aria-label="LABED - voltar ao início">
-          <img src="/img/logos/logo_abreviado.svg" alt="LABED" class="w-[74px]" width="74" height="46" >
+          <img
+            src="/img/logos/logo_abreviado.svg"
+            alt="LABED"
+            class="w-18.5"
+            width="74"
+            height="46"
+          >
         </NuxtLink>
 
-        <!-- Links desktop -->
         <ul class="ml-20 hidden items-center gap-8 md:flex">
           <li v-for="secao in secoes" :key="secao.id">
             <NuxtLink
@@ -96,7 +101,6 @@ onMounted(() => {
           </a>
         </div>
 
-        <!-- Botão do menu mobile -->
         <button
           type="button"
           class="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
@@ -119,7 +123,6 @@ onMounted(() => {
           />
         </button>
 
-        <!-- Menu mobile -->
         <div
           id="menu-mobile"
           class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-escuro/90 backdrop-blur-lg transition-all duration-500 md:hidden"

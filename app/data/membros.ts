@@ -102,7 +102,6 @@ const dados: Membro[] = [
   },
 ];
 
-/** Membros em ordem alfabética. */
 export const membros: Membro[] = [...dados].sort((a, b) =>
   a.nome.localeCompare(b.nome, "pt-BR"),
 );

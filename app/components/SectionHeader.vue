@@ -1,9 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   titulo: string;
-  /** Classe de fundo da faixa (ex.: bg-primaria, bg-escuro). */
   classeFundo: string;
-  /** Classe de cor do título (ex.: text-escuro, text-white). */
   classeTexto: string;
 }>();
 </script>

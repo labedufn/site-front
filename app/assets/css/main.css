@@ -2,7 +2,6 @@
 
 @theme {
   --color-primaria: #22b5d3;
-  /* Tom fechado do ciano — texto de tags/links sobre fundo claro (contraste AA) */
   --color-primaria-escura: #0c657a;
   --color-escuro: #001013;
   --color-escuro-claro: #003842;
@@ -47,9 +46,9 @@ body {
   color: var(--color-escuro);
   background-color: white;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Foco visível consistente em toda a navegação por teclado */
 :focus-visible {
   outline: 2px solid var(--color-primaria);
   outline-offset: 3px;

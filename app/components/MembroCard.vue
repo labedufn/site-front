@@ -17,7 +17,11 @@ const primeiroNome = computed(() => props.membro.nome.split(" ")[0]);
 
 const redes = computed(() => {
   const lista: { url: string; icone?: string; imagem?: string; label: string }[] = [
-    { url: `mailto:${props.membro.email}`, icone: "lucide:mail", label: `E-mail de ${props.membro.nome}` },
+    {
+      url: `mailto:${props.membro.email}`,
+      icone: "lucide:mail",
+      label: `E-mail de ${props.membro.nome}`,
+    },
   ];
   if (props.membro.instagram)
     lista.push({
@@ -42,9 +46,9 @@ const redes = computed(() => {
 </script>
 
 <template>
-  <div class="group w-70 max-w-full [perspective:1200px]">
+  <div class="group w-70 max-w-full perspective-distant">
     <div
-      class="relative h-full transition-transform duration-500 [transform-style:preserve-3d] group-focus-within:transform-[rotateY(180deg)] group-hover:transform-[rotateY(180deg)] motion-reduce:transition-none"
+      class="relative h-full transition-transform duration-500 transform-3d group-focus-within:transform-[rotateY(180deg)] group-hover:transform-[rotateY(180deg)] motion-reduce:transition-none"
     >
       <!-- Frente -->
       <article
@@ -94,7 +98,14 @@ const redes = computed(() => {
             class="text-escuro transition-colors duration-300 hover:text-primaria focus-visible:text-primaria"
           >
             <Icon v-if="rede.icone" :name="rede.icone" size="30" />
-            <img v-else-if="rede.imagem" :src="rede.imagem" alt="" class="size-7.5" width="30" height="30" >
+            <img
+              v-else-if="rede.imagem"
+              :src="rede.imagem"
+              alt=""
+              class="size-7.5"
+              width="30"
+              height="30"
+            >
           </a>
         </div>
       </div>
