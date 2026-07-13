@@ -10,53 +10,63 @@ const numeros = [
 </script>
 
 <template>
-  <section id="sobre" class="relative my-10 scroll-mt-20 md:my-20">
+  <section id="sobre" class="relative scroll-mt-20 overflow-hidden bg-escuro py-20 text-white md:py-32">
+    <!-- Desenho técnico sangrando na borda direita, invertido para o fundo escuro -->
     <NuxtImg
       src="/img/ilustracoes/chiko_desenho.png"
       alt=""
       aria-hidden="true"
-      class="pointer-events-none absolute top-1/2 right-0 max-w-none -translate-y-1/2 select-none max-[999px]:hidden min-[1000px]:w-[85vw] min-[1000px]:translate-x-[60%] min-[1400px]:translate-x-[45%] min-[1800px]:translate-x-[35%] min-[2200px]:w-[95vw] min-[2200px]:translate-x-[30%] min-[1000px]:max-w-350"
+      class="pointer-events-none absolute top-1/2 right-0 max-w-none -translate-y-1/2 opacity-70 select-none [filter:invert(1)_hue-rotate(180deg)] max-[999px]:hidden min-[1000px]:w-[85vw] min-[1000px]:max-w-350 min-[1000px]:translate-x-[60%] min-[1400px]:translate-x-[45%] min-[1800px]:translate-x-[35%] min-[2200px]:w-[95vw] min-[2200px]:translate-x-[30%]"
       width="1400"
       loading="lazy"
     />
-    <div class="container-site">
-      <div class="flex flex-col-reverse items-center gap-10 min-[1000px]:flex-row">
-        <div v-reveal class="min-[1000px]:w-3/5 text-escuro max-[1000px]:text-center">
-          <p class="titulo-display mb-3 text-xl font-medium md:mb-4 md:text-3xl">Sobre o</p>
-          <h2 class="titulo-display mb-4 text-2xl font-bold sm:text-4xl md:mb-8 xl:text-5xl">
-            Laboratório de Eletrônica e Desenvolvimento
-          </h2>
-          <div class="mb-8 space-y-4 text-base md:text-xl">
-            <p>
-              O LABED (Laboratório de Eletrônica e Desenvolvimento) da Universidade Franciscana é
-              uma iniciativa pioneira que reflete o compromisso da instituição com a educação
-              moderna e interativa, alinhada à expansão global do movimento Maker. Este laboratório
-              foi desenvolvido para oferecer à comunidade acadêmica um espaço dinâmico e equipado
-              para a prática e aprofundamento em áreas de robótica, programação, tecnologia, e muito
-              mais, fomentando assim o aprendizado ativo.
-            </p>
-            <p>
-              Os objetivos principais incluem estimular a criatividade, inovação, trabalho em
-              equipe, pensamento crítico, e resolver problemas através do desenvolvimento de
-              projetos práticos. Com projetos que já se destacaram em diversos eventos e feiras
-              tecnológicas, o LABED se estabelece como um marco no engajamento e na disseminação do
-              conhecimento tecnológico na Universidade Franciscana e na comunidade ao redor,
-              destacando-se como um modelo de inovação educacional e colaboração multidisciplinar.
-            </p>
-          </div>
 
-          <dl class="mb-8 flex flex-wrap gap-x-12 gap-y-4 max-[1000px]:justify-center">
-            <div v-for="numero in numeros" :key="numero.rotulo">
-              <dt class="sr-only">{{ numero.rotulo }}</dt>
-              <dd class="titulo-display text-3xl font-bold text-primaria-escura md:text-4xl">
-                {{ String(numero.valor).padStart(2, "0") }}
-              </dd>
-              <dd class="mt-1 text-sm text-escuro/70">{{ numero.rotulo }}</dd>
-            </div>
-          </dl>
-
-          <BotaoAcao to="/#projetos">Conheça nossos projetos</BotaoAcao>
+    <div class="container-site relative">
+      <div v-reveal class="min-[1000px]:w-3/5">
+        <p class="titulo-display mb-4 text-sm font-medium tracking-[0.35em] text-primaria md:text-base">
+          Sobre o lab
+        </p>
+        <div class="mb-10 w-24 text-primaria">
+          <RaioLinha />
         </div>
+
+        <h2
+          class="titulo-display mb-10 max-w-3xl text-2xl leading-[1.2] font-bold text-balance sm:text-4xl xl:text-5xl"
+        >
+          Um espaço <span class="text-primaria">maker</span> para aprender fazendo.
+        </h2>
+
+        <div class="mb-12 max-w-2xl space-y-5 text-base text-white/70 md:text-lg">
+          <p>
+            O LABED (Laboratório de Eletrônica e Desenvolvimento) da Universidade Franciscana é uma
+            iniciativa pioneira que reflete o compromisso da instituição com a educação moderna e
+            interativa, alinhada à expansão global do movimento Maker. Um espaço dinâmico e equipado
+            para a prática e aprofundamento em robótica, programação e tecnologia, fomentando o
+            aprendizado ativo.
+          </p>
+          <p>
+            Estimulamos criatividade, inovação, trabalho em equipe e pensamento crítico através de
+            projetos práticos — que já se destacaram em diversos eventos e feiras tecnológicas,
+            levando conhecimento à Universidade Franciscana e à comunidade ao redor.
+          </p>
+        </div>
+
+        <dl class="mb-14 flex flex-wrap gap-x-14 gap-y-8">
+          <div v-for="numero in numeros" :key="numero.rotulo" class="border-l-2 border-primaria pl-5">
+            <dt class="sr-only">{{ numero.rotulo }}</dt>
+            <dd class="titulo-display text-4xl font-bold text-white md:text-6xl">
+              {{ String(numero.valor).padStart(2, "0") }}
+            </dd>
+            <dd class="mt-2 text-sm tracking-wider text-white/60 uppercase">{{ numero.rotulo }}</dd>
+          </div>
+        </dl>
+
+        <NuxtLink
+          to="/#projetos"
+          class="inline-block cursor-pointer rounded border-2 border-primaria px-6 py-4 text-base font-bold text-primaria transition-colors duration-300 hover:bg-primaria hover:text-escuro md:px-10"
+        >
+          Conheça nossos projetos
+        </NuxtLink>
       </div>
     </div>
   </section>
