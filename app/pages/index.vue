@@ -19,5 +19,6 @@ useSeoMeta({
     <ProjetosSection />
     <MembrosSection />
     <ApoiadoresSection />
+    <ChamadaFinal />
   </main>
 </template>

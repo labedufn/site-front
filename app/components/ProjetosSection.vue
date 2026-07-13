@@ -8,12 +8,13 @@ import { projetos } from "~/data/projetos";
       <SecaoTitulo kicker="Projetos">
         Da bancada para a <span class="text-primaria">competição</span>.
       </SecaoTitulo>
-      <div class="flex flex-col gap-16 md:gap-24">
+      <div class="flex flex-col gap-20 md:gap-32">
         <ProjetoCard
           v-for="(projeto, index) in projetos"
           :key="projeto.slug"
           v-reveal
           :projeto="projeto"
+          :indice="index + 1"
           :invertido="index % 2 === 1"
         />
       </div>

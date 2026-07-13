@@ -8,7 +8,8 @@ import { membros } from "~/data/membros";
       <SecaoTitulo centralizado kicker="Membros">
         Quem faz o lab <span class="text-primaria">acontecer</span>.
       </SecaoTitulo>
-      <div class="flex flex-wrap justify-center gap-15 lg:gap-19">
+      <!-- Desnível alternado nas colunas: efeito treliça -->
+      <div class="flex flex-wrap justify-center gap-15 lg:gap-19 lg:[&>*:nth-child(even)]:translate-y-10">
         <MembroCard
           v-for="(membro, index) in membros"
           :key="membro.email"

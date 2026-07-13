@@ -55,7 +55,7 @@ const numeros = [
           <div v-for="numero in numeros" :key="numero.rotulo" class="border-l border-primaria/70 pl-5">
             <dt class="sr-only">{{ numero.rotulo }}</dt>
             <dd class="titulo-display text-3xl font-bold text-white md:text-5xl">
-              {{ String(numero.valor).padStart(2, "0") }}
+              <NumeroAnimado :valor="numero.valor" />
             </dd>
             <dd class="mt-2 text-xs tracking-[0.2em] text-white/50 uppercase">{{ numero.rotulo }}</dd>
           </div>

@@ -3,6 +3,8 @@ import type { Projeto } from "~/data/projetos";
 
 defineProps<{
   projeto: Projeto;
+  /** Posição na vitrine, exibida como índice fantasma (01, 02...). */
+  indice: number;
   /** Alterna o lado da foto nas linhas da vitrine. */
   invertido?: boolean;
 }>();
@@ -27,7 +29,14 @@ defineProps<{
           loading="lazy"
         />
       </div>
-      <div class="lg:col-span-5">
+      <div class="relative lg:col-span-5">
+        <!-- Índice fantasma: contorno ciano gigante atrás do texto -->
+        <span
+          aria-hidden="true"
+          class="titulo-display pointer-events-none absolute -top-14 -left-2 text-8xl font-bold text-transparent select-none [-webkit-text-stroke:1px_rgb(34_181_211/0.3)] md:-top-20 md:text-9xl"
+        >
+          {{ String(indice).padStart(2, "0") }}
+        </span>
         <p class="mb-3 text-xs font-medium tracking-[0.3em] text-primaria/90 uppercase">
           {{ projeto.tag }}
         </p>
