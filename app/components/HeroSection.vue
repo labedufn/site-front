@@ -42,7 +42,8 @@
       </div>
     </div>
 
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 max-md:hidden">
+    <!-- Acima do raio da base, que é mais alto em telas largas (5.3vw) -->
+    <div class="absolute bottom-[calc(5.3vw+2.5rem)] left-1/2 -translate-x-1/2 max-md:hidden">
       <ScrollIndicador class="scale-75" />
     </div>
 

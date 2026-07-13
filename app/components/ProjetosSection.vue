@@ -11,7 +11,12 @@ const projetosVisiveis = computed(() =>
 
 <template>
   <section id="projetos" class="mb-10 scroll-mt-20 md:mb-20">
-    <SectionHeader titulo="Projetos" classe-fundo="bg-primaria" classe-texto="text-escuro" />
+    <SectionHeader
+      titulo="Projetos"
+      classe-fundo="bg-primaria"
+      classe-texto="text-escuro"
+      classe-fill-topo="fill-escuro"
+    />
     <div class="container-site">
       <div class="mt-10 mb-15 flex flex-wrap justify-center gap-10 lg:gap-19">
         <ProjetoCard

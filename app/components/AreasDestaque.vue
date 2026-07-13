@@ -51,5 +51,8 @@ const areas = [
       </div>
     </div>
   </div>
-  <SectionDivisor />
+  <!-- Fundo escuro atrás do raio: a próxima seção (Sobre) é navy -->
+  <div class="bg-escuro">
+    <SectionDivisor />
+  </div>
 </template>

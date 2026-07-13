@@ -46,7 +46,7 @@ const numeros = [
           </p>
           <p>
             Estimulamos criatividade, inovação, trabalho em equipe e pensamento crítico através de
-            projetos práticos — que já se destacaram em diversos eventos e feiras tecnológicas,
+            projetos práticos, que já se destacaram em diversos eventos e feiras tecnológicas,
             levando conhecimento à Universidade Franciscana e à comunidade ao redor.
           </p>
         </div>
