@@ -13,9 +13,13 @@ const logos = [
 <template>
   <section id="apoiadores" class="scroll-mt-20 py-16 md:py-24">
     <div class="container-site">
-      <SecaoTitulo kicker="Apoiadores">
-        Quem caminha <span class="text-primaria">com a gente</span>.
-      </SecaoTitulo>
+      <!-- Tratamento mínimo: um respiro antes do footer -->
+      <p
+        v-reveal
+        class="titulo-display mb-12 text-center text-sm font-medium tracking-[0.35em] text-primaria/90 md:text-base"
+      >
+        Apoiadores
+      </p>
       <div v-reveal>
         <!-- Fade nas bordas para o marquee não cortar seco -->
         <div

@@ -5,7 +5,7 @@ import { membros } from "~/data/membros";
 <template>
   <section id="membros" class="scroll-mt-20 py-16 md:py-24">
     <div class="container-site">
-      <SecaoTitulo kicker="Membros">
+      <SecaoTitulo centralizado kicker="Membros">
         Quem faz o lab <span class="text-primaria">acontecer</span>.
       </SecaoTitulo>
       <div class="flex flex-wrap justify-center gap-15 lg:gap-19">

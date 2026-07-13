@@ -1,33 +1,40 @@
 <script setup lang="ts">
 import type { Projeto } from "~/data/projetos";
 
-defineProps<{ projeto: Projeto }>();
+defineProps<{
+  projeto: Projeto;
+  /** Alterna o lado da foto nas linhas da vitrine. */
+  invertido?: boolean;
+}>();
 </script>
 
 <template>
   <NuxtLink
     :to="`/projetos/${projeto.slug}`"
-    class="group block max-w-full rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primaria"
+    class="group block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primaria"
   >
-    <article class="flex h-full flex-col">
-      <div class="overflow-hidden rounded-2xl">
+    <article class="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
+      <div
+        class="overflow-hidden rounded-2xl lg:col-span-7"
+        :class="invertido && 'lg:order-2'"
+      >
         <NuxtImg
           :src="projeto.thumbnail"
           :alt="`Foto do projeto ${projeto.titulo}`"
           class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          width="480"
-          height="270"
+          width="820"
+          height="461"
           loading="lazy"
         />
       </div>
-      <div class="flex flex-1 flex-col pt-6">
-        <p class="mb-2 text-xs font-medium tracking-[0.3em] text-primaria/90 uppercase">
+      <div class="lg:col-span-5">
+        <p class="mb-3 text-xs font-medium tracking-[0.3em] text-primaria/90 uppercase">
           {{ projeto.tag }}
         </p>
-        <h3 class="titulo-display mb-3 text-lg font-bold text-white md:text-xl">
+        <h3 class="titulo-display mb-4 text-xl leading-snug font-bold text-white md:text-3xl">
           {{ projeto.titulo }}
         </h3>
-        <p class="mb-5 flex-1 text-sm leading-relaxed text-white/60">{{ projeto.descricao }}</p>
+        <p class="mb-6 leading-relaxed text-white/60">{{ projeto.descricao }}</p>
         <span class="inline-flex items-center gap-2 text-sm font-bold text-primaria">
           Ver projeto
           <Icon
