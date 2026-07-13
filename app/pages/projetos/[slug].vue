@@ -57,7 +57,9 @@ useSeoMeta({
       </NuxtLink>
 
       <div class="mt-8 mb-8">
-        <span class="inline-block rounded-full bg-primaria/10 px-4 py-1.5 text-sm font-bold tracking-wider text-primaria-escura uppercase">
+        <span
+          class="inline-block rounded-full bg-primaria/10 px-4 py-1.5 text-sm font-bold tracking-wider text-primaria-escura uppercase"
+        >
           {{ projeto.tag }}
         </span>
       </div>

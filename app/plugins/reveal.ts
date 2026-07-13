@@ -21,7 +21,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         ([entry]) => {
           if (entry?.isIntersecting) revelar();
         },
-        { threshold: 0.15 },
+        { threshold: 0.15 }
       );
       observer.observe(el);
 

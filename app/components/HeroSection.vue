@@ -16,8 +16,8 @@
           Eletrônica e Desenvolvimento
         </h1>
         <p class="mx-auto mb-10 max-w-xl text-base text-white/80 md:text-lg">
-          Robótica, eletrônica e programação na prática, um espaço maker da Universidade
-          Franciscana aberto à comunidade acadêmica.
+          Robótica, eletrônica e programação na prática, um espaço maker da Universidade Franciscana
+          aberto à comunidade acadêmica.
         </p>
         <div class="mb-12 flex flex-wrap items-center justify-center gap-4">
           <BotaoAcao to="/#projetos">Conheça os projetos</BotaoAcao>
