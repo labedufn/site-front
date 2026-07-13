@@ -1,0 +1,105 @@
+export type Curso =
+  | "Ciência da Computação"
+  | "Ciência de Dados"
+  | "Engenharia Biomédica"
+  | "Jogos Digitais"
+  | "PPG Nanociências"
+  | "Professor Orientador"
+  | "Egresso";
+
+export interface Membro {
+  nome: string;
+  curso: Curso;
+  email: string;
+  foto?: string;
+  instagram?: string;
+  github?: string;
+  lattes?: string;
+}
+
+const dados: Membro[] = [
+  {
+    nome: "Alessandro de Oliveira",
+    curso: "Professor Orientador",
+    email: "alessandroandre@ufn.edu.br",
+    foto: "/img/membros/alessandro-oliveira.jpg",
+    lattes: "http://lattes.cnpq.br/2955059113937654",
+  },
+  {
+    nome: "Andrisa Santos",
+    curso: "Ciência da Computação",
+    email: "andrisassilva@gmail.com",
+    foto: "/img/membros/andrisa-santos.jpg",
+    instagram: "https://instagram.com/andrisaxsantos",
+    github: "https://github.com/Andrisa-S",
+  },
+  {
+    nome: "Gabriel Fachim",
+    curso: "PPG Nanociências",
+    email: "gabrielafachim2@gmail.com",
+    foto: "/img/membros/gabriel-fachim.jpg",
+    instagram: "https://instagram.com/gabriel_fachim",
+    github: "https://github.com/GabrielAF-Faca",
+    lattes: "http://lattes.cnpq.br/4660333925873089",
+  },
+  {
+    nome: "Gustavo Sefrin",
+    curso: "Ciência da Computação",
+    email: "g.sefrin@ufn.edu.br",
+    foto: "/img/membros/gustavo-sefrin.jpg",
+    github: "https://github.com/TavoSefrin",
+  },
+  {
+    nome: "Luiz Batista Cardoso",
+    curso: "PPG Nanociências",
+    email: "luiz.bcardoso@ufn.edu.br",
+    foto: "/img/membros/luiz-cardoso.jpg",
+    github: "https://github.com/luiz-bcardoso",
+    lattes: "http://lattes.cnpq.br/8803636666287797",
+  },
+  {
+    nome: "Maria Antônia Espinosa",
+    curso: "Ciência da Computação",
+    email: "maria.aewoltmann@ufn.edu.br",
+    foto: "/img/membros/maria-espinosa.jpg",
+  },
+  {
+    nome: "Mateus dos Reis",
+    curso: "Jogos Digitais",
+    email: "m.nedel@ufn.edu.br",
+    foto: "/img/membros/mateus-reis.png",
+  },
+  {
+    nome: "Matheus Braga",
+    curso: "Ciência de Dados",
+    email: "matheus.braga@ufn.edu.br",
+    foto: "/img/membros/matheus-braga.jpg",
+    github: "https://github.com/matheuskbraga",
+  },
+  {
+    nome: "Matheus Faccin",
+    curso: "Ciência da Computação",
+    email: "matheus.faccin@ufn.edu.br",
+    foto: "/img/membros/matheus-faccin.jpg",
+    github: "https://github.com/MatheusMFaccin",
+  },
+  {
+    nome: "Mauricio Pereira",
+    curso: "PPG Nanociências",
+    email: "mauprb@gmail.com",
+    foto: "/img/membros/mauricio-pereira.jpg",
+    instagram: "https://instagram.com/mauricioprb",
+    github: "https://github.com/mauricioprb",
+    lattes: "http://lattes.cnpq.br/4826637586256637",
+  },
+  {
+    nome: "Paulo André Maracci",
+    curso: "Egresso",
+    email: "paulo.andre@ufn.edu.br",
+    foto: "/img/membros/paulo-maracci.jpg",
+    instagram: "https://instagram.com/paulo_m.m",
+    github: "https://github.com/PauloMM23",
+  },
+];
+
+export const membros: Membro[] = [...dados].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
