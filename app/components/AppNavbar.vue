@@ -80,7 +80,7 @@ onMounted(() => {
             <NuxtLink
               :to="`/#${secao.id}`"
               class="-m-3 p-3 transition-colors duration-300 hover:text-primaria"
-              :class="secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white'"
+              :class="secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white/85'"
             >
               {{ secao.label }}
             </NuxtLink>

@@ -43,8 +43,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: var(--color-escuro);
-  background-color: white;
+  color: white;
+  background-color: var(--color-escuro);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }

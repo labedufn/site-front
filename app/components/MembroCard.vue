@@ -52,13 +52,13 @@ const redes = computed(() => {
     >
       <!-- Frente -->
       <article
-        class="flex flex-col items-center rounded-2xl border border-cinza/60 bg-white p-10 shadow-sm transition-shadow duration-300 backface-hidden group-hover:shadow-[0_12px_32px_rgb(0_16_19/0.12)]"
+        class="flex flex-col items-center rounded-2xl bg-white p-10 shadow-[0_8px_40px_rgb(0_0_0/0.35)] transition-shadow duration-300 backface-hidden"
       >
         <NuxtImg
           v-if="membro.foto"
           :src="membro.foto"
           :alt="`Foto de ${membro.nome}`"
-          class="size-50 rounded-full object-cover ring-4 ring-primaria/15"
+          class="size-50 rounded-full object-cover ring-2 ring-primaria/25"
           width="200"
           height="200"
           loading="lazy"
@@ -77,7 +77,7 @@ const redes = computed(() => {
 
       <!-- Verso -->
       <div
-        class="absolute inset-0 flex flex-col justify-between rounded-2xl border border-cinza/60 bg-white p-6 shadow-sm backface-hidden transform-[rotateY(180deg)]"
+        class="absolute inset-0 flex flex-col justify-between rounded-2xl bg-white p-6 shadow-[0_8px_40px_rgb(0_0_0/0.35)] backface-hidden transform-[rotateY(180deg)]"
       >
         <div>
           <h3 class="titulo-display text-xl font-bold text-escuro">{{ primeiroNome }}</h3>

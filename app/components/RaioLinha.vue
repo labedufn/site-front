@@ -21,7 +21,7 @@ defineProps<{
       d="M0 14 H150 L172 4 L204 24 L226 14 H400"
       fill="none"
       stroke="currentColor"
-      stroke-width="5"
+      stroke-width="3"
       stroke-linejoin="round"
     />
   </svg>

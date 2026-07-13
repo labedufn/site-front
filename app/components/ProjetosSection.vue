@@ -10,15 +10,16 @@ const projetosVisiveis = computed(() =>
 </script>
 
 <template>
-  <section id="projetos" class="mb-10 scroll-mt-20 md:mb-20">
+  <section id="projetos" class="scroll-mt-20">
     <SectionHeader
       titulo="Projetos"
       classe-fundo="bg-primaria"
       classe-texto="text-escuro"
       classe-fill-topo="fill-escuro"
+      classe-fill-base="fill-escuro"
     />
     <div class="container-site">
-      <div class="mt-10 mb-15 flex flex-wrap justify-center gap-10 lg:gap-19">
+      <div class="grid gap-x-8 gap-y-14 py-16 sm:grid-cols-2 lg:grid-cols-3 md:py-24">
         <ProjetoCard
           v-for="(projeto, index) in projetosVisiveis"
           :key="projeto.slug"
@@ -27,8 +28,8 @@ const projetosVisiveis = computed(() =>
         />
       </div>
     </div>
-    <div v-if="projetos.length > LIMITE_INICIAL" class="flex justify-center">
-      <BotaoAcao secundario @click="mostrarTodos = !mostrarTodos">
+    <div v-if="projetos.length > LIMITE_INICIAL" class="flex justify-center pb-16 md:pb-24">
+      <BotaoAcao secundario claro @click="mostrarTodos = !mostrarTodos">
         {{ mostrarTodos ? "Ver menos projetos" : "Ver todos os projetos" }}
       </BotaoAcao>
     </div>

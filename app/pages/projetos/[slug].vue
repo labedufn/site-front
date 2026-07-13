@@ -45,37 +45,33 @@ useSeoMeta({
 </script>
 
 <template>
-  <main v-if="projeto" class="bg-white">
+  <main v-if="projeto">
     <!-- Respiro para a navbar fixa -->
     <div class="container-site max-w-250 pt-28 pb-16 md:pt-36 md:pb-24">
       <NuxtLink
         to="/#projetos"
-        class="inline-flex items-center gap-2 text-escuro transition-colors hover:text-primaria"
+        class="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-primaria"
       >
         <Icon name="lucide:arrow-left" size="20" aria-hidden="true" />
         Voltar aos projetos
       </NuxtLink>
 
-      <div class="mt-8 mb-8">
-        <span
-          class="inline-block rounded-full bg-primaria/10 px-4 py-1.5 text-sm font-bold tracking-wider text-primaria-escura uppercase"
-        >
-          {{ projeto.tag }}
-        </span>
-      </div>
+      <p class="mt-10 mb-3 text-sm font-bold tracking-[0.25em] text-primaria uppercase">
+        {{ projeto.tag }}
+      </p>
 
-      <h1 class="titulo-display mb-6 text-2xl font-bold text-escuro sm:text-4xl xl:text-5xl">
+      <h1 class="titulo-display mb-8 text-2xl font-bold text-white sm:text-4xl xl:text-5xl">
         {{ projeto.titulo }}
       </h1>
 
       <ProjetoGaleria :imagens="projeto.imagens" :titulo="projeto.titulo" />
 
-      <div class="mt-10 space-y-4 text-base text-escuro md:text-xl">
+      <div class="mt-10 max-w-3xl space-y-5 text-base text-white/70 md:text-lg">
         <p v-for="(paragrafo, index) in projeto.conteudo" :key="index">{{ paragrafo }}</p>
       </div>
 
       <div class="mt-10 flex items-center gap-3">
-        <p class="font-bold">Compartilhar:</p>
+        <p class="text-sm font-bold tracking-wider text-white/60 uppercase">Compartilhar</p>
         <a
           v-for="rede in compartilhar"
           :key="rede.url"
@@ -83,21 +79,21 @@ useSeoMeta({
           target="_blank"
           rel="noopener noreferrer"
           :aria-label="rede.label"
-          class="flex h-9 w-9 items-center justify-center rounded-full bg-primaria text-escuro transition-colors duration-300 hover:bg-escuro hover:text-primaria"
+          class="flex size-9 items-center justify-center rounded-full border border-escuro-claro text-white/70 transition-colors duration-300 hover:border-primaria hover:text-primaria"
         >
-          <Icon :name="rede.icone" size="16" />
+          <Icon :name="rede.icone" size="15" />
         </a>
       </div>
 
       <nav
         v-if="projetoAnterior || proximoProjeto"
-        class="mt-16 flex justify-between gap-4 border-t border-cinza pt-8"
+        class="mt-16 flex justify-between gap-4 border-t border-escuro-claro pt-8"
         aria-label="Outros projetos"
       >
         <NuxtLink
           v-if="projetoAnterior"
           :to="`/projetos/${projetoAnterior.slug}`"
-          class="inline-flex items-center gap-2 text-escuro transition-colors hover:text-primaria"
+          class="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-primaria"
         >
           <Icon name="lucide:chevron-left" size="20" aria-hidden="true" />
           {{ projetoAnterior.titulo }}
@@ -106,7 +102,7 @@ useSeoMeta({
         <NuxtLink
           v-if="proximoProjeto"
           :to="`/projetos/${proximoProjeto.slug}`"
-          class="inline-flex items-center gap-2 text-escuro transition-colors hover:text-primaria"
+          class="inline-flex items-center gap-2 text-right text-white/70 transition-colors hover:text-primaria"
         >
           {{ proximoProjeto.titulo }}
           <Icon name="lucide:chevron-right" size="20" aria-hidden="true" />

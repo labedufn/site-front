@@ -17,11 +17,11 @@ withDefaults(
 </script>
 
 <template>
-  <div :class="classeFundo" class="shadow-[inset_0_-6px_white]">
+  <div :class="classeFundo" class="shadow-[inset_0_-4px_white]">
     <SectionDivisor :classe-fill="classeFillTopo" />
     <h2
       v-reveal
-      class="titulo-display py-10 text-center text-2xl font-bold sm:text-4xl md:py-15 xl:text-5xl"
+      class="titulo-display py-10 text-center text-2xl font-bold tracking-[0.2em] sm:text-3xl md:py-14 xl:text-4xl"
       :class="classeTexto"
     >
       {{ titulo }}

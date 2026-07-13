@@ -16,7 +16,7 @@ const numeros = [
       src="/img/ilustracoes/chiko_desenho.png"
       alt=""
       aria-hidden="true"
-      class="pointer-events-none absolute top-1/2 right-0 max-w-none -translate-y-1/2 opacity-70 select-none [filter:invert(1)_hue-rotate(180deg)] max-[999px]:hidden min-[1000px]:w-[85vw] min-[1000px]:max-w-350 min-[1000px]:translate-x-[60%] min-[1400px]:translate-x-[45%] min-[1800px]:translate-x-[35%] min-[2200px]:w-[95vw] min-[2200px]:translate-x-[30%]"
+      class="pointer-events-none absolute top-1/2 right-0 max-w-none -translate-y-1/2 opacity-55 select-none [filter:invert(1)_hue-rotate(180deg)] max-[999px]:hidden min-[1000px]:w-[85vw] min-[1000px]:max-w-350 min-[1000px]:translate-x-[60%] min-[1400px]:translate-x-[45%] min-[1800px]:translate-x-[35%] min-[2200px]:w-[95vw] min-[2200px]:translate-x-[30%]"
       width="1400"
       loading="lazy"
     />
@@ -31,12 +31,12 @@ const numeros = [
         </div>
 
         <h2
-          class="titulo-display mb-10 max-w-3xl text-2xl leading-[1.2] font-bold text-balance sm:text-4xl xl:text-5xl"
+          class="titulo-display mb-10 max-w-3xl text-2xl leading-[1.25] font-bold text-balance sm:text-4xl xl:text-5xl"
         >
           Um espaço <span class="text-primaria">maker</span> para aprender fazendo.
         </h2>
 
-        <div class="mb-12 max-w-2xl space-y-5 text-base text-white/70 md:text-lg">
+        <div class="mb-12 max-w-2xl space-y-5 text-base leading-relaxed text-white/65 md:text-lg">
           <p>
             O LABED (Laboratório de Eletrônica e Desenvolvimento) da Universidade Franciscana é uma
             iniciativa pioneira que reflete o compromisso da instituição com a educação moderna e
@@ -52,18 +52,18 @@ const numeros = [
         </div>
 
         <dl class="mb-14 flex flex-wrap gap-x-14 gap-y-8">
-          <div v-for="numero in numeros" :key="numero.rotulo" class="border-l-2 border-primaria pl-5">
+          <div v-for="numero in numeros" :key="numero.rotulo" class="border-l border-primaria/70 pl-5">
             <dt class="sr-only">{{ numero.rotulo }}</dt>
-            <dd class="titulo-display text-4xl font-bold text-white md:text-6xl">
+            <dd class="titulo-display text-3xl font-bold text-white md:text-5xl">
               {{ String(numero.valor).padStart(2, "0") }}
             </dd>
-            <dd class="mt-2 text-sm tracking-wider text-white/60 uppercase">{{ numero.rotulo }}</dd>
+            <dd class="mt-2 text-xs tracking-[0.2em] text-white/50 uppercase">{{ numero.rotulo }}</dd>
           </div>
         </dl>
 
         <NuxtLink
           to="/#projetos"
-          class="inline-block cursor-pointer rounded border-2 border-primaria px-6 py-4 text-base font-bold text-primaria transition-colors duration-300 hover:bg-primaria hover:text-escuro md:px-10"
+          class="inline-block cursor-pointer rounded border border-primaria/80 px-6 py-4 text-base font-bold text-primaria transition-colors duration-300 hover:bg-primaria hover:text-escuro md:px-10"
         >
           Conheça nossos projetos
         </NuxtLink>

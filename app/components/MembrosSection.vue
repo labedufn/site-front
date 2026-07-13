@@ -6,7 +6,7 @@ import { membros } from "~/data/membros";
   <section id="membros" class="scroll-mt-20">
     <SectionHeader titulo="Membros" classe-fundo="bg-escuro" classe-texto="text-white" />
     <div class="container-site">
-      <div class="mt-10 flex flex-wrap justify-center gap-15 pb-20 lg:gap-19">
+      <div class="flex flex-wrap justify-center gap-15 py-16 md:py-24 lg:gap-19">
         <MembroCard
           v-for="(membro, index) in membros"
           :key="membro.email"
