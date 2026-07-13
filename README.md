@@ -36,9 +36,11 @@ O conteúdo editável fica em `app/data/`:
   `public/img/membros/` (arquivo local, nunca link externo) e referenciada como
   `/img/membros/nome-sobrenome.jpg`. A lista é ordenada alfabeticamente de forma automática.
 - **Projetos** — [app/data/projetos.ts](app/data/projetos.ts). Cada projeto tem `slug`
-  (vira a URL `/projetos/<slug>`), título, descrição curta (card e SEO), parágrafos de
-  conteúdo e imagens em `public/img/projetos/`. Cada projeto ganha uma página própria,
-  pré-renderizada e compartilhável.
+  (vira a URL `/projetos/<slug>`), `tag` (área exibida no card), título, descrição curta
+  (card e SEO), parágrafos de conteúdo e imagens em `public/img/projetos/`. Cada projeto
+  ganha uma página própria, pré-renderizada e compartilhável. A home exibe os 3 primeiros
+  como destaques; havendo mais que 3, aparece o botão "Ver todos" levando à página
+  `/projetos` com a lista completa.
 - **Apoiadores** — logos em `public/img/apoiadores/` e lista em
   [app/components/ApoiadoresSection.vue](app/components/ApoiadoresSection.vue).
 
