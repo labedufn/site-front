@@ -26,8 +26,13 @@ watch(
   }
 );
 
+const { $lenis } = useNuxtApp();
+
 watch(menuAberto, (aberto) => {
-  if (import.meta.client) document.body.classList.toggle("overflow-hidden", aberto);
+  if (!import.meta.client) return;
+  document.body.classList.toggle("overflow-hidden", aberto);
+  if (aberto) $lenis?.stop();
+  else $lenis?.start();
 });
 
 onMounted(() => {
@@ -54,6 +59,7 @@ onMounted(() => {
     window.removeEventListener("scroll", aoRolar);
     observer.disconnect();
     document.body.classList.remove("overflow-hidden");
+    $lenis?.start();
   });
 });
 </script>

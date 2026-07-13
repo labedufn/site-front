@@ -29,7 +29,6 @@ useSeoMeta({
         <ProjetoCard
           v-for="projeto in projetos"
           :key="projeto.slug"
-          v-reveal
           compacto
           :projeto="projeto"
         />

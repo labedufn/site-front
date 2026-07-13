@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { gsap, movimentoReduzido } from "~/utils/animacao";
 import { membros } from "~/data/membros";
 import { projetos } from "~/data/projetos";
 
@@ -7,21 +8,51 @@ const numeros = [
   { valor: projetos.length, rotulo: "projetos" },
   { valor: 3, rotulo: "áreas de atuação" },
 ];
+
+const secao = ref<HTMLElement | null>(null);
+let contexto: gsap.Context | undefined;
+
+onMounted(() => {
+  if (movimentoReduzido()) return;
+  const raiz = secao.value;
+  if (!raiz) return;
+
+  contexto = gsap.context(() => {
+    gsap.fromTo(
+      "[data-sobre-ilustracao]",
+      { scale: 1 },
+      {
+        scale: 1.08,
+        ease: "none",
+        scrollTrigger: { trigger: raiz, start: "top bottom", end: "bottom top", scrub: true },
+      }
+    );
+  }, raiz);
+});
+
+onUnmounted(() => contexto?.revert());
 </script>
 
 <template>
   <section
     id="sobre"
+    ref="secao"
     class="relative scroll-mt-20 overflow-hidden bg-escuro py-20 text-white md:py-28"
   >
-    <NuxtImg
-      src="/img/ilustracoes/chiko_desenho.png"
-      alt=""
+    <div
       aria-hidden="true"
-      class="pointer-events-none absolute top-1/2 right-0 max-w-none -translate-y-1/2 opacity-55 select-none filter-[invert(1)_hue-rotate(180deg)] max-[999px]:hidden min-[1000px]:w-[85vw] min-[1000px]:max-w-350 min-[1000px]:translate-x-[60%] min-[1400px]:translate-x-[45%] min-[1800px]:translate-x-[35%] min-[2200px]:w-[95vw] min-[2200px]:translate-x-[30%]"
-      width="1400"
-      loading="lazy"
-    />
+      class="pointer-events-none absolute top-1/2 right-0 max-w-none -translate-y-1/2 select-none max-[999px]:hidden min-[1000px]:w-[85vw] min-[1000px]:max-w-350 min-[1000px]:translate-x-[60%] min-[1400px]:translate-x-[45%] min-[1800px]:translate-x-[35%] min-[2200px]:w-[95vw] min-[2200px]:translate-x-[30%]"
+    >
+      <NuxtImg
+        data-sobre-ilustracao
+        src="/img/ilustracoes/chiko_desenho.png"
+        alt=""
+        class="w-full opacity-55 mask-[linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] filter-[invert(1)_hue-rotate(180deg)]"
+        width="1400"
+        height="919"
+        loading="lazy"
+      />
+    </div>
 
     <div class="container-site relative">
       <div v-reveal class="min-[1000px]:w-3/5">

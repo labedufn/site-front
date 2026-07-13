@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 @theme {
   --color-primaria: #22b5d3;
@@ -9,14 +10,6 @@
 
   --font-display: "Orbitron", sans-serif;
   --font-sans: "Roboto", sans-serif;
-
-  --animate-marquee: marquee 30s linear infinite;
-
-  @keyframes marquee {
-    to {
-      transform: translateX(-50%);
-    }
-  }
 }
 
 @utility container-site {

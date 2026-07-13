@@ -15,7 +15,6 @@ const destaques = projetos.slice(0, DESTAQUES);
         <ProjetoCard
           v-for="(projeto, index) in destaques"
           :key="projeto.slug"
-          v-reveal
           :projeto="projeto"
           :indice="index + 1"
           :invertido="index % 2 === 1"

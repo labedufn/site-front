@@ -3,8 +3,9 @@ import { membros } from "~/data/membros";
 </script>
 
 <template>
-  <section id="membros" class="scroll-mt-20 py-20 md:py-28">
-    <div class="container-site">
+  <section id="membros" class="scroll-mt-20 bg-escuro-claro">
+    <SectionDivisor classe-fill="fill-escuro" />
+    <div class="container-site py-16 md:py-24">
       <SecaoTitulo centralizado kicker="Membros">
         Quem faz o lab <span class="text-primaria">acontecer</span>.
       </SecaoTitulo>
@@ -20,4 +21,7 @@ import { membros } from "~/data/membros";
       </div>
     </div>
   </section>
+  <div class="bg-escuro">
+    <SectionDivisor classe-fill="fill-escuro-claro" />
+  </div>
 </template>

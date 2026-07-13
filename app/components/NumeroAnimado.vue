@@ -1,38 +1,41 @@
 <script setup lang="ts">
+import { gsap, movimentoReduzido } from "~/utils/animacao";
+
 const props = defineProps<{ valor: number }>();
 
 const raiz = ref<HTMLElement | null>(null);
 const exibido = ref(props.valor);
+let contexto: gsap.Context | undefined;
 
 function formatar(n: number) {
   return String(Math.round(n)).padStart(2, "0");
 }
 
 onMounted(() => {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (movimentoReduzido()) return;
   const el = raiz.value;
-  if (!el || !("IntersectionObserver" in window)) return;
+  if (!el) return;
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry?.isIntersecting) return;
-      observer.disconnect();
+  const contador = { atual: 0 };
 
-      const duracao = 1200;
-      const inicio = performance.now();
-      const animar = (agora: number) => {
-        const progresso = Math.min((agora - inicio) / duracao, 1);
-        const suavizado = 1 - Math.pow(1 - progresso, 3);
-        exibido.value = props.valor * suavizado;
-        if (progresso < 1) requestAnimationFrame(animar);
-      };
-      exibido.value = 0;
-      requestAnimationFrame(animar);
-    },
-    { threshold: 0.6 }
-  );
-  observer.observe(el);
+  contexto = gsap.context(() => {
+    gsap.fromTo(
+      contador,
+      { atual: 0 },
+      {
+        atual: props.valor,
+        duration: 1.4,
+        ease: "power3.out",
+        onUpdate: () => {
+          exibido.value = contador.atual;
+        },
+        scrollTrigger: { trigger: el, start: "top 85%", once: true },
+      }
+    );
+  });
 });
+
+onUnmounted(() => contexto?.revert());
 </script>
 
 <template>
