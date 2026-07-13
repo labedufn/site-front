@@ -10,16 +10,12 @@ const projetosVisiveis = computed(() =>
 </script>
 
 <template>
-  <section id="projetos" class="scroll-mt-20">
-    <SectionHeader
-      titulo="Projetos"
-      classe-fundo="bg-primaria"
-      classe-texto="text-escuro"
-      classe-fill-topo="fill-escuro"
-      classe-fill-base="fill-escuro"
-    />
+  <section id="projetos" class="scroll-mt-20 py-16 md:py-24">
     <div class="container-site">
-      <div class="grid gap-x-8 gap-y-14 py-16 sm:grid-cols-2 lg:grid-cols-3 md:py-24">
+      <SecaoTitulo kicker="Projetos">
+        Da bancada para a <span class="text-primaria">competição</span>.
+      </SecaoTitulo>
+      <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
         <ProjetoCard
           v-for="(projeto, index) in projetosVisiveis"
           :key="projeto.slug"
@@ -27,11 +23,11 @@ const projetosVisiveis = computed(() =>
           :projeto="projeto"
         />
       </div>
-    </div>
-    <div v-if="projetos.length > LIMITE_INICIAL" class="flex justify-center pb-16 md:pb-24">
-      <BotaoAcao secundario claro @click="mostrarTodos = !mostrarTodos">
-        {{ mostrarTodos ? "Ver menos projetos" : "Ver todos os projetos" }}
-      </BotaoAcao>
+      <div v-if="projetos.length > LIMITE_INICIAL" class="mt-14 flex justify-center">
+        <BotaoAcao secundario claro @click="mostrarTodos = !mostrarTodos">
+          {{ mostrarTodos ? "Ver menos projetos" : "Ver todos os projetos" }}
+        </BotaoAcao>
+      </div>
     </div>
   </section>
 </template>

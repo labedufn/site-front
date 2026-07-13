@@ -13,15 +13,9 @@ const iconesCurso: Record<Curso, string> = {
   Egresso: "lucide:graduation-cap",
 };
 
-const primeiroNome = computed(() => props.membro.nome.split(" ")[0]);
-
 const redes = computed(() => {
   const lista: { url: string; icone?: string; imagem?: string; label: string }[] = [
-    {
-      url: `mailto:${props.membro.email}`,
-      icone: "lucide:mail",
-      label: `E-mail de ${props.membro.nome}`,
-    },
+    { url: `mailto:${props.membro.email}`, icone: "lucide:mail", label: `E-mail de ${props.membro.nome}` },
   ];
   if (props.membro.instagram)
     lista.push({
@@ -46,69 +40,51 @@ const redes = computed(() => {
 </script>
 
 <template>
-  <div class="group w-70 max-w-full perspective-distant">
+  <article class="group flex w-56 flex-col items-center text-center">
     <div
-      class="relative h-full transition-transform duration-500 transform-3d group-focus-within:transform-[rotateY(180deg)] group-hover:transform-[rotateY(180deg)] motion-reduce:transition-none"
+      class="rounded-full p-1.5 ring-1 ring-white/15 transition-colors duration-300 group-hover:ring-primaria/70"
     >
-      <!-- Frente -->
-      <article
-        class="flex flex-col items-center rounded-2xl bg-white p-10 shadow-[0_8px_40px_rgb(0_0_0/0.35)] transition-shadow duration-300 backface-hidden"
-      >
-        <NuxtImg
-          v-if="membro.foto"
-          :src="membro.foto"
-          :alt="`Foto de ${membro.nome}`"
-          class="size-50 rounded-full object-cover ring-2 ring-primaria/25"
-          width="200"
-          height="200"
-          loading="lazy"
-        />
-        <div
-          v-else
-          class="flex size-50 items-center justify-center rounded-full bg-cinza/40 text-escuro"
-        >
-          <Icon name="lucide:user" size="80" aria-hidden="true" />
-        </div>
-        <div class="pt-10 text-center">
-          <h3 class="titulo-display text-xl font-bold text-escuro">{{ primeiroNome }}</h3>
-          <p class="pt-3 text-escuro">{{ membro.curso }}</p>
-        </div>
-      </article>
-
-      <!-- Verso -->
-      <div
-        class="absolute inset-0 flex flex-col justify-between rounded-2xl bg-white p-6 shadow-[0_8px_40px_rgb(0_0_0/0.35)] backface-hidden transform-[rotateY(180deg)]"
-      >
-        <div>
-          <h3 class="titulo-display text-xl font-bold text-escuro">{{ primeiroNome }}</h3>
-          <p class="pt-3 text-escuro">{{ membro.nome }}</p>
-          <div class="flex items-center gap-2 pt-6 text-escuro">
-            <Icon :name="iconesCurso[membro.curso]" size="24" aria-hidden="true" />
-            <p class="font-bold">{{ membro.curso }}</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <a
-            v-for="rede in redes"
-            :key="rede.url"
-            :href="rede.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            :aria-label="rede.label"
-            class="text-escuro transition-colors duration-300 hover:text-primaria focus-visible:text-primaria"
-          >
-            <Icon v-if="rede.icone" :name="rede.icone" size="30" />
-            <img
-              v-else-if="rede.imagem"
-              :src="rede.imagem"
-              alt=""
-              class="size-7.5"
-              width="30"
-              height="30"
-            >
-          </a>
-        </div>
+      <NuxtImg
+        v-if="membro.foto"
+        :src="membro.foto"
+        :alt="`Foto de ${membro.nome}`"
+        class="size-40 rounded-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+        width="160"
+        height="160"
+        loading="lazy"
+      />
+      <div v-else class="flex size-40 items-center justify-center rounded-full bg-white/5 text-primaria/70">
+        <Icon name="lucide:user" size="56" aria-hidden="true" />
       </div>
     </div>
-  </div>
+
+    <h3 class="titulo-display mt-6 text-base font-bold text-white">{{ membro.nome }}</h3>
+
+    <p class="mt-3 flex items-center gap-2 text-xs tracking-[0.15em] text-white/50 uppercase">
+      <Icon :name="iconesCurso[membro.curso]" size="15" class="text-primaria/80" aria-hidden="true" />
+      {{ membro.curso }}
+    </p>
+
+    <div class="mt-4 flex items-center gap-4">
+      <a
+        v-for="rede in redes"
+        :key="rede.url"
+        :href="rede.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        :aria-label="rede.label"
+        class="text-white/50 transition-colors duration-300 hover:text-primaria focus-visible:text-primaria"
+      >
+        <Icon v-if="rede.icone" :name="rede.icone" size="20" />
+        <img
+          v-else-if="rede.imagem"
+          :src="rede.imagem"
+          alt=""
+          class="size-5 opacity-50 brightness-0 invert transition-opacity hover:opacity-100"
+          width="20"
+          height="20"
+        >
+      </a>
+    </div>
+  </article>
 </template>

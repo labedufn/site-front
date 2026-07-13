@@ -11,15 +11,21 @@ const logos = [
 </script>
 
 <template>
-  <section id="apoiadores" class="scroll-mt-20 bg-escuro">
-    <SectionDivisor classe-fill="fill-white" />
-    <h2 v-reveal class="titulo-display pt-10 pb-10 text-center text-xl font-bold text-white md:pt-15 md:text-2xl">
-      Apoiadores
-    </h2>
+  <section id="apoiadores" class="scroll-mt-20 py-16 md:py-24">
     <div class="container-site">
+      <SecaoTitulo kicker="Apoiadores">
+        Quem caminha <span class="text-primaria">com a gente</span>.
+      </SecaoTitulo>
       <div v-reveal>
-        <div class="overflow-hidden" role="region" aria-label="Logos dos apoiadores">
-          <div class="flex w-max animate-marquee items-center hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center">
+        <!-- Fade nas bordas para o marquee não cortar seco -->
+        <div
+          class="overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+          role="region"
+          aria-label="Logos dos apoiadores"
+        >
+          <div
+            class="flex w-max animate-marquee items-center hover:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:justify-center"
+          >
             <img
               v-for="(logo, index) in [...logos, ...logos]"
               :key="index"
@@ -31,7 +37,6 @@ const logos = [
             >
           </div>
         </div>
-        <div class="mt-15 h-px w-full bg-escuro-claro" />
       </div>
     </div>
   </section>
