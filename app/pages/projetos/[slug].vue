@@ -10,7 +10,8 @@ if (!projeto) {
 
 const siteConfig = useSiteConfig();
 const urlProjeto = `${siteConfig.url}/projetos/${projeto.slug}`;
-const mensagem = `Confira o projeto do LABED - ${projeto.titulo}: ${urlProjeto}`;
+const tituloCompartilhado = `${projeto.titulo} | LABED`;
+const mensagem = `${projeto.titulo}\n\n${projeto.descricao}\n\n${urlProjeto}`;
 
 const compartilhar = [
   {
@@ -24,9 +25,9 @@ const compartilhar = [
     url: `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagem)}`,
   },
   {
-    label: "Compartilhar no X",
-    icone: "fa6-brands:x-twitter",
-    url: `https://x.com/intent/tweet?text=${encodeURIComponent(mensagem)}`,
+    label: "Compartilhar no LinkedIn",
+    icone: "fa6-brands:linkedin-in",
+    url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(urlProjeto)}&title=${encodeURIComponent(tituloCompartilhado)}&summary=${encodeURIComponent(projeto.descricao)}`,
   },
 ];
 
@@ -35,18 +36,22 @@ const projetoAnterior = projetos[indiceAtual - 1];
 const proximoProjeto = projetos[indiceAtual + 1];
 
 useSeoMeta({
-  title: `${projeto.titulo} | LABED`,
+  title: projeto.titulo,
   description: projeto.descricao,
   ogTitle: `${projeto.titulo} | LABED`,
   ogDescription: projeto.descricao,
   ogImage: projeto.thumbnail,
+  ogUrl: urlProjeto,
+  ogType: "article",
   twitterCard: "summary_large_image",
+  twitterTitle: `${projeto.titulo} | LABED`,
+  twitterDescription: projeto.descricao,
+  twitterImage: projeto.thumbnail,
 });
 </script>
 
 <template>
   <main v-if="projeto">
-    <!-- Respiro para a navbar fixa -->
     <div class="container-site max-w-250 pt-28 pb-16 md:pt-36 md:pb-24">
       <NuxtLink
         to="/#projetos"
@@ -66,7 +71,7 @@ useSeoMeta({
 
       <ProjetoGaleria :imagens="projeto.imagens" :titulo="projeto.titulo" />
 
-      <div class="mt-10 max-w-3xl space-y-5 text-base text-white/70 md:text-lg">
+      <div class="mt-10 space-y-5 text-base text-white/70 md:text-lg">
         <p v-for="(paragrafo, index) in projeto.conteudo" :key="index">{{ paragrafo }}</p>
       </div>
 

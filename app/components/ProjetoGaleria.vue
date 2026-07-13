@@ -6,6 +6,7 @@ const props = defineProps<{
 
 const trilho = ref<HTMLElement | null>(null);
 const indiceAtual = ref(0);
+let intervalo: ReturnType<typeof setInterval> | null = null;
 
 function irPara(indice: number) {
   const el = trilho.value;
@@ -13,6 +14,7 @@ function irPara(indice: number) {
   const total = props.imagens.length;
   const destino = ((indice % total) + total) % total;
   el.scrollTo({ left: destino * el.clientWidth, behavior: "smooth" });
+  reiniciarIntervalo();
 }
 
 function aoRolar() {
@@ -20,13 +22,33 @@ function aoRolar() {
   if (!el) return;
   indiceAtual.value = Math.round(el.scrollLeft / el.clientWidth);
 }
+
+function iniciarIntervalo() {
+  if (props.imagens.length <= 1) return;
+  intervalo = setInterval(() => {
+    irPara(indiceAtual.value + 1);
+  }, 5000);
+}
+
+function reiniciarIntervalo() {
+  if (intervalo) clearInterval(intervalo);
+  iniciarIntervalo();
+}
+
+onMounted(() => {
+  iniciarIntervalo();
+});
+
+onBeforeUnmount(() => {
+  if (intervalo) clearInterval(intervalo);
+});
 </script>
 
 <template>
   <div class="relative">
     <div
       ref="trilho"
-      class="flex snap-x snap-mandatory overflow-x-auto rounded-xl"
+      class="flex snap-x snap-mandatory overflow-x-auto rounded-xl scrollbar-none"
       tabindex="0"
       role="region"
       :aria-label="`Galeria de fotos do projeto ${titulo}`"
@@ -47,18 +69,18 @@ function aoRolar() {
       <button
         type="button"
         aria-label="Foto anterior"
-        class="absolute top-1/2 left-3 -translate-y-1/2 rounded-full bg-escuro/60 p-2 text-white transition-colors hover:bg-primaria hover:text-escuro"
+        class="absolute top-1/2 left-3 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-escuro/60 text-white transition-colors hover:bg-primaria hover:text-escuro"
         @click="irPara(indiceAtual - 1)"
       >
-        <Icon name="lucide:chevron-left" size="28" />
+        <Icon name="lucide:chevron-left" size="22" />
       </button>
       <button
         type="button"
         aria-label="Próxima foto"
-        class="absolute top-1/2 right-3 -translate-y-1/2 rounded-full bg-escuro/60 p-2 text-white transition-colors hover:bg-primaria hover:text-escuro"
+        class="absolute top-1/2 right-3 flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-escuro/60 text-white transition-colors hover:bg-primaria hover:text-escuro"
         @click="irPara(indiceAtual + 1)"
       >
-        <Icon name="lucide:chevron-right" size="28" />
+        <Icon name="lucide:chevron-right" size="22" />
       </button>
 
       <div class="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">

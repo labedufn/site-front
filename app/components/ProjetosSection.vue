@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { projetos } from "~/data/projetos";
 
-/** A home mostra só os destaques; a lista completa vive em /projetos. */
 const DESTAQUES = 3;
 const destaques = projetos.slice(0, DESTAQUES);
 </script>
 
 <template>
-  <section id="projetos" class="scroll-mt-20 py-16 md:py-24">
+  <section id="projetos" class="scroll-mt-20 py-20 md:py-28">
     <div class="container-site">
       <SecaoTitulo kicker="Projetos">
-        Da bancada para a <span class="text-primaria">competição</span>.
+        Da bancada para a <span class="text-primaria">prática</span>.
       </SecaoTitulo>
       <div class="flex flex-col gap-20 md:gap-32">
         <ProjetoCard

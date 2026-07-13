@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/**
- * Número que sobe em contagem quando entra na tela.
- * Sem JS ou com prefers-reduced-motion, mostra o valor final direto.
- */
 const props = defineProps<{ valor: number }>();
 
 const raiz = ref<HTMLElement | null>(null);
@@ -26,7 +22,6 @@ onMounted(() => {
       const inicio = performance.now();
       const animar = (agora: number) => {
         const progresso = Math.min((agora - inicio) / duracao, 1);
-        // easing de desaceleração
         const suavizado = 1 - Math.pow(1 - progresso, 3);
         exibido.value = props.valor * suavizado;
         if (progresso < 1) requestAnimationFrame(animar);
@@ -34,7 +29,7 @@ onMounted(() => {
       exibido.value = 0;
       requestAnimationFrame(animar);
     },
-    { threshold: 0.6 },
+    { threshold: 0.6 }
   );
   observer.observe(el);
 });

@@ -3,17 +3,13 @@ import type { Projeto } from "~/data/projetos";
 
 defineProps<{
   projeto: Projeto;
-  /** Posição na vitrine, exibida como índice fantasma (01, 02...). */
   indice?: number;
-  /** Alterna o lado da foto nas linhas da vitrine. */
   invertido?: boolean;
-  /** Variante vertical para grades densas (página /projetos). */
   compacto?: boolean;
 }>();
 </script>
 
 <template>
-  <!-- Variante compacta: card vertical para grade -->
   <NuxtLink
     v-if="compacto"
     :to="`/projetos/${projeto.slug}`"
@@ -51,7 +47,6 @@ defineProps<{
     </article>
   </NuxtLink>
 
-  <!-- Variante vitrine: linha de largura inteira com índice fantasma -->
   <NuxtLink
     v-else
     :to="`/projetos/${projeto.slug}`"

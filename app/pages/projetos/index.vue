@@ -2,7 +2,7 @@
 import { projetos } from "~/data/projetos";
 
 useSeoMeta({
-  title: "Projetos | LABED",
+  title: "Projetos",
   description:
     "Todos os projetos do LABED, Laboratório de Eletrônica e Desenvolvimento da Universidade Franciscana: robótica, eletrônica e desenvolvimento na prática.",
   ogTitle: "Projetos | LABED",
@@ -12,7 +12,6 @@ useSeoMeta({
 
 <template>
   <main>
-    <!-- Respiro para a navbar fixa -->
     <div class="container-site pt-28 pb-16 md:pt-36 md:pb-24">
       <NuxtLink
         to="/#projetos"

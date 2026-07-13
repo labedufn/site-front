@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: "LABED - Laboratório de Eletrônica e Desenvolvimento",
+  title: "Laboratório de Eletrônica e Desenvolvimento",
   description:
     "LABED - Laboratório de Eletrônica e Desenvolvimento da Universidade Franciscana: robótica, programação e eletrônica na prática ⚡",
   ogTitle: "LABED - Laboratório de Eletrônica e Desenvolvimento",

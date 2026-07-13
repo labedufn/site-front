@@ -1,8 +1,4 @@
 <script setup lang="ts">
-/**
- * Cabeçalho editorial de seção: kicker ciano, raio-linha e statement.
- * O título vai no slot para permitir palavras destacadas.
- */
 defineProps<{
   kicker: string;
   centralizado?: boolean;
@@ -10,8 +6,14 @@ defineProps<{
 </script>
 
 <template>
-  <div v-reveal class="mb-12 md:mb-16" :class="centralizado && 'flex flex-col items-center text-center'">
-    <p class="titulo-display mb-4 text-sm font-medium tracking-[0.35em] text-primaria/90 md:text-base">
+  <div
+    v-reveal
+    class="mb-12 md:mb-16"
+    :class="centralizado && 'flex flex-col items-center text-center'"
+  >
+    <p
+      class="titulo-display mb-4 text-sm font-medium tracking-[0.35em] text-primaria/90 md:text-base"
+    >
       {{ kicker }}
     </p>
     <div class="mb-8 w-24 text-primaria">

@@ -1,10 +1,5 @@
 <script setup lang="ts">
-/**
- * Linha de raio: o zigue-zague do divisor reduzido a um traço fino,
- * usado como elemento gráfico cruzando composições (estilo barras do hero).
- */
 defineProps<{
-  /** Classe de cor do traço (padrão: ciano da marca). */
   classeCor?: string;
 }>();
 </script>

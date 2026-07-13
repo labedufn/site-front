@@ -10,7 +10,7 @@ defineProps<{
     viewBox="0 0 1440 76"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
-    class="block h-auto w-full"
+    class="block h-auto w-full min-h-6 sm:min-h-10"
     :class="[classeFill ?? 'fill-primaria', invertido && 'rotate-180']"
     preserveAspectRatio="none"
   >

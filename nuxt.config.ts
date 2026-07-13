@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 
   site: {
     url: "https://labedufn.vercel.app",
-    name: "LABED - Laboratório de Eletrônica e Desenvolvimento",
+    name: "LABED",
     description:
       "Laboratório de Eletrônica e Desenvolvimento da Universidade Franciscana: robótica, programação e eletrônica na prática.",
     defaultLocale: "pt-BR",

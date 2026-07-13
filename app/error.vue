@@ -6,7 +6,7 @@ const props = defineProps<{ error: NuxtError }>();
 const ehNaoEncontrado = computed(() => props.error.status === 404);
 
 useSeoMeta({
-  title: ehNaoEncontrado.value ? "Página não encontrada | LABED" : "Erro | LABED",
+  title: ehNaoEncontrado.value ? "Página não encontrada" : "Erro",
 });
 </script>
 
