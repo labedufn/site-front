@@ -61,7 +61,6 @@ const logos = [
               :alt="index < logos.length ? logo.nome : ''"
               :aria-hidden="index >= logos.length"
               class="max-h-28 max-w-56 px-12 opacity-60 transition-opacity duration-300 hover:opacity-100"
-              loading="lazy"
             >
           </div>
         </div>
