@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    serverBundle: { collections: ["fa6-brands", "lucide"] },
+    serverBundle: { collections: ["fa6-brands", "lucide", "academicons"] },
   },
 
   fonts: {

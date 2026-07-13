@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { projetos } from "~/data/projetos";
+
+/** A home mostra só os destaques; a lista completa vive em /projetos. */
+const DESTAQUES = 3;
+const destaques = projetos.slice(0, DESTAQUES);
 </script>
 
 <template>
@@ -10,13 +14,18 @@ import { projetos } from "~/data/projetos";
       </SecaoTitulo>
       <div class="flex flex-col gap-20 md:gap-32">
         <ProjetoCard
-          v-for="(projeto, index) in projetos"
+          v-for="(projeto, index) in destaques"
           :key="projeto.slug"
           v-reveal
           :projeto="projeto"
           :indice="index + 1"
           :invertido="index % 2 === 1"
         />
+      </div>
+      <div v-if="projetos.length > DESTAQUES" class="mt-16 flex justify-center md:mt-24">
+        <BotaoAcao secundario claro to="/projetos">
+          Ver todos os {{ projetos.length }} projetos
+        </BotaoAcao>
       </div>
     </div>
   </section>

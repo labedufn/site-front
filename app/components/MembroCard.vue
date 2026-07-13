@@ -14,7 +14,7 @@ const iconesCurso: Record<Curso, string> = {
 };
 
 const redes = computed(() => {
-  const lista: { url: string; icone?: string; imagem?: string; label: string }[] = [
+  const lista: { url: string; icone: string; label: string }[] = [
     { url: `mailto:${props.membro.email}`, icone: "lucide:mail", label: `E-mail de ${props.membro.nome}` },
   ];
   if (props.membro.instagram)
@@ -32,7 +32,7 @@ const redes = computed(() => {
   if (props.membro.lattes)
     lista.push({
       url: props.membro.lattes,
-      imagem: "/img/icons/lattes.svg",
+      icone: "academicons:lattes",
       label: `Currículo Lattes de ${props.membro.nome}`,
     });
   return lista;
@@ -75,15 +75,7 @@ const redes = computed(() => {
         :aria-label="rede.label"
         class="text-white/50 transition-colors duration-300 hover:text-primaria focus-visible:text-primaria"
       >
-        <Icon v-if="rede.icone" :name="rede.icone" size="20" />
-        <img
-          v-else-if="rede.imagem"
-          :src="rede.imagem"
-          alt=""
-          class="size-5 opacity-50 brightness-0 invert transition-opacity hover:opacity-100"
-          width="20"
-          height="20"
-        >
+        <Icon :name="rede.icone" size="20" />
       </a>
     </div>
   </article>
