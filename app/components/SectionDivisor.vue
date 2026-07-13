@@ -1,6 +1,5 @@
 <script setup lang="ts">
 defineProps<{
-  /** Classe Tailwind de fill do traçado (padrão: ciano da marca). */
   classeFill?: string;
   invertido?: boolean;
 }>();

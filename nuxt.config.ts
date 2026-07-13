@@ -19,7 +19,6 @@ export default defineNuxtConfig({
   },
 
   site: {
-    // Sobrescreva em produção com NUXT_PUBLIC_SITE_URL se o domínio for outro
     url: "https://labedufn.vercel.app",
     name: "LABED - Laboratório de Eletrônica e Desenvolvimento",
     description:

@@ -50,18 +50,19 @@ useSeoMeta({
     <div class="container-site max-w-250 pt-28 pb-16 md:pt-36 md:pb-24">
       <NuxtLink
         to="/#projetos"
-        class="mb-8 inline-flex items-center gap-2 text-escuro transition-colors hover:text-primaria"
+        class="inline-flex items-center gap-2 text-escuro transition-colors hover:text-primaria"
       >
         <Icon name="lucide:arrow-left" size="20" aria-hidden="true" />
         Voltar aos projetos
       </NuxtLink>
 
-      <span
-        class="mb-4 inline-block rounded-full bg-primaria/10 px-3 py-1 text-xs font-bold tracking-wider text-primaria-escura uppercase"
-      >
-        {{ projeto.tag }}
-      </span>
-      <h1 class="titulo-display mb-8 text-2xl font-bold text-escuro sm:text-4xl xl:text-5xl">
+      <div class="mt-8 mb-8">
+        <span class="inline-block rounded-full bg-primaria/10 px-4 py-1.5 text-sm font-bold tracking-wider text-primaria-escura uppercase">
+          {{ projeto.tag }}
+        </span>
+      </div>
+
+      <h1 class="titulo-display mb-6 text-2xl font-bold text-escuro sm:text-4xl xl:text-5xl">
         {{ projeto.titulo }}
       </h1>
 

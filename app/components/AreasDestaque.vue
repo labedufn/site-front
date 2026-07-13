@@ -34,7 +34,7 @@ const areas = [
           class="flex flex-col items-center"
         >
           <div
-            class="mb-6 flex size-24 items-center justify-center rounded-2xl bg-white shadow-[0_4px_16px_rgb(0_16_19/0.15)] md:size-28"
+            class="mb-6 flex size-24 items-center justify-center rounded-2xl md:size-28"
           >
             <img :src="area.icone" :alt="''" class="w-14 md:w-16" width="64" height="64" aria-hidden="true" >
           </div>

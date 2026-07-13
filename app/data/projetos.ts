@@ -1,11 +1,8 @@
 export interface Projeto {
   slug: string;
   titulo: string;
-  /** Área do projeto, exibida como tag técnica no card. */
   tag: string;
-  /** Resumo curto exibido no card e nas meta tags. */
   descricao: string;
-  /** Parágrafos do texto completo da página do projeto. */
   conteudo: string[];
   thumbnail: string;
   imagens: string[];
@@ -33,8 +30,6 @@ export const projetos: Projeto[] = [
     ],
   },
 
-  // TODO(equipe): revisar os textos dos dois projetos abaixo — são rascunhos
-  // escritos a partir das fotos existentes, sem detalhes de competições/resultados.
   {
     slug: "robo-seguidor-de-linha",
     titulo: "Robô Seguidor de Linha",
@@ -43,7 +38,7 @@ export const projetos: Projeto[] = [
       "Robô autônomo que percorre trajetos demarcados usando sensores e algoritmos de controle, desenvolvido como plataforma de aprendizado em eletrônica embarcada.",
     conteudo: [
       "O robô seguidor de linha é um dos projetos clássicos da robótica educacional: um veículo autônomo que identifica e percorre um trajeto demarcado no chão por meio de sensores, tomando decisões de direção em tempo real.",
-      "No LABED, o projeto serve como porta de entrada para conceitos de eletrônica embarcada, leitura de sensores, controle de motores e algoritmos de decisão — habilidades que os membros aplicam depois em projetos mais complexos e em competições de robótica.",
+      "No LABED, o projeto serve como porta de entrada para conceitos de eletrônica embarcada, leitura de sensores, controle de motores e algoritmos de decisão, habilidades que os membros aplicam depois em projetos mais complexos e em competições de robótica.",
     ],
     thumbnail: "/img/fotos/robo_seguidor.png",
     imagens: ["/img/fotos/robo_seguidor.png"],

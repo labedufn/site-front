@@ -1,11 +1,3 @@
-/**
- * Diretiva v-reveal: anima a entrada de um elemento quando ele entra no viewport.
- *
- * O conteúdo é visível por padrão (SSR/no-JS/crawlers); a animação é aplicada
- * apenas no cliente e respeita prefers-reduced-motion.
- *
- * Uso: v-reveal ou v-reveal="{ delay: 200 }"
- */
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive("reveal", {
     getSSRProps: () => ({}),
@@ -33,7 +25,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       );
       observer.observe(el);
 
-      // Garante que nada fique oculto na impressão da página
       window.addEventListener("beforeprint", revelar, { once: true });
     },
   });

@@ -37,7 +37,7 @@ function aoRolar() {
         :key="imagem"
         :src="imagem"
         :alt="`Foto ${index + 1} do projeto ${titulo}`"
-        class="aspect-[3/2] w-full flex-none snap-center object-cover"
+        class="aspect-3/2 w-full flex-none snap-center object-cover"
         width="800"
         :loading="index === 0 ? 'eager' : 'lazy'"
       />
