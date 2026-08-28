@@ -15,16 +15,20 @@ media:
 content:
   - name: membros
     label: Membros
-    description: Equipe exibida na seção "Membros". A ordem alfabética é aplicada pelo site.
-    type: file
-    path: app/data/membros.json
+    description: Cadastre e edite as pessoas exibidas na seção "Membros".
+    type: collection
+    path: app/data/membros
     format: json
-    list: true
+    filename: "{nome}.json"
+    subfolders: false
     view:
       primary: nome
       fields: [foto, nome, curso]
       search: [nome, email]
       sort: [nome, curso]
+      default:
+        sort: nome
+        order: asc
     fields:
       - name: nome
         label: Nome
@@ -70,17 +74,26 @@ content:
 
   - name: projetos
     label: Projetos
-    description: Projetos do laboratório, exibidos na home e em /projetos/{slug}.
-    type: file
-    path: app/data/projetos.json
+    description: Gerencie os projetos exibidos na página inicial e no catálogo do laboratório.
+    type: collection
+    path: app/data/projetos
     format: json
-    list: true
+    filename: "{slug}.json"
+    subfolders: false
     view:
       primary: titulo
-      fields: [thumbnail, titulo, tag]
+      fields: [thumbnail, titulo, tag, ordem]
       search: [titulo, descricao]
-      sort: [titulo, tag]
+      sort: [ordem, titulo, tag]
+      default:
+        sort: ordem
+        order: asc
     fields:
+      - name: ordem
+        label: Ordem de exibição
+        type: number
+        required: true
+        description: Projetos com números menores aparecem primeiro.
       - name: titulo
         label: Título
         type: string
@@ -97,17 +110,17 @@ content:
         label: Categoria
         type: string
         required: true
-        description: Exibida em caixa alta acima do título (ex.- robótica).
+        description: "Exibida em caixa alta acima do título (ex.: robótica)."
       - name: descricao
         label: Descrição curta
         type: text
         required: true
         description: Usada nos cards e na meta description da página.
       - name: conteudo
-        label: Parágrafos
+        label: Texto do projeto
         type: text
         list: true
-        description: Um item por parágrafo do texto da página do projeto.
+        description: Adicione um parágrafo por campo, na ordem em que deve aparecer.
       - name: thumbnail
         label: Capa
         type: image
@@ -115,7 +128,7 @@ content:
         options:
           media: projetos
       - name: imagens
-        label: Galeria
+        label: Imagens da galeria
         type: image
         list: true
         options:

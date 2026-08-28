@@ -1,5 +1,3 @@
-import dados from "./membros.json";
-
 export type Curso =
   | "Ciência da Computação"
   | "Ciência de Dados"
@@ -19,6 +17,11 @@ export interface Membro {
   lattes?: string;
 }
 
-export const membros: Membro[] = [...(dados as Membro[])].sort((a, b) =>
+const arquivos = import.meta.glob<Membro>("./membros/*.json", {
+  eager: true,
+  import: "default",
+});
+
+export const membros = Object.values(arquivos).sort((a, b) =>
   a.nome.localeCompare(b.nome, "pt-BR")
 );

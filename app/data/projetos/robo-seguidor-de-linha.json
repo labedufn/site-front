@@ -1,0 +1,15 @@
+{
+  "ordem": 2,
+  "slug": "robo-seguidor-de-linha",
+  "titulo": "Robô Seguidor de Linha",
+  "tag": "robótica",
+  "descricao": "Robô autônomo que percorre trajetos demarcados usando sensores e algoritmos de controle, desenvolvido como plataforma de aprendizado em eletrônica embarcada.",
+  "conteudo": [
+    "O robô seguidor de linha é um dos projetos clássicos da robótica educacional: um veículo autônomo que identifica e percorre um trajeto demarcado no chão por meio de sensores, tomando decisões de direção em tempo real.",
+    "No LABED, o projeto serve como porta de entrada para conceitos de eletrônica embarcada, leitura de sensores, controle de motores e algoritmos de decisão, habilidades que os membros aplicam depois em projetos mais complexos e em competições de robótica."
+  ],
+  "thumbnail": "/img/fotos/robo_seguidor.png",
+  "imagens": [
+    "/img/fotos/robo_seguidor.png"
+  ]
+}

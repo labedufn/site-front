@@ -1,0 +1,15 @@
+{
+  "ordem": 3,
+  "slug": "cabine-de-realidade-virtual",
+  "titulo": "Cabine de Realidade Virtual",
+  "tag": "desenvolvimento",
+  "descricao": "Ambiente imersivo de realidade virtual construído no laboratório, unindo desenvolvimento de software, eletrônica e fabricação para experiências educacionais.",
+  "conteudo": [
+    "A cabine de realidade virtual é um projeto que une desenvolvimento de software, eletrônica e fabricação em um ambiente imersivo construído pelos próprios membros do laboratório.",
+    "O projeto explora o uso de tecnologias imersivas na educação, permitindo que a comunidade acadêmica experimente aplicações de realidade virtual e que os membros desenvolvam habilidades em integração de hardware e software."
+  ],
+  "thumbnail": "/img/fotos/cabine_rv.png",
+  "imagens": [
+    "/img/fotos/cabine_rv.png"
+  ]
+}

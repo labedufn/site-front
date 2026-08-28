@@ -1,6 +1,5 @@
-import dados from "./projetos.json";
-
 export interface Projeto {
+  ordem: number;
   slug: string;
   titulo: string;
   tag: string;
@@ -10,4 +9,9 @@ export interface Projeto {
   imagens: string[];
 }
 
-export const projetos = dados as Projeto[];
+const arquivos = import.meta.glob<Projeto>("./projetos/*.json", {
+  eager: true,
+  import: "default",
+});
+
+export const projetos = Object.values(arquivos).sort((a, b) => a.ordem - b.ordem);
