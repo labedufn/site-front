@@ -1,5 +1,16 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
+@plugin "tailwindcss-motion";
+
+@custom-variant intersect (&:not([no-intersect]));
+
+@layer base {
+  * {
+    --motion-delay: 0ms;
+    --motion-timing: ease-out;
+    --motion-perceptual-duration-multiplier: 1;
+  }
+}
 
 @theme {
   --color-primaria: #22b5d3;
@@ -22,6 +33,36 @@
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+@utility revelar {
+  animation: revelar var(--motion-duration, 1000ms) cubic-bezier(0.165, 0.84, 0.44, 1)
+    var(--motion-delay, 0ms) backwards;
+}
+
+@utility limpar {
+  animation: limpar var(--motion-duration, 900ms) cubic-bezier(0.77, 0, 0.175, 1)
+    var(--motion-delay, 0ms) backwards;
+}
+
+@utility limpar-invertido {
+  --limpar-inicio: 100%;
+  --limpar-fim: 0%;
+}
+
+@utility raio-traco {
+  stroke-dasharray: 420;
+  animation:
+    raio-desenha var(--motion-duration, 800ms) cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      var(--motion-delay, 0ms) backwards,
+    raio-pisca 350ms linear calc(var(--motion-delay, 0ms) + var(--motion-duration, 800ms)) backwards;
+}
+
+@keyframes revelar {
+  from {
+    opacity: 0;
+    translate: 0 36px;
+  }
 }
 
 html {
@@ -51,4 +92,127 @@ body {
 ::selection {
   background-color: var(--color-primaria);
   color: var(--color-escuro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .esteira {
+    animation: esteira 30s linear infinite;
+  }
+
+  .esteira:hover {
+    animation-play-state: paused;
+  }
+
+  [data-barra-progresso] {
+    transform-origin: left center;
+    scale: 0 1;
+  }
+}
+
+@keyframes limpar {
+  from {
+    clip-path: inset(0 var(--limpar-fim, 100%) 0 var(--limpar-inicio, 0%));
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes raio-desenha {
+  from {
+    stroke-dashoffset: 420;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes raio-pisca {
+  0% {
+    opacity: 0.35;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes esteira {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-conteudo {
+  to {
+    translate: 0 -18%;
+    opacity: 0;
+  }
+}
+
+@keyframes hero-raio {
+  to {
+    translate: 0 -70px;
+  }
+}
+
+@keyframes sobre-zoom {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.08;
+  }
+}
+
+@keyframes barra-progresso {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  [data-hero-conteudo] {
+    animation: hero-conteudo linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 80svh;
+  }
+
+  [data-hero-raio] {
+    animation: hero-raio linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100svh;
+  }
+
+  [data-sobre] {
+    view-timeline: --sobre block;
+  }
+
+  [data-sobre-ilustracao] {
+    animation: sobre-zoom linear both;
+    animation-timeline: --sobre;
+  }
+
+  [data-barra-progresso] {
+    animation: barra-progresso linear both;
+    animation-timeline: scroll(root block);
+  }
 }

@@ -73,7 +73,7 @@ const redes = computed(() => {
       class="mt-2 flex items-center gap-1.5 text-[0.65rem] tracking-[0.15em] text-white/50 uppercase sm:mt-3 sm:gap-2 sm:text-xs"
     >
       <Icon
-        :name="iconesCurso[membro.curso]"
+        :name="iconesCurso[membro.curso] ?? 'lucide:graduation-cap'"
         size="13"
         class="text-primaria/80 sm:size-[15]"
         aria-hidden="true"

@@ -22,7 +22,7 @@ const anoAtual = new Date().getFullYear();
       <div
         class="grid grid-cols-1 gap-8 border-b border-escuro/15 py-12 sm:grid-cols-2 sm:gap-10 sm:py-15 md:grid-cols-4"
       >
-        <div v-reveal class="flex flex-col items-center md:items-start">
+        <div class="intersect-once intersect:revelar flex flex-col items-center md:items-start">
           <NuxtLink to="/#inicio" aria-label="LABED - voltar ao início" class="inline-block">
             <img src="/img/logos/logo_original.svg" alt="LABED" width="160" height="64">
           </NuxtLink>
@@ -41,7 +41,7 @@ const anoAtual = new Date().getFullYear();
           </div>
         </div>
 
-        <nav v-reveal="{ delay: 100 }" aria-label="Seções do site">
+        <nav class="intersect-once intersect:revelar motion-delay-[100ms]" aria-label="Seções do site">
           <h3 class="titulo-display mb-5 text-lg font-bold sm:text-xl">LABED</h3>
           <ul class="flex flex-col gap-3 text-sm sm:text-base">
             <li v-for="secao in secoes" :key="secao.id">
@@ -55,7 +55,7 @@ const anoAtual = new Date().getFullYear();
           </ul>
         </nav>
 
-        <div v-reveal="{ delay: 200 }">
+        <div class="intersect-once intersect:revelar motion-delay-[200ms]">
           <h3 class="titulo-display mb-5 text-lg font-bold sm:text-xl">Contato</h3>
           <div class="flex flex-col gap-3 text-sm sm:text-base">
             <a
@@ -80,7 +80,7 @@ const anoAtual = new Date().getFullYear();
           </div>
         </div>
 
-        <div v-reveal="{ delay: 300 }" class="hidden sm:block">
+        <div class="intersect-once intersect:revelar motion-delay-[300ms] hidden sm:block">
           <h3 class="titulo-display mb-5 text-lg font-bold sm:text-xl">Redes Sociais</h3>
           <div class="flex gap-4">
             <a

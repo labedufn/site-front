@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { gsap, movimentoReduzido } from "~/utils/animacao";
-
 const secoes = [
   { id: "inicio", label: "Início" },
   { id: "sobre", label: "Sobre" },
@@ -22,10 +20,6 @@ const rolado = ref(false);
 const secaoAtiva = ref<string | null>(null);
 const menuAberto = ref(false);
 
-const barraProgresso = ref<HTMLElement | null>(null);
-const menuMobile = ref<HTMLElement | null>(null);
-let contexto: gsap.Context | undefined;
-
 watch(
   () => route.fullPath,
   () => {
@@ -38,18 +32,6 @@ watch(menuAberto, (aberto) => {
   document.body.classList.toggle("overflow-hidden", aberto);
   if (aberto) $lenis?.stop();
   else $lenis?.start();
-
-  if (aberto && !movimentoReduzido() && menuMobile.value) {
-    gsap.from(menuMobile.value.querySelectorAll("[data-menu-item]"), {
-      y: 26,
-      opacity: 0,
-      duration: 0.5,
-      ease: "power3.out",
-      stagger: 0.06,
-      delay: 0.2,
-      clearProps: "opacity,transform",
-    });
-  }
 });
 
 onMounted(() => {
@@ -72,24 +54,9 @@ onMounted(() => {
     if (el) observer.observe(el);
   }
 
-  if (!movimentoReduzido() && barraProgresso.value) {
-    contexto = gsap.context(() => {
-      gsap.fromTo(
-        barraProgresso.value,
-        { scaleX: 0, transformOrigin: "left center" },
-        {
-          scaleX: 1,
-          ease: "none",
-          scrollTrigger: { start: 0, end: "max", scrub: true },
-        }
-      );
-    });
-  }
-
   onBeforeUnmount(() => {
     window.removeEventListener("scroll", aoRolar);
     observer.disconnect();
-    contexto?.revert();
     document.body.classList.remove("overflow-hidden");
     $lenis?.start();
   });
@@ -194,7 +161,6 @@ onMounted(() => {
         <Teleport to="body">
           <div
             id="menu-mobile"
-            ref="menuMobile"
             class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-escuro-claro/95 backdrop-blur-lg transition-all duration-500 md:hidden"
             :class="
               menuAberto
@@ -204,21 +170,33 @@ onMounted(() => {
             @click.self="menuAberto = false"
           >
             <NuxtLink
-              v-for="secao in secoes"
+              v-for="(secao, index) in secoes"
               :key="secao.id"
               :to="`/#${secao.id}`"
-              data-menu-item
+              :style="{ '--motion-delay': `${200 + index * 60}ms` }"
               class="titulo-display text-lg font-medium tracking-[0.15em] transition-colors duration-300 hover:text-primaria"
-              :class="secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white'"
+              :class="[
+                secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white',
+                menuAberto && 'revelar motion-duration-[500ms]',
+              ]"
               :tabindex="menuAberto ? 0 : -1"
               @click="menuAberto = false"
             >
               {{ secao.label }}
             </NuxtLink>
-            <div data-menu-item aria-hidden="true" class="w-24 text-primaria/60">
+            <div
+              aria-hidden="true"
+              class="w-24 text-primaria/60"
+              :class="menuAberto && 'revelar motion-duration-[500ms]'"
+              :style="{ '--motion-delay': `${200 + secoes.length * 60}ms` }"
+            >
               <RaioLinha />
             </div>
-            <div data-menu-item class="flex gap-6">
+            <div
+              class="flex gap-6"
+              :class="menuAberto && 'revelar motion-duration-[500ms]'"
+              :style="{ '--motion-delay': `${260 + secoes.length * 60}ms` }"
+            >
               <a
                 v-for="rede in redesSociais"
                 :key="rede.url"
@@ -243,7 +221,7 @@ onMounted(() => {
         :class="rolado || !naHome ? 'opacity-100' : 'opacity-0'"
       />
       <div
-        ref="barraProgresso"
+        data-barra-progresso
         class="absolute inset-x-0 bottom-0 h-0.5 bg-linear-to-r from-primaria-escura to-primaria"
       />
     </div>

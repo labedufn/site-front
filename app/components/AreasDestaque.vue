@@ -30,8 +30,8 @@ const areas = [
         <div
           v-for="(area, index) in areas"
           :key="area.titulo"
-          v-reveal="{ delay: index * 200 }"
-          class="group flex flex-col items-center"
+          :style="{ '--motion-delay': `${index * 200}ms` }"
+          class="intersect-once intersect:revelar group flex flex-col items-center"
         >
           <div
             class="mb-6 flex size-24 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:-translate-y-2 md:size-28"

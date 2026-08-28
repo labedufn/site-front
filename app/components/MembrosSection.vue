@@ -15,7 +15,8 @@ import { membros } from "~/data/membros";
         <MembroCard
           v-for="(membro, index) in membros"
           :key="membro.email"
-          v-reveal="{ delay: (index % 4) * 100 }"
+          :style="{ '--motion-delay': `${(index % 4) * 100}ms` }"
+          class="intersect-once intersect:revelar"
           :membro="membro"
         />
       </div>

@@ -13,7 +13,7 @@
       <RaioLinha />
     </div>
 
-    <div v-reveal class="container-site flex flex-col items-center text-center">
+    <div class="intersect-once intersect:revelar container-site flex flex-col items-center text-center">
       <p
         class="titulo-display mb-4 text-sm font-medium tracking-[0.35em] text-primaria/90 md:text-base"
       >

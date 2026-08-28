@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { gsap, movimentoReduzido } from "~/utils/animacao";
 import { membros } from "~/data/membros";
 import { projetos } from "~/data/projetos";
 
@@ -8,35 +7,12 @@ const numeros = [
   { valor: projetos.length, rotulo: "projetos" },
   { valor: 3, rotulo: "áreas de atuação" },
 ];
-
-const secao = ref<HTMLElement | null>(null);
-let contexto: gsap.Context | undefined;
-
-onMounted(() => {
-  if (movimentoReduzido()) return;
-  const raiz = secao.value;
-  if (!raiz) return;
-
-  contexto = gsap.context(() => {
-    gsap.fromTo(
-      "[data-sobre-ilustracao]",
-      { scale: 1 },
-      {
-        scale: 1.08,
-        ease: "none",
-        scrollTrigger: { trigger: raiz, start: "top bottom", end: "bottom top", scrub: true },
-      }
-    );
-  }, raiz);
-});
-
-onUnmounted(() => contexto?.revert());
 </script>
 
 <template>
   <section
     id="sobre"
-    ref="secao"
+    data-sobre
     class="relative scroll-mt-20 overflow-hidden bg-escuro py-20 text-white md:py-28"
   >
     <div
@@ -55,7 +31,7 @@ onUnmounted(() => contexto?.revert());
     </div>
 
     <div class="container-site relative">
-      <div v-reveal class="min-[1000px]:w-3/5">
+      <div class="intersect-once intersect:revelar min-[1000px]:w-3/5">
         <SecaoTitulo kicker="Sobre o lab">
           Um espaço <span class="text-primaria">maker</span> para aprender fazendo.
         </SecaoTitulo>

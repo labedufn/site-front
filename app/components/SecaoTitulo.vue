@@ -7,8 +7,7 @@ defineProps<{
 
 <template>
   <div
-    v-reveal
-    class="mb-12 md:mb-16"
+    class="intersect-once intersect:revelar mb-12 md:mb-16"
     :class="centralizado && 'flex flex-col items-center text-center'"
   >
     <p
