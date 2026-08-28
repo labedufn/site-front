@@ -142,7 +142,7 @@ content:
 
   - name: apoiadores
     label: Apoiadores
-    description: Gerencie os nomes, logos e a ordem dos apoiadores exibidos no site.
+    description: Gerencie os nomes e logos dos apoiadores exibidos no site.
     type: collection
     path: app/data/apoiadores
     format: json
@@ -150,18 +150,17 @@ content:
     subfolders: false
     view:
       primary: nome
-      fields: [logo, nome, ordem]
+      fields: [logo, nome]
       search: [nome]
-      sort: [ordem, nome]
+      sort: [nome]
       default:
-        sort: ordem
+        sort: nome
         order: asc
     fields:
       - name: ordem
-        label: Ordem de exibição
         type: number
-        required: true
-        description: Apoiadores com números menores aparecem primeiro.
+        hidden: true
+        default: 999
       - name: nome
         label: Nome
         type: string
