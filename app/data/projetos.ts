@@ -14,4 +14,4 @@ const arquivos = import.meta.glob<Projeto>("./projetos/*.json", {
   import: "default",
 });
 
-export const projetos = Object.values(arquivos).sort((a, b) => a.ordem - b.ordem);
+export const projetos = Object.values(arquivos).sort((a, b) => b.ordem - a.ordem);
