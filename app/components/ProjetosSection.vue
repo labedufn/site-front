@@ -8,7 +8,7 @@ const destaques = projetos.slice(0, DESTAQUES);
 <template>
   <section id="projetos" class="scroll-mt-20 py-20 md:py-28">
     <div class="container-site">
-      <SecaoTitulo kicker="Projetos">
+      <SecaoTitulo>
         Da bancada para a <span class="text-primaria">prática</span>.
       </SecaoTitulo>
       <div class="flex flex-col gap-20 md:gap-32">

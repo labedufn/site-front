@@ -32,7 +32,7 @@ const numeros = [
 
     <div class="container-site relative">
       <div class="intersect-once intersect:revelar min-[1000px]:w-3/5">
-        <SecaoTitulo kicker="Sobre o lab">
+        <SecaoTitulo>
           Um espaço <span class="text-primaria">maker</span> para aprender fazendo.
         </SecaoTitulo>
 

@@ -6,7 +6,7 @@ import { membros } from "~/data/membros";
   <section id="membros" class="scroll-mt-20 bg-escuro-claro">
     <SectionDivisor classe-fill="fill-escuro" />
     <div class="container-site py-16 md:py-24">
-      <SecaoTitulo centralizado kicker="Membros">
+      <SecaoTitulo centralizado>
         Quem faz o lab <span class="text-primaria">acontecer</span>.
       </SecaoTitulo>
       <div

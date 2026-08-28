@@ -17,6 +17,7 @@ const naHome = computed(() => route.path === "/");
 const { $lenis } = useNuxtApp();
 
 const rolado = ref(false);
+const opacidadeFundo = ref(0);
 const secaoAtiva = ref<string | null>(null);
 const menuAberto = ref(false);
 
@@ -36,7 +37,11 @@ watch(menuAberto, (aberto) => {
 
 onMounted(() => {
   const aoRolar = () => {
-    rolado.value = window.scrollY > 50;
+    const posicao = window.scrollY;
+    opacidadeFundo.value = Math.min(Math.max((posicao - 64) / 72, 0), 1);
+
+    if (!rolado.value && posicao > 64) rolado.value = true;
+    else if (rolado.value && posicao < 24) rolado.value = false;
   };
   aoRolar();
   window.addEventListener("scroll", aoRolar, { passive: true });
@@ -65,32 +70,65 @@ onMounted(() => {
 
 <template>
   <header
-    class="fixed z-50 w-full transition-all duration-500"
-    :class="
-      menuAberto
-        ? 'bg-transparent'
-        : rolado || !naHome
-          ? 'bg-escuro-claro/80 backdrop-blur-md'
-          : 'bg-transparent'
-    "
+    class="pointer-events-none fixed inset-x-0 top-0 z-50 transition-[padding] duration-500 ease-out"
+    :class="rolado && !menuAberto ? 'px-3 pt-3 sm:px-4 md:px-6' : 'px-0 pt-0'"
   >
-    <div class="container-site">
-      <nav class="flex items-center justify-between py-4" aria-label="Principal">
-        <NuxtLink to="/#inicio" aria-label="LABED - voltar ao início">
+    <div
+      aria-hidden="true"
+      class="navbar-fundo pointer-events-none absolute inset-x-3 top-3 mx-auto h-16 max-w-4xl rounded-2xl sm:inset-x-4 md:inset-x-6 md:h-14"
+      :class="rolado && !menuAberto && 'navbar-fundo-animado'"
+      :style="{ opacity: menuAberto ? 0 : opacidadeFundo }"
+    />
+
+    <div
+      class="pointer-events-auto mx-auto w-full transition-[max-width] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+      :class="
+        rolado && !menuAberto
+          ? 'navbar-conteudo-flutuante max-w-4xl'
+          : 'max-w-[100vw]'
+      "
+    >
+      <div
+        class="relative w-full"
+        :class="
+          menuAberto
+            ? 'bg-transparent shadow-none'
+            : rolado
+              ? 'bg-transparent shadow-none'
+              : !naHome
+                ? 'rounded-none bg-escuro-claro/80 backdrop-blur-md shadow-none'
+                : 'rounded-none bg-transparent shadow-none'
+        "
+      >
+        <div class="container-site">
+          <nav
+            class="grid grid-cols-[1fr_auto] items-center transition-[padding] duration-300 md:grid-cols-[1fr_auto_1fr]"
+            :class="rolado && !menuAberto ? 'py-3' : 'py-4'"
+            aria-label="Principal"
+          >
+        <NuxtLink
+          to="/#inicio"
+          aria-label="LABED - voltar ao início"
+          class="flex items-center justify-self-start"
+        >
           <img
             src="/img/logos/logo_original.svg"
             alt="LABED"
-            class="h-8 w-auto"
+            class="block w-auto transition-[height] duration-300"
+            :class="rolado && !menuAberto ? 'h-7' : 'h-8'"
             width="160"
             height="40"
           >
         </NuxtLink>
 
-        <ul class="ml-8 hidden items-center gap-5 md:flex lg:ml-16 lg:gap-7">
+        <ul
+          class="hidden items-center justify-self-center transition-[gap] duration-300 md:flex"
+          :class="rolado && !menuAberto ? 'gap-2 lg:gap-3' : 'gap-3 lg:gap-4'"
+        >
           <li v-for="secao in secoes" :key="secao.id">
             <NuxtLink
               :to="`/#${secao.id}`"
-              class="group relative -m-2 flex items-baseline p-2 transition-colors duration-300"
+              class="group relative flex h-8 items-center px-1.5 leading-none transition-colors duration-300"
               :class="
                 secaoAtiva === secao.id && naHome ? 'text-white' : 'text-white/70 hover:text-white'
               "
@@ -98,31 +136,16 @@ onMounted(() => {
               <span class="titulo-display text-[0.65rem] font-medium tracking-[0.18em] lg:text-xs">
                 {{ secao.label }}
               </span>
-              <svg
-                viewBox="0 0 400 28"
-                preserveAspectRatio="none"
+              <span
                 aria-hidden="true"
-                class="absolute inset-x-2 bottom-0 h-1.5 w-[calc(100%-1rem)] text-primaria"
-              >
-                <path
-                  d="M0 14 H150 L172 4 L204 24 L226 14 H400"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="4"
-                  stroke-linejoin="round"
-                  class="transition-[stroke-dashoffset] duration-500 ease-out [stroke-dasharray:420] group-hover:[stroke-dashoffset:0]"
-                  :class="
-                    secaoAtiva === secao.id && naHome
-                      ? '[stroke-dashoffset:0]'
-                      : '[stroke-dashoffset:420]'
-                  "
-                />
-              </svg>
+                class="absolute inset-x-1.5 bottom-0 h-px origin-center bg-primaria transition-transform duration-300 group-hover:scale-x-100"
+                :class="secaoAtiva === secao.id && naHome ? 'scale-x-100' : 'scale-x-0'"
+              />
             </NuxtLink>
           </li>
         </ul>
 
-        <div class="hidden flex-1 justify-end gap-4 md:flex">
+        <div class="hidden items-center justify-self-end gap-2 md:flex">
           <a
             v-for="rede in redesSociais"
             :key="rede.url"
@@ -130,15 +153,15 @@ onMounted(() => {
             target="_blank"
             rel="noopener noreferrer"
             :aria-label="rede.label"
-            class="text-white transition-colors duration-300 hover:text-primaria"
+            class="flex size-8 items-center justify-center text-white transition-colors duration-300 hover:text-primaria"
           >
-            <Icon :name="rede.icone" size="24" />
+            <Icon :name="rede.icone" :size="rolado && !menuAberto ? 20 : 24" />
           </a>
         </div>
 
         <button
           type="button"
-          class="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          class="relative z-50 flex h-10 w-10 flex-col items-center justify-center justify-self-end gap-1.5 md:hidden"
           :aria-expanded="menuAberto"
           aria-controls="menu-mobile"
           :aria-label="menuAberto ? 'Fechar menu' : 'Abrir menu'"
@@ -177,7 +200,7 @@ onMounted(() => {
               class="titulo-display text-lg font-medium tracking-[0.15em] transition-colors duration-300 hover:text-primaria"
               :class="[
                 secaoAtiva === secao.id && naHome ? 'text-primaria' : 'text-white',
-                menuAberto && 'revelar motion-duration-[500ms]',
+                menuAberto && 'revelar motion-duration-500',
               ]"
               :tabindex="menuAberto ? 0 : -1"
               @click="menuAberto = false"
@@ -185,16 +208,8 @@ onMounted(() => {
               {{ secao.label }}
             </NuxtLink>
             <div
-              aria-hidden="true"
-              class="w-24 text-primaria/60"
-              :class="menuAberto && 'revelar motion-duration-[500ms]'"
-              :style="{ '--motion-delay': `${200 + secoes.length * 60}ms` }"
-            >
-              <RaioLinha />
-            </div>
-            <div
               class="flex gap-6"
-              :class="menuAberto && 'revelar motion-duration-[500ms]'"
+              :class="menuAberto && 'revelar motion-duration-500'"
               :style="{ '--motion-delay': `${260 + secoes.length * 60}ms` }"
             >
               <a
@@ -212,18 +227,10 @@ onMounted(() => {
             </div>
           </div>
         </Teleport>
-      </nav>
-    </div>
+          </nav>
+        </div>
 
-    <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 bottom-0">
-      <div
-        class="h-px w-full bg-primaria/15 transition-opacity duration-500"
-        :class="rolado || !naHome ? 'opacity-100' : 'opacity-0'"
-      />
-      <div
-        data-barra-progresso
-        class="absolute inset-x-0 bottom-0 h-0.5 bg-linear-to-r from-primaria-escura to-primaria"
-      />
+      </div>
     </div>
   </header>
 </template>

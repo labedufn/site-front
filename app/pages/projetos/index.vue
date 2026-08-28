@@ -21,7 +21,7 @@ useSeoMeta({
         Voltar ao início
       </NuxtLink>
 
-      <SecaoTitulo kicker="Projetos">
+      <SecaoTitulo>
         Tudo que já saiu da <span class="text-primaria">bancada</span>.
       </SecaoTitulo>
 
