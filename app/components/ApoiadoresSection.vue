@@ -1,14 +1,5 @@
 <script setup lang="ts">
-const logos = [
-  { src: "/img/apoiadores/ufn.svg", nome: "Universidade Franciscana" },
-  { src: "/img/apoiadores/sistemas_informacao.svg", nome: "Sistemas de Informação UFN" },
-  { src: "/img/apoiadores/ufnbotz.svg", nome: "UFNBotz" },
-  { src: "/img/apoiadores/solidworks.svg", nome: "SolidWorks" },
-  { src: "/img/apoiadores/jogos_digitais.svg", nome: "Jogos Digitais UFN" },
-  { src: "/img/apoiadores/ciencia_computacao.svg", nome: "Ciência da Computação UFN" },
-  { src: "/img/apoiadores/conectare.svg", nome: "Conectare Hub de Inovação" },
-  { src: "/img/apoiadores/logo_oclz.svg", nome: "OCLZ" },
-];
+import { apoiadores } from "~/data/apoiadores";
 </script>
 
 <template>
@@ -29,11 +20,11 @@ const logos = [
             class="esteira flex w-max items-center will-change-transform motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center"
           >
             <img
-              v-for="(logo, index) in [...logos, ...logos]"
+              v-for="(apoiador, index) in [...apoiadores, ...apoiadores]"
               :key="index"
-              :src="logo.src"
-              :alt="index < logos.length ? logo.nome : ''"
-              :aria-hidden="index >= logos.length"
+              :src="apoiador.logo"
+              :alt="index < apoiadores.length ? apoiador.nome : ''"
+              :aria-hidden="index >= apoiadores.length"
               class="max-h-28 max-w-56 px-12 opacity-60 transition-opacity duration-300 hover:opacity-100"
             >
           </div>

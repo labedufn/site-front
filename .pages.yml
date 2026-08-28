@@ -11,6 +11,12 @@ media:
     output: /img
     categories: [image]
     rename: safe
+  - name: apoiadores
+    label: Logos dos apoiadores
+    input: public/img/apoiadores
+    output: /img/apoiadores
+    categories: [image]
+    rename: safe
 
 content:
   - name: membros
@@ -133,3 +139,37 @@ content:
         list: true
         options:
           media: projetos
+
+  - name: apoiadores
+    label: Apoiadores
+    description: Gerencie os nomes, logos e a ordem dos apoiadores exibidos no site.
+    type: collection
+    path: app/data/apoiadores
+    format: json
+    filename: "{nome}.json"
+    subfolders: false
+    view:
+      primary: nome
+      fields: [logo, nome, ordem]
+      search: [nome]
+      sort: [ordem, nome]
+      default:
+        sort: ordem
+        order: asc
+    fields:
+      - name: ordem
+        label: Ordem de exibição
+        type: number
+        required: true
+        description: Apoiadores com números menores aparecem primeiro.
+      - name: nome
+        label: Nome
+        type: string
+        required: true
+        description: Também é usado como texto alternativo acessível do logo.
+      - name: logo
+        label: Logo
+        type: image
+        required: true
+        options:
+          media: apoiadores
