@@ -97,17 +97,41 @@ body {
 }
 
 @layer components {
-  .navbar-fundo {
-    background-color: var(--color-escuro-claro);
-    box-shadow: 0 16px 50px -24px rgb(0 0 0 / 90%);
-    opacity: 0;
-    transition: opacity 160ms linear;
+  .navbar-cabecalho {
+    padding-top: calc(var(--nav-desgrudar, 0) * 0.75rem);
   }
 
-  .navbar-fundo-animado,
-  .navbar-conteudo-flutuante {
-    transform-origin: top center;
-    animation: navbar-flutuar 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  .navbar-barra {
+    max-width: calc(100% - var(--nav-encolher, 0) * (100% - 56rem));
+    border-radius: calc(var(--nav-encolher, 0) * 1rem);
+    background-color: color-mix(
+      in oklab,
+      var(--color-escuro-claro) calc(var(--nav-fundo, 0) * 100%),
+      transparent
+    );
+    box-shadow: 0 16px 50px -24px
+      rgb(0 0 0 / calc(var(--nav-fundo, 0) * 90%));
+  }
+
+  .navbar-barra-opaca {
+    background-color: color-mix(
+      in oklab,
+      var(--color-escuro-claro) calc(80% + var(--nav-fundo, 0) * 20%),
+      transparent
+    );
+    backdrop-filter: blur(12px);
+  }
+
+  .navbar-nav {
+    padding-block: calc(1rem - var(--nav-encolher, 0) * 0.25rem);
+  }
+
+  .navbar-logo {
+    height: calc(2rem - var(--nav-encolher, 0) * 0.25rem);
+  }
+
+  .navbar-links {
+    gap: calc(0.75rem - var(--nav-encolher, 0) * 0.25rem);
   }
 
   .esteira {
@@ -132,18 +156,6 @@ body {
 @keyframes esteira {
   to {
     transform: translateX(-50%);
-  }
-}
-
-@keyframes navbar-flutuar {
-  0% {
-    transform: translateY(-6px);
-  }
-  72% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(0);
   }
 }
 
