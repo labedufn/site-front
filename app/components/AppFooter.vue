@@ -112,7 +112,7 @@ const anoAtual = new Date().getFullYear();
           aria-label="OCLZ"
         >
           <img
-            src="/img/apoiadores/overclk-systems-horizontal-mono-branca.svg"
+            src="/img/apoiadores/overclk-systems-horizontal-mono-preta.svg"
             alt="OCLZ"
             class="h-7 w-auto"
             width="80"
