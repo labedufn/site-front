@@ -41,7 +41,7 @@ const anoAtual = new Date().getFullYear();
           </div>
         </div>
 
-        <nav class="intersect-once intersect:revelar motion-delay-[100ms]" aria-label="Seções do site">
+        <nav class="intersect-once intersect:revelar motion-delay-100" aria-label="Seções do site">
           <h3 class="titulo-display mb-5 text-lg font-bold sm:text-xl">LABED</h3>
           <ul class="flex flex-col gap-3 text-sm sm:text-base">
             <li v-for="secao in secoes" :key="secao.id">
@@ -55,7 +55,7 @@ const anoAtual = new Date().getFullYear();
           </ul>
         </nav>
 
-        <div class="intersect-once intersect:revelar motion-delay-[200ms]">
+        <div class="intersect-once intersect:revelar motion-delay-200">
           <h3 class="titulo-display mb-5 text-lg font-bold sm:text-xl">Contato</h3>
           <div class="flex flex-col gap-3 text-sm sm:text-base">
             <a
@@ -80,7 +80,7 @@ const anoAtual = new Date().getFullYear();
           </div>
         </div>
 
-        <div class="intersect-once intersect:revelar motion-delay-[300ms] hidden sm:block">
+        <div class="intersect-once intersect:revelar motion-delay-300 hidden sm:block">
           <h3 class="titulo-display mb-5 text-lg font-bold sm:text-xl">Redes Sociais</h3>
           <div class="flex gap-4">
             <a
@@ -112,7 +112,7 @@ const anoAtual = new Date().getFullYear();
           aria-label="OCLZ"
         >
           <img
-            src="/img/apoiadores/logo_oclz_preto.svg"
+            src="/img/apoiadores/overclk-systems-horizontal-mono-branca.svg"
             alt="OCLZ"
             class="h-7 w-auto"
             width="80"
