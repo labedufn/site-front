@@ -12,12 +12,12 @@ import { apoiadores } from "~/data/apoiadores";
       </p>
       <div>
         <div
-          class="overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
+          class="overflow-hidden mask-[linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] motion-reduce:mask-none"
           role="region"
           aria-label="Logos dos apoiadores"
         >
           <div
-            class="esteira flex w-max items-center will-change-transform motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center"
+            class="esteira flex w-max items-center will-change-transform motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-10"
           >
             <img
               v-for="(apoiador, index) in [...apoiadores, ...apoiadores]"
@@ -25,7 +25,7 @@ import { apoiadores } from "~/data/apoiadores";
               :src="apoiador.logo"
               :alt="index < apoiadores.length ? apoiador.nome : ''"
               :aria-hidden="index >= apoiadores.length"
-              class="max-h-28 max-w-56 px-12 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              class="h-28 w-56 shrink-0 object-scale-down px-12 opacity-60 motion-reduce:aria-hidden:hidden transition-opacity duration-300 hover:opacity-100"
             >
           </div>
         </div>

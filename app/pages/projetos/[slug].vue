@@ -55,27 +55,29 @@ useSeoMeta({
     <div class="container-site max-w-250 pt-28 pb-16 md:pt-36 md:pb-24">
       <NuxtLink
         to="/#projetos"
-        class="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-primaria"
+        class="revelar inline-flex items-center gap-2 text-white/70 transition-colors hover:text-primaria"
       >
         <Icon name="lucide:arrow-left" size="20" aria-hidden="true" />
         Voltar aos projetos
       </NuxtLink>
 
-      <p class="mt-10 mb-3 text-sm font-bold tracking-[0.25em] text-primaria uppercase">
+      <p class="limpar motion-delay-150 mt-10 mb-3 text-sm font-bold tracking-[0.25em] text-primaria uppercase">
         {{ projeto.tag }}
       </p>
 
-      <h1 class="titulo-display mb-8 text-2xl font-bold text-white sm:text-4xl xl:text-5xl">
+      <h1 class="revelar motion-delay-250 titulo-display mb-8 text-2xl font-bold text-white sm:text-4xl xl:text-5xl">
         {{ projeto.titulo }}
       </h1>
 
-      <ProjetoGaleria :imagens="projeto.imagens" :titulo="projeto.titulo" />
+      <ProjetoGaleria
+        class="limpar motion-duration-1000 motion-delay-350"
+        :imagens="projeto.imagens" :titulo="projeto.titulo" />
 
-      <div class="mt-10 space-y-5 text-base text-white/70 md:text-lg">
+      <div class="revelar motion-delay-500 mt-10 space-y-5 text-base text-white/70 md:text-lg">
         <p v-for="(paragrafo, index) in projeto.conteudo" :key="index">{{ paragrafo }}</p>
       </div>
 
-      <div class="mt-10 flex items-center gap-3">
+      <div class="revelar motion-delay-600 mt-10 flex items-center gap-3">
         <p class="text-sm font-bold tracking-wider text-white/60 uppercase">Compartilhar</p>
         <a
           v-for="rede in compartilhar"
@@ -92,7 +94,7 @@ useSeoMeta({
 
       <nav
         v-if="projetoAnterior || proximoProjeto"
-        class="mt-16 flex justify-between gap-4 border-t border-escuro-claro pt-8"
+        class="intersect-once intersect:revelar mt-16 flex justify-between gap-4 border-t border-escuro-claro pt-8"
         aria-label="Outros projetos"
       >
         <NuxtLink

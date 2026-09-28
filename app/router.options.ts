@@ -36,7 +36,8 @@ export default {
 
     return new Promise((resolve) => {
       nuxtApp.hooks.hookOnce("page:finish", () => {
-        setTimeout(rolar, 50);
+        if (to.hash) setTimeout(rolar, 50);
+        else rolar();
         resolve(false);
       });
     });

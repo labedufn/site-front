@@ -21,7 +21,6 @@ onMounted(() => {
       const inicio = performance.now();
       const passo = (agora: number) => {
         const t = Math.min((agora - inicio) / duracao, 1);
-        // power3.out
         exibido.value = Math.round(props.valor * (1 - (1 - t) ** 3));
         if (t < 1) requestAnimationFrame(passo);
       };
